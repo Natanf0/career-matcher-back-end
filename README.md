@@ -1,4 +1,4 @@
-**INTEGRANTES: Natan Ferreira, 
+**INTEGRANTES: Natan Ferreira, Julia Lopes, João Pedro Bianco, Milton Salgado e Pedro Henrique.
 Trabalho final da disciplina de Algoritmos e Grafos | 2025.2 | UFRJ - Universidade Federal do Rio de Janeiro**
 
 **Título: Criando um sistema que encontra a combinação ótima e estável entre Candidatos (via dados de seus currículos) e
