@@ -44,6 +44,9 @@ A protagonista desta partição é VAGA cujos atributos são: **_cargo, seniorid
 e a senioridade são chaves para o emparelhamento com o CANDIDATO, a modalidade (presencial/híbrido/remoto) em conjunto com a cidade
 e a localidade do CANDIDATO serão fatores de aumento ou decremento das preferências CANDIDATO X VAGA.
 Ademais, os mesmos vértices da partição anterior ainda são mantidos aqui, apenas com a diferença nos relacionamentos
-
+Então uma VAGA pode possuir relações de:
+REQUISITA_FORMAÇÃO_EM com um ou mais vértices de GRADUAÇÃO ou MESTRADO ou DOUTORADO OU PÓS-DOUTORADO
+REQUISITA_EXPERIENCIA_EM com um ou mais vértices de EXPERIÊNCIA
+REQUISICA_COMPETÊNCIA_EM com um ou mais vértices de HABILIDADE
 ![Modelagem](./assets/modelo.png)
 ## Representação no Neo4J
