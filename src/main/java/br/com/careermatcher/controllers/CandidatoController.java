@@ -1,8 +1,7 @@
 package br.com.careermatcher.controllers;
 
-
-import br.com.careermatcher.models.Vaga;
-import br.com.careermatcher.services.VagaService;
+import br.com.careermatcher.models.Candidato;
+import br.com.careermatcher.services.CandidatoService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,15 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/careermatcher/vagas")
+@RequestMapping("/api/careermatcher/candidatos")
 @AllArgsConstructor
-public class VagaController {
+public class CandidatoController {
 
-    private final VagaService vagaService;
+    private final CandidatoService candidatoService;
 
     @GetMapping("/")
-    public ResponseEntity<List<Vaga>> findAllVagas(){
-        return new ResponseEntity<>(vagaService.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<Candidato>> findAllVagas(){
+        return new ResponseEntity<>(candidatoService.findAll(), HttpStatus.OK);
     }
+
+
 
 }

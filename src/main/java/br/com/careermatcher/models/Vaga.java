@@ -4,6 +4,8 @@ import br.com.careermatcher.enums.Modalidade;
 import br.com.careermatcher.enums.Senioridade;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
@@ -13,13 +15,12 @@ import java.util.List;
 
 @Node("VAGA")
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class Vaga {
-    @Id @GeneratedValue
-    @Getter private Long id;
-    @Getter private String empresa, cargo, cidade;
-    @Getter private Senioridade senioridade;
-    @Getter private Modalidade  modalidade;
+    @Id @GeneratedValue @Getter private Long id;
+    @Getter @NonNull private String empresa, cargo, cidade;
+    @Getter @NonNull private Senioridade senioridade;
+    @Getter @NonNull private Modalidade  modalidade;
 
     @Relationship(type = "REQUISITA_FORMACAO_EM", direction = Relationship.Direction.OUTGOING)
     private List<Graduacao> graduacao; // Normalmente vagas possuem uma lista de graduações correlatas de interesse. Então decidi cobrir isto
@@ -38,4 +39,6 @@ public class Vaga {
 
     @Relationship(type = "REQUISITA_FORMACAO_EM", direction = Relationship.Direction.OUTGOING)
     private PosDoutorado posDoutorado;
+
+    private List<Candidato> lidtaPreferenciaCandidatos;
 }

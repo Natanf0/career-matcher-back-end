@@ -17,4 +17,5 @@ public class Graduacao {
     private TipoGraduacao tipoGraduacao;
     private Integer ano_conclusao;
     private Boolean concluido;
+
 }

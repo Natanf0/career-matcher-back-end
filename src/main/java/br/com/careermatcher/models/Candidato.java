@@ -3,6 +3,8 @@ package br.com.careermatcher.models;
 import br.com.careermatcher.enums.Senioridade;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
@@ -12,12 +14,11 @@ import java.util.List;
 
 @Node("CANDIDATO")
 @Getter
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class Candidato {
-    @Id @GeneratedValue
-    private Long id;
-    private String nome, cargo, país, cidade, telefone, email;
-    private Senioridade senioridade;
+    @Id @GeneratedValue @NonNull private Long id;
+    @NonNull private String nome, cargo, país, cidade, telefone, email;
+    @NonNull private Senioridade senioridade;
 
     @Relationship(type = "HABIL_EM", direction = Relationship.Direction.OUTGOING)
     private List<Competencia> competencias;
@@ -36,4 +37,6 @@ public class Candidato {
 
     @Relationship(type = "FORMADO_EM", direction = Relationship.Direction.OUTGOING)
     private PosDoutorado posDoutorado;
+
+    private List<Vaga> listaPreferenciaVagas;
 }
