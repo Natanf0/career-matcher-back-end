@@ -21,6 +21,8 @@ public class VagaController {
 
     @GetMapping("/")
     public ResponseEntity<List<Vaga>> findAllVagas(){
+        //System.out.println("--------------------------------------------------------------------------");
+        //vagaService.createRankedListVagas();
         return new ResponseEntity<>(vagaService.findAll(), HttpStatus.OK);
     }
 

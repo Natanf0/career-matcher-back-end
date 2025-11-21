@@ -14,13 +14,13 @@ import org.springframework.data.neo4j.core.schema.Relationship;
 import java.util.List;
 
 @Node("VAGA")
-
+@Getter
 @RequiredArgsConstructor
 public class Vaga {
-    @Id @GeneratedValue @Getter private Long id;
-    @Getter @NonNull private String empresa, cargo, cidade;
-    @Getter @NonNull private Senioridade senioridade;
-    @Getter @NonNull private Modalidade  modalidade;
+    @Id @GeneratedValue private Long id;
+    @NonNull private String empresa, cargo, cidade;
+    @NonNull private Senioridade senioridade;
+     @NonNull private Modalidade  modalidade;
 
     @Relationship(type = "REQUISITA_FORMACAO_EM", direction = Relationship.Direction.OUTGOING)
     private List<Graduacao> graduacao; // Normalmente vagas possuem uma lista de graduações correlatas de interesse. Então decidi cobrir isto
