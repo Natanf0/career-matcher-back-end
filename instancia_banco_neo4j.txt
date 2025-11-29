@@ -1,0 +1,2649 @@
+// LIMPAR O BANCO DE DADOS EXISTENTE
+MATCH (n) DETACH DELETE n;
+
+//Nós de COMPETENCIA
+CREATE (comp1:COMPETENCIA {nome:"Java"})
+CREATE (comp2:COMPETENCIA {nome:"Python"})
+CREATE (comp3:COMPETENCIA {nome:"React"})
+CREATE (comp4:COMPETENCIA {nome:"SQL"})
+CREATE (comp5:COMPETENCIA {nome:"AWS Cloud"})
+CREATE (comp6:COMPETENCIA {nome:"Machine Learning"})
+CREATE (comp7:COMPETENCIA {nome:"Kubernetes"})
+CREATE (comp8:COMPETENCIA {nome:"Figma"})
+CREATE (comp9:COMPETENCIA {nome:"Scrum"})
+CREATE (comp10:COMPETENCIA {nome:"Liderança de Equipes"})
+CREATE (comp11:COMPETENCIA {nome:"Docker"})
+CREATE (comp12:COMPETENCIA {nome:"CI/CD"})
+CREATE (comp13:COMPETENCIA {nome:"Terraform"})
+CREATE (comp14:COMPETENCIA {nome:"Go (Golang)"})
+CREATE (comp15:COMPETENCIA {nome:"C# / .NET"})
+CREATE (comp16:COMPETENCIA {nome:"Node.js"})
+CREATE (comp17:COMPETENCIA {nome:"Microsserviços"})
+CREATE (comp18:COMPETENCIA {nome:"Arquitetura Serverless"})
+CREATE (comp19:COMPETENCIA {nome:"Mensageria (Kafka/RabbitMQ)"})
+CREATE (comp20:COMPETENCIA {nome:"APIs RESTful"})
+CREATE (comp21:COMPETENCIA {nome:"GraphQL"})
+CREATE (comp22:COMPETENCIA {nome:"Git Avançado"})
+
+// COMPETÊNCIAS DE FRONTEND & UX/UI
+CREATE (comp23:COMPETENCIA {nome:"Vue.js"})
+CREATE (comp24:COMPETENCIA {nome:"Angular"})
+CREATE (comp25:COMPETENCIA {nome:"TypeScript"})
+CREATE (comp26:COMPETENCIA {nome:"Redux"})
+CREATE (comp27:COMPETENCIA {nome:"HTML5/CSS3"})
+CREATE (comp28:COMPETENCIA {nome:"Design System"})
+CREATE (comp29:COMPETENCIA {nome:"Prototipação Avançada"})
+CREATE (comp30:COMPETENCIA {nome:"Testes de Usabilidade"})
+
+// COMPETÊNCIAS DE DADOS & IA
+CREATE (comp31:COMPETENCIA {nome:"Spark"})
+CREATE (comp32:COMPETENCIA {nome:"Hadoop"})
+CREATE (comp33:COMPETENCIA {nome:"Estatística Aplicada"})
+CREATE (comp34:COMPETENCIA {nome:"Deep Learning (TensorFlow/PyTorch)"})
+CREATE (comp35:COMPETENCIA {nome:"Processamento de Linguagem Natural (NLP)"})
+CREATE (comp36:COMPETENCIA {nome:"ETL/ELT"})
+CREATE (comp37:COMPETENCIA {nome:"NoSQL (MongoDB/Cassandra)"})
+CREATE (comp38:COMPETENCIA {nome:"Data Warehousing"})
+
+// COMPETÊNCIAS DE QA, SEGURANÇA & GESTÃO
+CREATE (comp39:COMPETENCIA {nome:"Testes Automatizados"})
+CREATE (comp40:COMPETENCIA {nome:"Cypress"})
+CREATE (comp41:COMPETENCIA {nome:"JMeter (Testes de Performance)"})
+CREATE (comp42:COMPETENCIA {nome:"OWASP"})
+CREATE (comp43:COMPETENCIA {nome:"Segurança de Aplicações"})
+CREATE (comp44:COMPETENCIA {nome:"Gestão de Projetos (PMBOK)"})
+CREATE (comp45:COMPETENCIA {nome:"Metodologias Ágeis (Kanban)"})
+CREATE (comp46:COMPETENCIA {nome:"Análise de Negócios (Business Analysis)"})
+CREATE (comp47:COMPETENCIA {nome:"Compliance e LGPD"})
+CREATE (comp48:COMPETENCIA {nome:"Marketing Digital (SEO/SEM)"})
+CREATE (comp49:COMPETENCIA {nome:"Cloud Computing (Azure/GCP)"})
+CREATE (comp50:COMPETENCIA {nome:"Otimização de Banco de Dados"})
+// COMPETÊNCIAS DE LINGUAGENS E FUNDAMENTOS
+CREATE (comp51:COMPETENCIA {nome:"C++"})
+CREATE (comp52:COMPETENCIA {nome:"R"})
+CREATE (comp53:COMPETENCIA {nome:"Ruby"})
+CREATE (comp54:COMPETENCIA {nome:"PHP"})
+CREATE (comp55:COMPETENCIA {nome:"Assembly"})
+CREATE (comp56:COMPETENCIA {nome:"Shell Scripting"})
+CREATE (comp57:COMPETENCIA {nome:"Linux"})
+CREATE (comp58:COMPETENCIA {nome:"Git"}) // Diferente de "Git Avançado" (anteriormente comp22)
+CREATE (comp59:COMPETENCIA {nome:"Estrutura de Dados"})
+CREATE (comp60:COMPETENCIA {nome:"Algoritmos"})
+
+// COMPETÊNCIAS DE BANCO DE DADOS E ENGENHARIA
+CREATE (comp61:COMPETENCIA {nome:"PostgreSQL"})
+CREATE (comp62:COMPETENCIA {nome:"MongoDB"}) // Diferente de "NoSQL" (anteriormente comp37)
+CREATE (comp63:COMPETENCIA {nome:"Cassandra"})
+CREATE (comp64:COMPETENCIA {nome:"Modelagem de Dados"})
+CREATE (comp65:COMPETENCIA {nome:"ETL"}) // Diferente de "ETL/ELT" (anteriormente comp36)
+CREATE (comp66:COMPETENCIA {nome:"Big Data"})
+CREATE (comp67:COMPETENCIA {nome:"Micro-Frontend"})
+CREATE (comp68:COMPETENCIA {nome:"Testes Unitários"})
+
+// COMPETÊNCIAS DE INFRA E CLOUD
+CREATE (comp69:COMPETENCIA {nome:"Azure"}) // Diferente de "AWS Cloud" (anteriormente comp5)
+CREATE (comp70:COMPETENCIA {nome:"GCP"})
+CREATE (comp71:COMPETENCIA {nome:"Ansible"})
+CREATE (comp72:COMPETENCIA {nome:"Nagios"})
+CREATE (comp73:COMPETENCIA {nome:"Virtualização"})
+CREATE (comp74:COMPETENCIA {nome:"Segurança de Rede"})
+
+// COMPETÊNCIAS DE GESTÃO E NEGÓCIOS
+CREATE (comp75:COMPETENCIA {nome:"OKR"})
+CREATE (comp76:COMPETENCIA {nome:"Gestão de Produtos"})
+CREATE (comp77:COMPETENCIA {nome:"Análise de Mercado"})
+CREATE (comp78:COMPETENCIA {nome:"Comunicação"})
+CREATE (comp79:COMPETENCIA {nome:"Mentoria"})
+CREATE (comp80:COMPETENCIA {nome:"Vendas Técnicas"})
+
+
+//Nós de GRADUACAO
+CREATE (g1:GRADUACAO {curso:"Ciência da Computação", instituição:"UFRJ", ano_conclusão:2010, TipoGraduacao:"BACHARELADO"})
+CREATE (g2:GRADUACAO {curso:"Design Digital", instituição:"Mackenzie", ano_conclusão:2016, TipoGraduacao:"BACHARELADO"})
+CREATE (g3:GRADUACAO {curso:"Engenharia de Software", instituição:"USP", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g4:GRADUACAO {curso:"Engenharia de Produção", instituição:"POLI-USP", ano_conclusão:2014, TipoGraduacao:"BACHARELADO"})
+CREATE (g5:GRADUACAO {curso:"Física", instituição:"UERJ", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g6:GRADUACAO {curso:"Engenharia Química", instituição:"UNICAMP", ano_conclusão:2011, TipoGraduacao:"BACHARELADO"})
+CREATE (g7:GRADUACAO {curso:"Engenharia de Telecomunicações", instituição:"INATEL", ano_conclusão:2016, TipoGraduacao:"BACHARELADO"})
+CREATE (g8:GRADUACAO {curso:"Matemática", instituição:"UFRGS", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g9:GRADUACAO {curso:"Engenharia Civil", instituição:"UFMG", ano_conclusão:2013, TipoGraduacao:"BACHARELADO"})
+CREATE (g10:GRADUACAO {curso:"Gestão Ambiental", instituição:"UNESP", ano_conclusão:2017, TipoGraduacao:"TECNOLOGO"})
+CREATE (g11:GRADUACAO {curso:"Estatística Aplicada", instituição:"FGV", ano_conclusão:2015, TipoGraduacao:"BACHARELADO"})
+CREATE (g12:GRADUACAO {curso:"Engenharia Mecânica", instituição:"ITA", ano_conclusão:2009, TipoGraduacao:"BACHARELADO"})
+CREATE (g13:GRADUACAO {curso:"Química Industrial", instituição:"UFRJ", ano_conclusão:2016, TipoGraduacao:"BACHARELADO"})
+CREATE (g14:GRADUACAO {curso:"Análise e Desenvolvimento de Sistemas", instituição:"FIAP", ano_conclusão:2021, TipoGraduacao:"TECNOLOGO"})
+CREATE (g15:GRADUACAO {curso:"Redes de Computadores", instituição:"SENAC", ano_conclusão:2018, TipoGraduacao:"TECNOLOGO"})
+CREATE (g16:GRADUACAO {curso:"Jogos Digitais", instituição:"PUC-SP", ano_conclusão:2020, TipoGraduacao:"TECNOLOGO"})
+CREATE (g17:GRADUACAO {curso:"Segurança da Informação", instituição:"Estácio", ano_conclusão:2022, TipoGraduacao:"TECNOLOGO"})
+CREATE (g18:GRADUACAO {curso:"Tecnologia em Banco de Dados", instituição:"UNIP", ano_conclusão:2015, TipoGraduacao:"TECNOLOGO"})
+CREATE (g19:GRADUACAO {curso:"Engenharia de Controle e Automação", instituição:"CEFET-MG", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g20:GRADUACAO {curso:"Sistemas para Internet", instituição:"Anhembi Morumbi", ano_conclusão:2019, TipoGraduacao:"TECNOLOGO"})
+CREATE (g21:GRADUACAO {curso:"Tecnologia em Cloud Computing", instituição:"UNISINOS", ano_conclusão:2021, TipoGraduacao:"TECNOLOGO"})
+CREATE (g22:GRADUACAO {curso:"Engenharia de Computação", instituição:"INPE", ano_conclusão:2014, TipoGraduacao:"BACHARELADO"})
+CREATE (g23:GRADUACAO {curso:"Ciência de Dados", instituição:"USP", ano_conclusão:2022, TipoGraduacao:"BACHARELADO"})
+CREATE (g24:GRADUACAO {curso:"Comunicação Social", instituição:"ESPM", ano_conclusão:2010, TipoGraduacao:"BACHARELADO"})
+CREATE (g25:GRADUACAO {curso:"Psicologia", instituição:"PUC-RJ", ano_conclusão:2016, TipoGraduacao:"BACHARELADO"})
+CREATE (g26:GRADUACAO {curso:"Arquitetura e Urbanismo", instituição:"FAU-USP", ano_conclusão:2013, TipoGraduacao:"BACHARELADO"})
+CREATE (g27:GRADUACAO {curso:"Design Gráfico", instituição:"IED", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g28:GRADUACAO {curso:"Letras", instituição:"USP", ano_conclusão:2015, TipoGraduacao:"LICENCIATURA"})
+CREATE (g29:GRADUACAO {curso:"Biblioteconomia", instituição:"UFMG", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g30:GRADUACAO {curso:"Jornalismo", instituição:"UFRJ", ano_conclusão:2014, TipoGraduacao:"BACHARELADO"})
+CREATE (g31:GRADUACAO {curso:"Artes Visuais", instituição:"ECA-USP", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g32:GRADUACAO {curso:"Filosofia", instituição:"UNIFESP", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g33:GRADUACAO {curso:"Relações Públicas", instituição:"Cásper Líbero", ano_conclusão:2012, TipoGraduacao:"BACHARELADO"})
+CREATE (g34:GRADUACAO {curso:"Economia", instituição:"UNB", ano_conclusão:2011, TipoGraduacao:"BACHARELADO"})
+CREATE (g35:GRADUACAO {curso:"Administração Pública", instituição:"FGV", ano_conclusão:2016, TipoGraduacao:"BACHARELADO"})
+CREATE (g36:GRADUACAO {curso:"Marketing", instituição:"Insper", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g37:GRADUACAO {curso:"Ciências Contábeis", instituição:"PUC Minas", ano_conclusão:2015, TipoGraduacao:"BACHARELADO"})
+CREATE (g38:GRADUACAO {curso:"Comércio Exterior", instituição:"ESPM", ano_conclusão:2018, TipoGraduacao:"TECNOLOGO"})
+CREATE (g39:GRADUACAO {curso:"Gestão de RH", instituição:"UNINOVE", ano_conclusão:2021, TipoGraduacao:"TECNOLOGO"})
+CREATE (g40:GRADUACAO {curso:"Logística", instituição:"UTFPR", ano_conclusão:2017, TipoGraduacao:"TECNOLOGO"})
+CREATE (g41:GRADUACAO {curso:"Secretariado Executivo", instituição:"Mackenzie", ano_conclusão:2014, TipoGraduacao:"BACHARELADO"})
+CREATE (g42:GRADUACAO {curso:"Finanças", instituição:"IBMEC", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g43:GRADUACAO {curso:"Turismo", instituição:"USP", ano_conclusão:2013, TipoGraduacao:"BACHARELADO"})
+CREATE (g44:GRADUACAO {curso:"Sistemas de Informação", instituição:"UFPE", ano_conclusão:2015, TipoGraduacao:"BACHARELADO"})
+CREATE (g45:GRADUACAO {curso:"Ciência da Computação", instituição:"UFBA", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g46:GRADUACAO {curso:"Design Digital", instituição:"PUCRS", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g47:GRADUACAO {curso:"Engenharia de Software", instituição:"UNIFOR", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g48:GRADUACAO {curso:"Administração de Empresas", instituição:"UFV", ano_conclusão:2011, TipoGraduacao:"BACHARELADO"})
+CREATE (g49:GRADUACAO {curso:"Ciências Atuariais", instituição:"UFRJ", ano_conclusão:2016, TipoGraduacao:"BACHARELADO"})
+CREATE (g50:GRADUACAO {curso:"Gestão da Tecnologia da Informação", instituição:"UNINTER", ano_conclusão:2019, TipoGraduacao:"TECNOLOGO"})
+CREATE (g51:GRADUACAO {curso:"Web Design", instituição:"Impacta", ano_conclusão:2022, TipoGraduacao:"TECNOLOGO"})
+CREATE (g52:GRADUACAO {curso:"Engenharia Biomédica", instituição:"UFPE", ano_conclusão:2014, TipoGraduacao:"BACHARELADO"})
+CREATE (g53:GRADUACAO {curso:"Criminologia", instituição:"UNICAMP", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g54:GRADUACAO {curso:"Desenho Industrial", instituição:"UFSCar", ano_conclusão:2015, TipoGraduacao:"BACHARELADO"})
+CREATE (g55:GRADUACAO {curso:"Ciências Biológicas", instituição:"USP", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g56:GRADUACAO {curso:"Tecnologia em Sistemas Embarcados", instituição:"CEFET-RJ", ano_conclusão:2020, TipoGraduacao:"TECNOLOGO"})
+CREATE (g57:GRADUACAO {curso:"Geografia", instituição:"UNB", ano_conclusão:2013, TipoGraduacao:"BACHARELADO"})
+CREATE (g58:GRADUACAO {curso:"História", instituição:"UFRGS", ano_conclusão:2016, TipoGraduacao:"LICENCIATURA"})
+CREATE (g59:GRADUACAO {curso:"Engenharia de Materiais", instituição:"PUC-PR", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g60:GRADUACAO {curso:"Gestão Financeira", instituição:"UNIFACS", ano_conclusão:2021, TipoGraduacao:"TECNOLOGO"})
+CREATE (g61:GRADUACAO {curso:"Programação de Sistemas", instituição:"SENAI", ano_conclusão:2015, TipoGraduacao:"TECNOLOGO"})
+CREATE (g62:GRADUACAO {curso:"Pedagogia", instituição:"UFBA", ano_conclusão:2018, TipoGraduacao:"LICENCIATURA"})
+CREATE (g63:GRADUACAO {curso:"Relações Internacionais", instituição:"USP", ano_conclusão:2012, TipoGraduacao:"BACHARELADO"})
+CREATE (g64:GRADUACAO {curso:"Engenharia de Alimentos", instituição:"UFRGS", ano_conclusão:2015, TipoGraduacao:"BACHARELADO"})
+CREATE (g65:GRADUACAO {curso:"Ciências Políticas", instituição:"UERJ", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g66:GRADUACAO {curso:"Oceanografia", instituição:"FURG", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g67:GRADUACAO {curso:"Design de Produto", instituição:"Mackenzie", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g68:GRADUACAO {curso:"Tecnologia em Processos Gerenciais", instituição:"UNIP", ano_conclusão:2016, TipoGraduacao:"TECNOLOGO"})
+CREATE (g69:GRADUACAO {curso:"Engenharia de Petróleo", instituição:"UFRJ", ano_conclusão:2014, TipoGraduacao:"BACHARELADO"})
+CREATE (g70:GRADUACAO {curso:"Biblioteconomia e Ciência da Informação", instituição:"USP", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g71:GRADUACAO {curso:"Fotografia", instituição:"SENAC", ano_conclusão:2021, TipoGraduacao:"BACHARELADO"})
+CREATE (g72:GRADUACAO {curso:"Nutrição", instituição:"UNESP", ano_conclusão:2015, TipoGraduacao:"BACHARELADO"})
+CREATE (g73:GRADUACAO {curso:"Engenharia Aeroespacial", instituição:"ITA", ano_conclusão:2011, TipoGraduacao:"BACHARELADO"})
+CREATE (g74:GRADUACAO {curso:"Ciências Sociais", instituição:"UNB", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g75:GRADUACAO {curso:"Hotelaria", instituição:"Cásper Líbero", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g76:GRADUACAO {curso:"Gestão de Negócios Internacionais", instituição:"FGV", ano_conclusão:2022, TipoGraduacao:"TECNOLOGO"})
+CREATE (g77:GRADUACAO {curso:"Sistemas de Informação", instituição:"UFSC", ano_conclusão:2016, TipoGraduacao:"BACHARELADO"})
+CREATE (g78:GRADUACAO {curso:"Tecnologia em Big Data", instituição:"FIAP", ano_conclusão:2020, TipoGraduacao:"TECNOLOGO"})
+CREATE (g79:GRADUACAO {curso:"Psicopedagogia", instituição:"PUC Minas", ano_conclusão:2018, TipoGraduacao:"LICENCIATURA"})
+CREATE (g80:GRADUACAO {curso:"Engenharia de Automação Industrial", instituição:"CEFET-RJ", ano_conclusão:2015, TipoGraduacao:"BACHARELADO"})
+CREATE (g81:GRADUACAO {curso:"Marketing Digital", instituição:"ESPM", ano_conclusão:2021, TipoGraduacao:"TECNOLOGO"})
+CREATE (g82:GRADUACAO {curso:"Filologia", instituição:"UFMG", ano_conclusão:2014, TipoGraduacao:"BACHARELADO"})
+CREATE (g83:GRADUACAO {curso:"Comunicação e Multimeios", instituição:"PUC-SP", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g84:GRADUACAO {curso:"Engenharia de Produção", instituição:"CEFET-MG", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g85:GRADUACAO {curso:"Ciências Econômicas", instituição:"USP", ano_conclusão:2016, TipoGraduacao:"BACHARELADO"})
+CREATE (g86:GRADUACAO {curso:"Logística Empresarial", instituição:"UNINOVE", ano_conclusão:2020, TipoGraduacao:"TECNOLOGO"})
+CREATE (g87:GRADUACAO {curso:"Desenvolvimento de Software", instituição:"Impacta", ano_conclusão:2022, TipoGraduacao:"TECNOLOGO"})
+CREATE (g88:GRADUACAO {curso:"Análise de Dados e Sistemas", instituição:"UNISINOS", ano_conclusão:2021, TipoGraduacao:"TECNOLOGO"})
+CREATE (g89:GRADUACAO {curso:"Engenharia Ambiental", instituição:"UNESP", ano_conclusão:2015, TipoGraduacao:"BACHARELADO"})
+CREATE (g90:GRADUACAO {curso:"Relações Públicas e Eventos", instituição:"Anhembi Morumbi", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g91:GRADUACAO {curso:"Ciências da Natureza", instituição:"UFRGS", ano_conclusão:2017, TipoGraduacao:"LICENCIATURA"})
+CREATE (g92:GRADUACAO {curso:"Administração Hospitalar", instituição:"Estácio", ano_conclusão:2019, TipoGraduacao:"TECNOLOGO"})
+CREATE (g93:GRADUACAO {curso:"Tecnologia em Gestão de Projetos", instituição:"SENAC", ano_conclusão:2020, TipoGraduacao:"TECNOLOGO"})
+CREATE (g94:GRADUACAO {curso:"Ciência Política", instituição:"PUC-RJ", ano_conclusão:2014, TipoGraduacao:"BACHARELADO"})
+CREATE (g95:GRADUACAO {curso:"Design de Moda", instituição:"IED", ano_conclusão:2016, TipoGraduacao:"BACHARELADO"})
+CREATE (g96:GRADUACAO {curso:"Engenharia de Transportes", instituição:"UFSCar", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g97:GRADUACAO {curso:"Gestão de TI", instituição:"Mackenzie", ano_conclusão:2022, TipoGraduacao:"TECNOLOGO"})
+CREATE (g98:GRADUACAO {curso:"Ciências Atuariais", instituição:"UFRGS", ano_conclusão:2015, TipoGraduacao:"BACHARELADO"})
+CREATE (g99:GRADUACAO {curso:"Jornalismo Investigativo", instituição:"FGV", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g100:GRADUACAO {curso:"Sistemas de Telecomunicações", instituição:"INATEL", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g101:GRADUACAO {curso:"Gestão de Mídias Sociais", instituição:"ESPM", ano_conclusão:2021, TipoGraduacao:"TECNOLOGO"})
+CREATE (g102:GRADUACAO {curso:"Engenharia de Software", instituição:"UNB", ano_conclusão:2016, TipoGraduacao:"BACHARELADO"})
+CREATE (g103:GRADUACAO {curso:"Ciência da Computação", instituição:"UFF", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g104:GRADUACAO {curso:"Engenharia de Sistemas", instituição:"UFRJ", ano_conclusão:2013, TipoGraduacao:"BACHARELADO"})
+CREATE (g105:GRADUACAO {curso:"Ciência da Computação", instituição:"USP", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g106:GRADUACAO {curso:"Engenharia de Software", instituição:"PUC-Rio", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g107:GRADUACAO {curso:"Arquitetura de Sistemas", instituição:"ITA", ano_conclusão:2015, TipoGraduacao:"BACHARELADO"})
+CREATE (g108:GRADUACAO {curso:"Engenharia de Telecomunicações", instituição:"INATEL", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g109:GRADUACAO {curso:"Sistemas de Informação", instituição:"UFSCar", ano_conclusão:2016, TipoGraduacao:"BACHARELADO"})
+CREATE (g110:GRADUACAO {curso:"Engenharia Elétrica", instituição:"UNICAMP", ano_conclusão:2014, TipoGraduacao:"BACHARELADO"})
+CREATE (g111:GRADUACAO {curso:"Ciência da Computação", instituição:"UnB", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g112:GRADUACAO {curso:"Sistemas de Informação", instituição:"UFRGS", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g113:GRADUACAO {curso:"Engenharia de Produção", instituição:"POLI-USP", ano_conclusão:2013, TipoGraduacao:"BACHARELADO"})
+CREATE (g114:GRADUACAO {curso:"Matemática Aplicada", instituição:"UERJ", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g115:GRADUACAO {curso:"Ciência de Dados", instituição:"UFMG", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g116:GRADUACAO {curso:"Estatística", instituição:"UFRJ", ano_conclusão:2015, TipoGraduacao:"BACHARELADO"})
+CREATE (g117:GRADUACAO {curso:"Inteligência Artificial", instituição:"USP", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g118:GRADUACAO {curso:"Ciência de Dados", instituição:"FGV", ano_conclusão:2021, TipoGraduacao:"BACHARELADO"})
+CREATE (g119:GRADUACAO {curso:"Engenharia da Computação", instituição:"UFPE", ano_conclusão:2016, TipoGraduacao:"BACHARELADO"})
+CREATE (g120:GRADUACAO {curso:"Estatística Aplicada", instituição:"UNESP", ano_conclusão:2022, TipoGraduacao:"BACHARELADO"})
+CREATE (g121:GRADUACAO {curso:"Ciência da Computação", instituição:"UFRRJ", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g122:GRADUACAO {curso:"Ciência da Computação", instituição:"UFRN", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g123:GRADUACAO {curso:"Ciência da Computação", instituição:"UFG", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g124:GRADUACAO {curso:"Ciência da Computação", instituição:"UFMA", ano_conclusão:2021, TipoGraduacao:"BACHARELADO"})
+CREATE (g125:GRADUACAO {curso:"Ciência da Computação", instituição:"UFPB", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g126:GRADUACAO {curso:"Engenharia de Software", instituição:"UFPA", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g127:GRADUACAO {curso:"Engenharia de Software", instituição:"UFT", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g128:GRADUACAO {curso:"Engenharia de Software", instituição:"UFAL", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g129:GRADUACAO {curso:"Engenharia de Software", instituição:"UFC", ano_conclusão:2021, TipoGraduacao:"BACHARELADO"})
+CREATE (g130:GRADUACAO {curso:"Engenharia de Software", instituição:"UFMS", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g131:GRADUACAO {curso:"Sistemas de Informação", instituição:"UFMT", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g132:GRADUACAO {curso:"Sistemas de Informação", instituição:"UFPI", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g133:GRADUACAO {curso:"Sistemas de Informação", instituição:"UFAC", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g134:GRADUACAO {curso:"Sistemas de Informação", instituição:"UFAM", ano_conclusão:2021, TipoGraduacao:"BACHARELADO"})
+CREATE (g135:GRADUACAO {curso:"Sistemas de Informação", instituição:"UFRR", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g136:GRADUACAO {curso:"Análise e Desenvolvimento de Sistemas", instituição:"IFRJ", ano_conclusão:2019, TipoGraduacao:"TECNOLOGO"})
+CREATE (g137:GRADUACAO {curso:"Análise e Desenvolvimento de Sistemas", instituição:"IFSP", ano_conclusão:2020, TipoGraduacao:"TECNOLOGO"})
+CREATE (g138:GRADUACAO {curso:"Análise e Desenvolvimento de Sistemas", instituição:"IFMG", ano_conclusão:2018, TipoGraduacao:"TECNOLOGO"})
+CREATE (g139:GRADUACAO {curso:"Análise e Desenvolvimento de Sistemas", instituição:"IFRS", ano_conclusão:2021, TipoGraduacao:"TECNOLOGO"})
+CREATE (g140:GRADUACAO {curso:"Análise e Desenvolvimento de Sistemas", instituição:"IFBA", ano_conclusão:2017, TipoGraduacao:"TECNOLOGO"})
+CREATE (g141:GRADUACAO {curso:"Ciência de Dados", instituição:"UFV", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g142:GRADUACAO {curso:"Ciência de Dados", instituição:"UFU", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g143:GRADUACAO {curso:"Ciência de Dados", instituição:"UFJF", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g144:GRADUACAO {curso:"Ciência de Dados", instituição:"UFPEL", ano_conclusão:2021, TipoGraduacao:"BACHARELADO"})
+CREATE (g145:GRADUACAO {curso:"Ciência de Dados", instituição:"UFLA", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g146:GRADUACAO {curso:"Engenharia da Computação", instituição:"UFES", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g147:GRADUACAO {curso:"Engenharia da Computação", instituição:"UFRB", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g148:GRADUACAO {curso:"Engenharia da Computação", instituição:"UFCA", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g149:GRADUACAO {curso:"Engenharia da Computação", instituição:"UFOB", ano_conclusão:2021, TipoGraduacao:"BACHARELADO"})
+CREATE (g150:GRADUACAO {curso:"Engenharia da Computação", instituição:"UNILA", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g151:GRADUACAO {curso:"Design Digital", instituição:"UFPR", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g152:GRADUACAO {curso:"Design Digital", instituição:"UDESC", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g153:GRADUACAO {curso:"Design Digital", instituição:"UEM", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g154:GRADUACAO {curso:"Design Digital", instituição:"UEL", ano_conclusão:2021, TipoGraduacao:"BACHARELADO"})
+CREATE (g155:GRADUACAO {curso:"Design Digital", instituição:"UEPG", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g156:GRADUACAO {curso:"Inteligência Artificial", instituição:"UFSC", ano_conclusão:2019, TipoGraduacao:"BACHARELADO"})
+CREATE (g157:GRADUACAO {curso:"Inteligência Artificial", instituição:"UFSM", ano_conclusão:2020, TipoGraduacao:"BACHARELADO"})
+CREATE (g158:GRADUACAO {curso:"Inteligência Artificial", instituição:"FURG", ano_conclusão:2018, TipoGraduacao:"BACHARELADO"})
+CREATE (g159:GRADUACAO {curso:"Inteligência Artificial", instituição:"UCPEL", ano_conclusão:2021, TipoGraduacao:"BACHARELADO"})
+CREATE (g160:GRADUACAO {curso:"Inteligência Artificial", instituição:"URI", ano_conclusão:2017, TipoGraduacao:"BACHARELADO"})
+CREATE (g161:GRADUACAO {curso:"Segurança da Informação", instituição:"UNIR", ano_conclusão:2019, TipoGraduacao:"TECNOLOGO"})
+CREATE (g162:GRADUACAO {curso:"Segurança da Informação", instituição:"UNIFAP", ano_conclusão:2020, TipoGraduacao:"TECNOLOGO"})
+CREATE (g163:GRADUACAO {curso:"Segurança da Informação", instituição:"UNIFESSPA", ano_conclusão:2018, TipoGraduacao:"TECNOLOGO"})
+CREATE (g164:GRADUACAO {curso:"Segurança da Informação", instituição:"UNIVASF", ano_conclusão:2021, TipoGraduacao:"TECNOLOGO"})
+CREATE (g165:GRADUACAO {curso:"Segurança da Informação", instituição:"UNILAB", ano_conclusão:2017, TipoGraduacao:"TECNOLOGO"})
+CREATE (g166:GRADUACAO {curso:"Redes de Computadores", instituição:"IFCE", ano_conclusão:2019, TipoGraduacao:"TECNOLOGO"})
+CREATE (g167:GRADUACAO {curso:"Redes de Computadores", instituição:"IFGO", ano_conclusão:2020, TipoGraduacao:"TECNOLOGO"})
+CREATE (g168:GRADUACAO {curso:"Redes de Computadores", instituição:"IFES", ano_conclusão:2018, TipoGraduacao:"TECNOLOGO"})
+CREATE (g169:GRADUACAO {curso:"Redes de Computadores", instituição:"IFSUL", ano_conclusão:2021, TipoGraduacao:"TECNOLOGO"})
+CREATE (g170:GRADUACAO {curso:"Redes de Computadores", instituição:"IFNMG", ano_conclusão:2017, TipoGraduacao:"TECNOLOGO"})
+
+// MESTRADOS
+CREATE (m1:MESTRADO {curso:"Engenharia de Sistemas", subarea:"Arquitetura", instituição:"UFRJ", ano_conclusão:2013})
+CREATE (m2:MESTRADO {curso:"Ciência da Computação", subarea:"Algoritmos Avançados", instituição:"USP", ano_conclusão:2018})
+CREATE (m3:MESTRADO {curso:"Engenharia de Software", subarea:"Qualidade de Código", instituição:"PUC-Rio", ano_conclusão:2017})
+CREATE (m4:MESTRADO {curso:"Arquitetura de Sistemas", subarea:"Microsserviços", instituição:"ITA", ano_conclusão:2015})
+CREATE (m5:MESTRADO {curso:"Engenharia de Telecomunicações", subarea:"Redes 5G", instituição:"INATEL", ano_conclusão:2019})
+CREATE (m6:MESTRADO {curso:"Sistemas de Informação", subarea:"Big Data", instituição:"UFSCar", ano_conclusão:2016})
+CREATE (m7:MESTRADO {curso:"Engenharia Elétrica", subarea:"IoT", instituição:"UNICAMP", ano_conclusão:2014})
+CREATE (m8:MESTRADO {curso:"Ciência da Computação", subarea:"Segurança Cibernética", instituição:"UnB", ano_conclusão:2020})
+CREATE (m9:MESTRADO {curso:"Sistemas de Informação", subarea:"Computação em Nuvem", instituição:"UFRGS", ano_conclusão:2018})
+CREATE (m10:MESTRADO {curso:"Engenharia de Produção", subarea:"Otimização", instituição:"POLI-USP", ano_conclusão:2013})
+CREATE (m11:MESTRADO {curso:"Matemática Aplicada", subarea:"Otimização Algorítmica", instituição:"UERJ", ano_conclusão:2017})
+CREATE (m12:MESTRADO {curso:"Ciência de Dados", subarea:"Machine Learning", instituição:"UFMG", ano_conclusão:2020})
+CREATE (m13:MESTRADO {curso:"Estatística", subarea:"Modelagem Preditiva", instituição:"UFRJ", ano_conclusão:2015})
+CREATE (m14:MESTRADO {curso:"Inteligência Artificial", subarea:"Visão Computacional", instituição:"USP", ano_conclusão:2019})
+CREATE (m15:MESTRADO {curso:"Ciência de Dados", subarea:"Processamento de Linguagem Natural", instituição:"FGV", ano_conclusão:2021})
+CREATE (m16:MESTRADO {curso:"Engenharia da Computação", subarea:"Análise de Fluxo de Dados", instituição:"UFPE", ano_conclusão:2016})
+CREATE (m17:MESTRADO {curso:"Estatística Aplicada", subarea:"Aprendizado por Reforço", instituição:"UNESP", ano_conclusão:2022})
+CREATE (m18:MESTRADO {curso:"Análise de Sistemas", subarea:"Business Intelligence", instituição:"PUCRS", ano_conclusão:2018})
+CREATE (m19:MESTRADO {curso:"Engenharia de Software", subarea:"Sistemas Distribuídos", instituição:"ITA", ano_conclusão:2014})
+CREATE (m20:MESTRADO {curso:"Ciência da Computação", subarea:"Tópicos em BD NoSQL", instituição:"UFRN", ano_conclusão:2017})
+CREATE (m21:MESTRADO {curso:"Engenharia de Dados", subarea:"ETL e Data Lakes", instituição:"UNICAMP", ano_conclusão:2020})
+CREATE (m22:MESTRADO {curso:"Administração", subarea:"Gestão Estratégica", instituição:"FGV", ano_conclusão:2011})
+CREATE (m23:MESTRADO {curso:"Gestão de Projetos", subarea:"PMO e Maturidade", instituição:"IBMEC", ano_conclusão:2016})
+CREATE (m24:MESTRADO {curso:"Marketing", subarea:"Métricas Digitais", instituição:"ESPM", ano_conclusão:2019})
+CREATE (m25:MESTRADO {curso:"Economia", subarea:"Finanças Quantitativas", instituição:"Insper", ano_conclusão:2021})
+CREATE (m26:MESTRADO {curso:"Administração Pública", subarea:"Inovação Governamental", instituição:"ENAP", ano_conclusão:2015})
+CREATE (m27:MESTRADO {curso:"Gestão de Pessoas", subarea:"Liderança e Coaching", instituição:"PUC Minas", ano_conclusão:2018})
+CREATE (m28:MESTRADO {curso:"Logística", subarea:"Cadeia de Suprimentos", instituição:"ITA", ano_conclusão:2013})
+CREATE (m29:MESTRADO {curso:"Negócios", subarea:"E-commerce", instituição:"FGV", ano_conclusão:2020})
+CREATE (m30:MESTRADO {curso:"Gestão da Inovação", subarea:"Propriedade Intelectual", instituição:"USP", ano_conclusão:2017})
+CREATE (m31:MESTRADO {curso:"Relações Internacionais", subarea:"Comércio Digital", instituição:"UFRJ", ano_conclusão:2016})
+CREATE (m32:MESTRADO {curso:"Design", subarea:"Design de Serviços", instituição:"UFPR", ano_conclusão:2018})
+CREATE (m33:MESTRADO {curso:"Comunicação", subarea:"Mídias Interativas", instituição:"Cásper Líbero", ano_conclusão:2017})
+CREATE (m34:MESTRADO {curso:"Psicologia", subarea:"Fatores Humanos", instituição:"UFBA", ano_conclusão:2015})
+CREATE (m35:MESTRADO {curso:"Design de Interação", subarea:"Acessibilidade Web", instituição:"Mackenzie", ano_conclusão:2020})
+CREATE (m36:MESTRADO {curso:"Arquitetura", subarea:"Design Thinking", instituição:"FAU-USP", ano_conclusão:2016})
+CREATE (m37:MESTRADO {curso:"Design", subarea:"Experiência do Usuário (UX)", instituição:"UDESC", ano_conclusão:2019})
+CREATE (m38:MESTRADO {curso:"Artes", subarea:"Visualização de Dados", instituição:"ECA-USP", ano_conclusão:2021})
+CREATE (m39:MESTRADO {curso:"Comunicação Social", subarea:"Conteúdo Estratégico", instituição:"ESPM", ano_conclusão:2014})
+CREATE (m40:MESTRADO {curso:"Design", subarea:"Prototipação Rápida", instituição:"IED", ano_conclusão:2020})
+CREATE (m41:MESTRADO {curso:"Jornalismo", subarea:"Análise de Sentimento", instituição:"UFRJ", ano_conclusão:2018})
+CREATE (m42:MESTRADO {curso:"Ciências da Saúde", subarea:"Telemedicina", instituição:"UNIFESP", ano_conclusão:2019})
+CREATE (m43:MESTRADO {curso:"Sustentabilidade", subarea:"Tecnologias Verdes", instituição:"UNESP", ano_conclusão:2017})
+CREATE (m44:MESTRADO {curso:"Engenharia Biomédica", subarea:"Processamento de Imagem", instituição:"UFMG", ano_conclusão:2015})
+CREATE (m45:MESTRADO {curso:"Geociências", subarea:"Geoprocessamento", instituição:"UNB", ano_conclusão:2016})
+CREATE (m46:MESTRADO {curso:"Educação", subarea:"Tecnologia Educacional", instituição:"UFBA", ano_conclusão:2020})
+CREATE (m47:MESTRADO {curso:"Direito", subarea:"LGPD e Compliance", instituição:"PUC-SP", ano_conclusão:2021})
+CREATE (m48:MESTRADO {curso:"Ciências Atuariais", subarea:"Risco e Modelagem", instituição:"UFRGS", ano_conclusão:2018})
+CREATE (m49:MESTRADO {curso:"Finanças", subarea:"Blockchain", instituição:"Insper", ano_conclusão:2022})
+CREATE (m50:MESTRADO {curso:"Gestão de TI", subarea:"ITIL e Governança", instituição:"UNISINOS", ano_conclusão:2016})
+CREATE (m51:MESTRADO {curso:"Engenharia Civil", subarea:"BIM e Digitalização", instituição:"UFSC", ano_conclusão:2019})
+CREATE (m52:MESTRADO {curso:"Ciência da Computação", subarea:"Engenharia de Requisitos", instituição:"UFRJ", ano_conclusão:2014})
+CREATE (m53:MESTRADO {curso:"Estatística", subarea:"Bioestatística", instituição:"UFRJ", ano_conclusão:2018})
+CREATE (m54:MESTRADO {curso:"Engenharia de Produção", subarea:"Simulação", instituição:"UFSC", ano_conclusão:2015})
+CREATE (m55:MESTRADO {curso:"Sistemas de Informação", subarea:"Arquitetura Empresarial", instituição:"USP", ano_conclusão:2017})
+CREATE (m56:MESTRADO {curso:"Design", subarea:"Pesquisa Quantitativa", instituição:"Mackenzie", ano_conclusão:2019})
+CREATE (m57:MESTRADO {curso:"Ciência de Dados", subarea:"Séries Temporais", instituição:"UNICAMP", ano_conclusão:2020})
+CREATE (m58:MESTRADO {curso:"Administração", subarea:"Empreendedorismo Digital", instituição:"FGV", ano_conclusão:2016})
+CREATE (m59:MESTRADO {curso:"Engenharia de Software", subarea:"Testes de Software", instituição:"UNB", ano_conclusão:2021})
+CREATE (m60:MESTRADO {curso:"Matemática Aplicada", subarea:"Criptografia", instituição:"ITA", ano_conclusão:2015})
+CREATE (m61:MESTRADO {curso:"Ciência da Computação", subarea:"Computação Paralela", instituição:"UFMG", ano_conclusão:2019})
+CREATE (m62:MESTRADO {curso:"Gestão de Projetos", subarea:"Transformação Digital", instituição:"Insper", ano_conclusão:2022})
+CREATE (m63:MESTRADO {curso:"Marketing", subarea:"Automação de Campanhas", instituição:"ESPM", ano_conclusão:2018})
+CREATE (m64:MESTRADO {curso:"Engenharia Elétrica", subarea:"Automação Industrial", instituição:"CEFET-MG", ano_conclusão:2017})
+CREATE (m65:MESTRADO {curso:"Design de Interação", subarea:"Design de Voz", instituição:"PUCRS", ano_conclusão:2021})
+CREATE (m66:MESTRADO {curso:"Sistemas de Informação", subarea:"Computação Móvel", instituição:"UFPR", ano_conclusão:2016})
+CREATE (m67:MESTRADO {curso:"Ciência de Dados", subarea:"Visualização Interativa", instituição:"UFPE", ano_conclusão:2020})
+CREATE (m68:MESTRADO {curso:"Administração Pública", subarea:"Sistemas de Informação Públicos", instituição:"ENAP", ano_conclusão:2015})
+CREATE (m69:MESTRADO {curso:"Arquitetura", subarea:"Modelagem 3D", instituição:"UDESC", ano_conclusão:2019})
+CREATE (m70:MESTRADO {curso:"Engenharia Química", subarea:"Simulação de Processos", instituição:"UNICAMP", ano_conclusão:2018})
+CREATE (m71:MESTRADO {curso:"Economia", subarea:"Econometria", instituição:"UFRGS", ano_conclusão:2017})
+CREATE (m72:MESTRADO {curso:"Direito", subarea:"Direito Digital", instituição:"PUC-RJ", ano_conclusão:2020})
+CREATE (m73:MESTRADO {curso:"Gestão Ambiental", subarea:"Monitoramento de Dados", instituição:"UNESP", ano_conclusão:2016})
+CREATE (m74:MESTRADO {curso:"Ciência da Computação", subarea:"Otimização Combinatória", instituição:"UFRJ", ano_conclusão:2014})
+CREATE (m75:MESTRADO {curso:"Engenharia de Software", subarea:"DevOps", instituição:"UFPE", ano_conclusão:2018})
+CREATE (m76:MESTRADO {curso:"Sistemas de Informação", subarea:"Sistemas Embarcados", instituição:"ITA", ano_conclusão:2015})
+CREATE (m77:MESTRADO {curso:"Design", subarea:"Metodologias de Pesquisa em Design", instituição:"UFBA", ano_conclusão:2019})
+CREATE (m78:MESTRADO {curso:"Ciência de Dados", subarea:"Big Data Analytics", instituição:"PUC Minas", ano_conclusão:2021})
+CREATE (m79:MESTRADO {curso:"Gestão de Projetos", subarea:"Cultura Ágil", instituição:"FGV", ano_conclusão:2017})
+CREATE (m80:MESTRADO {curso:"Inteligência Artificial", subarea:"Redes Neurais", instituição:"UnB", ano_conclusão:2020})
+CREATE (m81:MESTRADO {curso:"Engenharia de Sistemas", subarea:"Confiabilidade", instituição:"UFRGS", ano_conclusão:2016})
+CREATE (m82:MESTRADO {curso:"Ciência da Computação", subarea:"Processamento Distribuído", instituição:"UFSCar", ano_conclusão:2018})
+CREATE (m83:MESTRADO {curso:"Estatística", subarea:"Mineração de Dados", instituição:"UNICAMP", ano_conclusão:2015})
+CREATE (m84:MESTRADO {curso:"Administração", subarea:"Consultoria", instituição:"Insper", ano_conclusão:2019})
+CREATE (m85:MESTRADO {curso:"Engenharia de Software", subarea:"Computação Forense", instituição:"INATEL", ano_conclusão:2022})
+CREATE (m86:MESTRADO {curso:"Design", subarea:"Design para Sustentabilidade", instituição:"UFPR", ano_conclusão:2017})
+CREATE (m87:MESTRADO {curso:"Ciência de Dados", subarea:"Modelagem de Risco", instituição:"FGV", ano_conclusão:2020})
+CREATE (m88:MESTRADO {curso:"Gestão de TI", subarea:"Segurança da Informação", instituição:"PUC-Rio", ano_conclusão:2016})
+CREATE (m89:MESTRADO {curso:"Engenharia Elétrica", subarea:"Sistemas de Potência", instituição:"UFRJ", ano_conclusão:2014})
+CREATE (m90:MESTRADO {curso:"Sistemas de Informação", subarea:"Gestão de Banco de Dados", instituição:"UFSC", ano_conclusão:2018})
+CREATE (m91:MESTRADO {curso:"Design de Interação", subarea:"Design de Produto Digital", instituição:"Mackenzie", ano_conclusão:2021})
+CREATE (m92:MESTRADO {curso:"Ciência da Computação", subarea:"Otimização", instituição:"ITA", ano_conclusão:2015})
+CREATE (m93:MESTRADO {curso:"Estatística", subarea:"Estatística Espacial", instituição:"UFRGS", ano_conclusão:2019})
+CREATE (m94:MESTRADO {curso:"Engenharia de Produção", subarea:"Qualidade", instituição:"POLI-USP", ano_conclusão:2017})
+CREATE (m95:MESTRADO {curso:"Administração", subarea:"Inovação", instituição:"FGV", ano_conclusão:2020})
+CREATE (m96:MESTRADO {curso:"Sistemas de Informação", subarea:"Gerenciamento de Projetos", instituição:"UFMG", ano_conclusão:2016})
+CREATE (m97:MESTRADO {curso:"Design", subarea:"Experiência do Cliente (CX)", instituição:"ESPM", ano_conclusão:2018})
+CREATE (m98:MESTRADO {curso:"Ciência de Dados", subarea:"Previsão de Demanda", instituição:"UNICAMP", ano_conclusão:2021})
+CREATE (m99:MESTRADO {curso:"Engenharia de Software", subarea:"Desenvolvimento Ágil", instituição:"UNB", ano_conclusão:2017})
+CREATE (m100:MESTRADO {curso:"Matemática Aplicada", subarea:"Simulação", instituição:"UERJ", ano_conclusão:2019})
+CREATE (m101:MESTRADO {curso:"Gestão de TI", subarea:"Liderança de TI", instituição:"PUC Minas", ano_conclusão:2022})
+CREATE (m102:MESTRADO {curso:"Ciência da Computação", subarea:"Engenharia de Requisitos", instituição:"UFRJ", ano_conclusão:2014})
+CREATE (m103:MESTRADO {curso:"Estatística", subarea:"Bioestatística", instituição:"UFRJ", ano_conclusão:2018})
+CREATE (m104:MESTRADO {curso:"Engenharia de Produção", subarea:"Simulação", instituição:"UFSC", ano_conclusão:2015})
+CREATE (m105:MESTRADO {curso:"Sistemas de Informação", subarea:"Arquitetura Empresarial", instituição:"USP", ano_conclusão:2017})
+CREATE (m106:MESTRADO {curso:"Design", subarea:"Pesquisa Quantitativa", instituição:"Mackenzie", ano_conclusão:2019})
+CREATE (m107:MESTRADO {curso:"Ciência de Dados", subarea:"Séries Temporais", instituição:"UNICAMP", ano_conclusão:2020})
+CREATE (m108:MESTRADO {curso:"Administração", subarea:"Empreendedorismo Digital", instituição:"FGV", ano_conclusão:2016})
+CREATE (m109:MESTRADO {curso:"Engenharia de Software", subarea:"Testes de Software", instituição:"UNB", ano_conclusão:2021})
+CREATE (m110:MESTRADO {curso:"Matemática Aplicada", subarea:"Criptografia", instituição:"ITA", ano_conclusão:2015})
+CREATE (m111:MESTRADO {curso:"Ciência da Computação", subarea:"Computação Paralela", instituição:"UFMG", ano_conclusão:2019})
+CREATE (m112:MESTRADO {curso:"Gestão de Projetos", subarea:"Transformação Digital", instituição:"Insper", ano_conclusão:2022})
+CREATE (m113:MESTRADO {curso:"Marketing", subarea:"Automação de Campanhas", instituição:"ESPM", ano_conclusão:2018})
+CREATE (m114:MESTRADO {curso:"Engenharia Elétrica", subarea:"Automação Industrial", instituição:"CEFET-MG", ano_conclusão:2017})
+CREATE (m115:MESTRADO {curso:"Design de Interação", subarea:"Design de Voz", instituição:"PUCRS", ano_conclusão:2021})
+CREATE (m116:MESTRADO {curso:"Sistemas de Informação", subarea:"Computação Móvel", instituição:"UFPR", ano_conclusão:2016})
+CREATE (m117:MESTRADO {curso:"Ciência de Dados", subarea:"Visualização Interativa", instituição:"UFPE", ano_conclusão:2020})
+CREATE (m118:MESTRADO {curso:"Administração Pública", subarea:"Sistemas de Informação Públicos", instituição:"ENAP", ano_conclusão:2015})
+CREATE (m119:MESTRADO {curso:"Arquitetura", subarea:"Modelagem 3D", instituição:"UDESC", ano_conclusão:2019})
+CREATE (m120:MESTRADO {curso:"Engenharia Química", subarea:"Simulação de Processos", instituição:"UNICAMP", ano_conclusão:2018})
+CREATE (m121:MESTRADO {curso:"Ciência da Computação", subarea:"Inteligência Artificial", instituição:"UFRRJ", ano_conclusão:2021})
+CREATE (m122:MESTRADO {curso:"Ciência da Computação", subarea:"Banco de Dados", instituição:"UFRN", ano_conclusão:2020})
+CREATE (m123:MESTRADO {curso:"Ciência da Computação", subarea:"Redes de Computadores", instituição:"UFG", ano_conclusão:2019})
+CREATE (m124:MESTRADO {curso:"Ciência da Computação", subarea:"Engenharia de Software", instituição:"UFMA", ano_conclusão:2022})
+CREATE (m125:MESTRADO {curso:"Ciência da Computação", subarea:"Computação Gráfica", instituição:"UFPB", ano_conclusão:2018})
+CREATE (m126:MESTRADO {curso:"Engenharia de Software", subarea:"Testes de Software", instituição:"UFPA", ano_conclusão:2021})
+CREATE (m127:MESTRADO {curso:"Engenharia de Software", subarea:"Arquitetura de Software", instituição:"UFT", ano_conclusão:2020})
+CREATE (m128:MESTRADO {curso:"Engenharia de Software", subarea:"Qualidade de Software", instituição:"UFAL", ano_conclusão:2019})
+CREATE (m129:MESTRADO {curso:"Engenharia de Software", subarea:"Processos de Software", instituição:"UFC", ano_conclusão:2022})
+CREATE (m130:MESTRADO {curso:"Engenharia de Software", subarea:"Métodos Ágeis", instituição:"UFMS", ano_conclusão:2018})
+CREATE (m131:MESTRADO {curso:"Ciência de Dados", subarea:"Machine Learning", instituição:"UFMT", ano_conclusão:2021})
+CREATE (m132:MESTRADO {curso:"Ciência de Dados", subarea:"Big Data", instituição:"UFPI", ano_conclusão:2020})
+CREATE (m133:MESTRADO {curso:"Ciência de Dados", subarea:"Data Mining", instituição:"UFAC", ano_conclusão:2019})
+CREATE (m134:MESTRADO {curso:"Ciência de Dados", subarea:"Visualização de Dados", instituição:"UFAM", ano_conclusão:2022})
+CREATE (m135:MESTRADO {curso:"Ciência de Dados", subarea:"Estatística Computacional", instituição:"UFRR", ano_conclusão:2018})
+CREATE (m136:MESTRADO {curso:"Inteligência Artificial", subarea:"Deep Learning", instituição:"IFRJ", ano_conclusão:2021})
+CREATE (m137:MESTRADO {curso:"Inteligência Artificial", subarea:"Processamento de Linguagem Natural", instituição:"IFSP", ano_conclusão:2020})
+CREATE (m138:MESTRADO {curso:"Inteligência Artificial", subarea:"Visão Computacional", instituição:"IFMG", ano_conclusão:2019})
+CREATE (m139:MESTRADO {curso:"Inteligência Artificial", subarea:"Sistemas Especialistas", instituição:"IFRS", ano_conclusão:2022})
+CREATE (m140:MESTRADO {curso:"Inteligência Artificial", subarea:"Algoritmos Genéticos", instituição:"IFBA", ano_conclusão:2018})
+CREATE (m141:MESTRADO {curso:"Sistemas de Informação", subarea:"Gestão de TI", instituição:"UFV", ano_conclusão:2021})
+CREATE (m142:MESTRADO {curso:"Sistemas de Informação", subarea:"Business Intelligence", instituição:"UFU", ano_conclusão:2020})
+CREATE (m143:MESTRADO {curso:"Sistemas de Informação", subarea:"Governança de TI", instituição:"UFJF", ano_conclusão:2019})
+CREATE (m144:MESTRADO {curso:"Sistemas de Informação", subarea:"Arquitetura Corporativa", instituição:"UFPEL", ano_conclusão:2022})
+CREATE (m145:MESTRADO {curso:"Sistemas de Informação", subarea:"Sistemas Distribuídos", instituição:"UFLA", ano_conclusão:2018})
+CREATE (m146:MESTRADO {curso:"Segurança da Informação", subarea:"Criptografia", instituição:"UFES", ano_conclusão:2021})
+CREATE (m147:MESTRADO {curso:"Segurança da Informação", subarea:"Forensics", instituição:"UFRB", ano_conclusão:2020})
+CREATE (m148:MESTRADO {curso:"Segurança da Informação", subarea:"Gestão de Riscos", instituição:"UFCA", ano_conclusão:2019})
+CREATE (m149:MESTRADO {curso:"Segurança da Informação", subarea:"Security Operations", instituição:"UFOB", ano_conclusão:2022})
+CREATE (m150:MESTRADO {curso:"Segurança da Informação", subarea:"Ethical Hacking", instituição:"UNILA", ano_conclusão:2018})
+CREATE (m151:MESTRADO {curso:"Engenharia de Dados", subarea:"Data Engineering", instituição:"UFPR", ano_conclusão:2021})
+CREATE (m152:MESTRADO {curso:"Engenharia de Dados", subarea:"Data Warehousing", instituição:"UDESC", ano_conclusão:2020})
+CREATE (m153:MESTRADO {curso:"Engenharia de Dados", subarea:"ETL Processes", instituição:"UEM", ano_conclusão:2019})
+CREATE (m154:MESTRADO {curso:"Engenharia de Dados", subarea:"Data Pipelines", instituição:"UEL", ano_conclusão:2022})
+CREATE (m155:MESTRADO {curso:"Engenharia de Dados", subarea:"Cloud Data", instituição:"UEPG", ano_conclusão:2018})
+CREATE (m156:MESTRADO {curso:"Computação em Nuvem", subarea:"Cloud Architecture", instituição:"UFSC", ano_conclusão:2021})
+CREATE (m157:MESTRADO {curso:"Computação em Nuvem", subarea:"DevOps", instituição:"UFSM", ano_conclusão:2020})
+CREATE (m158:MESTRADO {curso:"Computação em Nuvem", subarea:"Containerization", instituição:"FURG", ano_conclusão:2019})
+CREATE (m159:MESTRADO {curso:"Computação em Nuvem", subarea:"Microservices", instituição:"UCPEL", ano_conclusão:2022})
+CREATE (m160:MESTRADO {curso:"Computação em Nuvem", subarea:"Serverless", instituição:"URI", ano_conclusão:2018})
+CREATE (m161:MESTRADO {curso:"Bioinformática", subarea:"Genômica", instituição:"UNIR", ano_conclusão:2021})
+CREATE (m162:MESTRADO {curso:"Bioinformática", subarea:"Proteômica", instituição:"UNIFAP", ano_conclusão:2020})
+CREATE (m163:MESTRADO {curso:"Bioinformática", subarea:"Biologia Computacional", instituição:"UNIFESSPA", ano_conclusão:2019})
+CREATE (m164:MESTRADO {curso:"Bioinformática", subarea:"Drug Discovery", instituição:"UNIVASF", ano_conclusão:2022})
+CREATE (m165:MESTRADO {curso:"Bioinformática", subarea:"Structural Biology", instituição:"UNILAB", ano_conclusão:2018})
+CREATE (m166:MESTRADO {curso:"Computação Quântica", subarea:"Quantum Algorithms", instituição:"IFCE", ano_conclusão:2021})
+CREATE (m167:MESTRADO {curso:"Computação Quântica", subarea:"Quantum Information", instituição:"IFGO", ano_conclusão:2020})
+CREATE (m168:MESTRADO {curso:"Computação Quântica", subarea:"Quantum Cryptography", instituição:"IFES", ano_conclusão:2019})
+CREATE (m169:MESTRADO {curso:"Computação Quântica", subarea:"Quantum Machine Learning", instituição:"IFSUL", ano_conclusão:2022})
+CREATE (m170:MESTRADO {curso:"Computação Quântica", subarea:"Quantum Simulation", instituição:"IFNMG", ano_conclusão:2018})
+
+// DOUTORADOS - SEQUÊNCIA COMPLETA CORRIGIDA (d1 a d120)
+CREATE (d1:DOUTORADO {curso:"Inteligência Artificial", subarea:"Visão Computacional", instituição:"MIT-Brasil", ano_conclusão:2020})
+CREATE (d2:DOUTORADO {curso:"Ciência da Computação", subarea:"Aprendizado por Reforço", instituição:"USP", ano_conclusão:2018})
+CREATE (d3:DOUTORADO {curso:"Engenharia de Software", subarea:"Verificação Formal", instituição:"ITA", ano_conclusão:2016})
+CREATE (d4:DOUTORADO {curso:"Sistemas de Informação", subarea:"Segurança de Dados Quânticos", instituição:"UFRJ", ano_conclusão:2020})
+CREATE (d5:DOUTORADO {curso:"Inteligência Artificial", subarea:"Processamento de Linguagem Natural (PNL)", instituição:"UNICAMP", ano_conclusão:2017})
+CREATE (d6:DOUTORADO {curso:"Engenharia de Computação", subarea:"Sistemas Embarcados", instituição:"UFMG", ano_conclusão:2015})
+CREATE (d7:DOUTORADO {curso:"Ciência da Computação", subarea:"Otimização Combinatória", instituição:"UnB", ano_conclusão:2019})
+CREATE (d8:DOUTORADO {curso:"Engenharia Elétrica", subarea:"Redes Neurais Profundas", instituição:"PUC-Rio", ano_conclusão:2021})
+CREATE (d9:DOUTORADO {curso:"Arquitetura de Sistemas", subarea:"Computação Distribuída", instituição:"UFRGS", ano_conclusão:2016})
+CREATE (d10:DOUTORADO {curso:"Ciência de Dados", subarea:"Mineração de Dados em Larga Escala", instituição:"UFPE", ano_conclusão:2022})
+CREATE (d11:DOUTORADO {curso:"Engenharia de Produção", subarea:"Simulação de Sistemas Complexos", instituição:"POLI-USP", ano_conclusão:2014})
+CREATE (d12:DOUTORADO {curso:"Estatística", subarea:"Modelos Bayesianos", instituição:"UERJ", ano_conclusão:2018})
+CREATE (d13:DOUTORADO {curso:"Matemática Aplicada", subarea:"Criptografia Avançada", instituição:"ITA", ano_conclusão:2017})
+CREATE (d14:DOUTORADO {curso:"Ciência de Dados", subarea:"Modelagem de Risco Financeiro", instituição:"FGV", ano_conclusão:2020})
+CREATE (d15:DOUTORADO {curso:"Bioinformática", subarea:"Genômica Computacional", instituição:"UNICAMP", ano_conclusão:2021})
+CREATE (d16:DOUTORADO {curso:"Estatística Aplicada", subarea:"Análise de Sobrevivência", instituição:"UNESP", ano_conclusão:2019})
+CREATE (d17:DOUTORADO {curso:"Engenharia de Dados", subarea:"Arquitetura de Data Lakes", instituição:"UFSCar", ano_conclusão:2016})
+CREATE (d18:DOUTORADO {curso:"Ciência da Computação", subarea:"Computação de Alto Desempenho", instituição:"UFRJ", ano_conclusão:2015})
+CREATE (d19:DOUTORADO {curso:"Inteligência Artificial", subarea:"Robótica Autônoma", instituição:"USP", ano_conclusão:2022})
+CREATE (d20:DOUTORADO {curso:"Matemática", subarea:"Teoria dos Jogos", instituição:"UFRGS", ano_conclusão:2018})
+CREATE (d21:DOUTORADO {curso:"Engenharia Química", subarea:"Otimização de Processos", instituição:"UNICAMP", ano_conclusão:2017})
+CREATE (d22:DOUTORADO {curso:"Administração", subarea:"Estratégia e Inovação", instituição:"FGV", ano_conclusão:2015})
+CREATE (d23:DOUTORADO {curso:"Gestão de Projetos", subarea:"Governança Corporativa", instituição:"Insper", ano_conclusão:2019})
+CREATE (d24:DOUTORADO {curso:"Economia", subarea:"Econometria Aplicada", instituição:"UFRJ", ano_conclusão:2016})
+CREATE (d25:DOUTORADO {curso:"Gestão da Inovação", subarea:"Empreendedorismo Tecnológico", instituição:"USP", ano_conclusão:2020})
+CREATE (d26:DOUTORADO {curso:"Marketing", subarea:"Comportamento do Consumidor Digital", instituição:"ESPM", ano_conclusão:2018})
+CREATE (d27:DOUTORADO {curso:"Administração Pública", subarea:"Transformação Digital no Setor Público", instituição:"ENAP", ano_conclusão:2021})
+CREATE (d28:DOUTORADO {curso:"Logística", subarea:"Otimização da Cadeia de Suprimentos", instituição:"ITA", ano_conclusão:2014})
+CREATE (d29:DOUTORADO {curso:"Finanças", subarea:"Mercados de Capitais", instituição:"IBMEC", ano_conclusão:2017})
+CREATE (d30:DOUTORADO {curso:"Relações Internacionais", subarea:"Geopolítica da Tecnologia", instituição:"UnB", ano_conclusão:2019})
+CREATE (d31:DOUTORADO {curso:"Gestão de Pessoas", subarea:"Liderança e Clima Organizacional", instituição:"PUC Minas", ano_conclusão:2016})
+CREATE (d32:DOUTORADO {curso:"Design", subarea:"Design de Experiência (UX) C.", instituição:"UFPR", ano_conclusão:2020})
+CREATE (d33:DOUTORADO {curso:"Comunicação", subarea:"Mídias Digitais e Engajamento", instituição:"Cásper Líbero", ano_conclusão:2018})
+CREATE (d34:DOUTORADO {curso:"Psicologia", subarea:"Interação Humano-Computador (IHC)", instituição:"UFBA", ano_conclusão:2015})
+CREATE (d35:DOUTORADO {curso:"Design de Interação", subarea:"Interfaces Naturais", instituição:"Mackenzie", ano_conclusão:2019})
+CREATE (d36:DOUTORADO {curso:"Arquitetura e Urbanismo", subarea:"Smart Cities e IoT", instituição:"FAU-USP", ano_conclusão:2017})
+CREATE (d37:DOUTORADO {curso:"Design", subarea:"Visualização de Informação", instituição:"UDESC", ano_conclusão:2021})
+CREATE (d38:DOUTORADO {curso:"Artes Visuais", subarea:"Realidade Virtual e Aumentada", instituição:"ECA-USP", ano_conclusão:2016})
+CREATE (d39:DOUTORADO {curso:"Comunicação Social", subarea:"Narrativas Digitais", instituição:"ESPM", ano_conclusão:2014})
+CREATE (d40:DOUTORADO {curso:"Jornalismo", subarea:"Fact-Checking e IA", instituição:"UFRJ", ano_conclusão:2020})
+CREATE (d41:DOUTORADO {curso:"Filosofia", subarea:"Ética em Inteligência Artificial", instituição:"UNIFESP", ano_conclusão:2018})
+CREATE (d42:DOUTORADO {curso:"Engenharia Biomédica", subarea:"Processamento de Sinais Biológicos", instituição:"UFMG", ano_conclusão:2019})
+CREATE (d43:DOUTORADO {curso:"Direito", subarea:"Propriedade Intelectual em Software", instituição:"PUC-SP", ano_conclusão:2021})
+CREATE (d44:DOUTORADO {curso:"Ciências da Saúde", subarea:"Telessaúde", instituição:"UNIFESP", ano_conclusão:2017})
+CREATE (d45:DOUTORADO {curso:"Geociências", subarea:"Modelagem Climática", instituição:"UNB", ano_conclusão:2016})
+CREATE (d46:DOUTORADO {curso:"Educação", subarea:"Aprendizagem Adaptativa", instituição:"UFBA", ano_conclusão:2020})
+CREATE (d47:DOUTORADO {curso:"Engenharia de Sistemas", subarea:"Teoria de Filas", instituição:"UFRGS", ano_conclusão:2015})
+CREATE (d48:DOUTORADO {curso:"Ciência da Computação", subarea:"Reconhecimento de Padrões", instituição:"UFSCar", ano_conclusão:2018})
+CREATE (d49:DOUTORADO {curso:"Estatística", subarea:"Inferência Causal", instituição:"UNICAMP", ano_conclusão:2021})
+CREATE (d50:DOUTORADO {curso:"Administração", subarea:"Governança de TI", instituição:"Insper", ano_conclusão:2016})
+CREATE (d51:DOUTORADO {curso:"Engenharia de Software", subarea:"Linhas de Produto de Software", instituição:"INATEL", ano_conclusão:2022})
+CREATE (d52:DOUTORADO {curso:"Design", subarea:"Design Centrado na Sustentabilidade", instituição:"UFPR", ano_conclusão:2019})
+CREATE (d53:DOUTORADO {curso:"Ciência de Dados", subarea:"Análise de Redes Sociais", instituição:"FGV", ano_conclusão:2017})
+CREATE (d54:DOUTORADO {curso:"Gestão de TI", subarea:"Gestão de Risco", instituição:"PUC-Rio", ano_conclusão:2020})
+CREATE (d55:DOUTORADO {curso:"Engenharia Elétrica", subarea:"Sistemas de Energia Renovável", instituição:"UFRJ", ano_conclusão:2015})
+CREATE (d56:DOUTORADO {curso:"Sistemas de Informação", subarea:"Integração de Sistemas", instituição:"UFSC", ano_conclusão:2018})
+CREATE (d57:DOUTORADO {curso:"Design de Interação", subarea:"Design de Experiência Auditiva", instituição:"Mackenzie", ano_conclusão:2021})
+CREATE (d58:DOUTORADO {curso:"Ciência da Computação", subarea:"Visão Computacional Aplicada", instituição:"ITA", ano_conclusão:2016})
+CREATE (d59:DOUTORADO {curso:"Estatística", subarea:"Modelagem de Séries Temporais", instituição:"UFRGS", ano_conclusão:2019})
+CREATE (d60:DOUTORADO {curso:"Engenharia de Produção", subarea:"Otimização Logística", instituição:"POLI-USP", ano_conclusão:2017})
+CREATE (d61:DOUTORADO {curso:"Administração", subarea:"Capital Humano", instituição:"FGV", ano_conclusão:2020})
+CREATE (d62:DOUTORADO {curso:"Sistemas de Informação", subarea:"Inovação em TI", instituição:"UFMG", ano_conclusão:2016})
+CREATE (d63:DOUTORADO {curso:"Design", subarea:"Ergonomia Cognitiva", instituição:"ESPM", ano_conclusão:2018})
+CREATE (d64:DOUTORADO {curso:"Ciência de Dados", subarea:"Aprendizagem Semi-Supervisionada", instituição:"UNICAMP", ano_conclusão:2021})
+CREATE (d65:DOUTORADO {curso:"Engenharia de Software", subarea:"Software Seguro", instituição:"UNB", ano_conclusão:2017})
+CREATE (d66:DOUTORADO {curso:"Matemática Aplicada", subarea:"Modelagem de Sistemas Dinâmicos", instituição:"UERJ", ano_conclusão:2019})
+CREATE (d67:DOUTORADO {curso:"Gestão de TI", subarea:"Cloud Computing Estratégico", instituição:"PUC Minas", ano_conclusão:2022})
+CREATE (d68:DOUTORADO {curso:"Ciência da Computação", subarea:"Tópicos em BD Distribuídos", instituição:"UFRJ", ano_conclusão:2015})
+CREATE (d69:DOUTORADO {curso:"Estatística", subarea:"Machine Learning para Saúde", instituição:"UFRJ", ano_conclusão:2018})
+CREATE (d70:DOUTORADO {curso:"Engenharia de Produção", subarea:"Gestão da Qualidade Total", instituição:"UFSC", ano_conclusão:2016})
+CREATE (d71:DOUTORADO {curso:"Sistemas de Informação", subarea:"Engenharia de Ontologias", instituição:"USP", ano_conclusão:2017})
+CREATE (d72:DOUTORADO {curso:"Design", subarea:"Design de Experiência em Ambientes Virtuais", instituição:"Mackenzie", ano_conclusão:2019})
+CREATE (d73:DOUTORADO {curso:"Ciência de Dados", subarea:"Deep Learning para Finanças", instituição:"UNICAMP", ano_conclusão:2020})
+CREATE (d74:DOUTORADO {curso:"Administração", subarea:"Teoria Organizacional", instituição:"FGV", ano_conclusão:2016})
+CREATE (d75:DOUTORADO {curso:"Engenharia de Software", subarea:"Reengenharia de Processos", instituição:"UNB", ano_conclusão:2021})
+CREATE (d76:DOUTORADO {curso:"Matemática Aplicada", subarea:"Otimização Linear", instituição:"ITA", ano_conclusão:2015})
+CREATE (d77:DOUTORADO {curso:"Ciência da Computação", subarea:"Processamento de Imagem Médica", instituição:"UFMG", ano_conclusão:2019})
+CREATE (d78:DOUTORADO {curso:"Gestão de Projetos", subarea:"Gestão de Riscos em Projetos", instituição:"Insper", ano_conclusão:2022})
+CREATE (d79:DOUTORADO {curso:"Marketing", subarea:"Estratégia de Conteúdo", instituição:"ESPM", ano_conclusão:2018})
+CREATE (d80:DOUTORADO {curso:"Administração", subarea:"Capital Humano", instituição:"FGV", ano_conclusão:2020})
+CREATE (d81:DOUTORADO {curso:"Sistemas de Informação", subarea:"Inovação em TI", instituição:"UFMG", ano_conclusão:2016})
+CREATE (d82:DOUTORADO {curso:"Design", subarea:"Ergonomia Cognitiva", instituição:"ESPM", ano_conclusão:2018})
+CREATE (d83:DOUTORADO {curso:"Ciência de Dados", subarea:"Aprendizagem Semi-Supervisionada", instituição:"UNICAMP", ano_conclusão:2021})
+CREATE (d84:DOUTORADO {curso:"Engenharia de Software", subarea:"Software Seguro", instituição:"UNB", ano_conclusão:2017})
+CREATE (d85:DOUTORADO {curso:"Matemática Aplicada", subarea:"Modelagem de Sistemas Dinâmicos", instituição:"UERJ", ano_conclusão:2019})
+CREATE (d86:DOUTORADO {curso:"Gestão de TI", subarea:"Cloud Computing Estratégico", instituição:"PUC Minas", ano_conclusão:2022})
+CREATE (d87:DOUTORADO {curso:"Ciência da Computação", subarea:"Tópicos em BD Distribuídos", instituição:"UFRJ", ano_conclusão:2015})
+CREATE (d88:DOUTORADO {curso:"Estatística", subarea:"Machine Learning para Saúde", instituição:"UFRJ", ano_conclusão:2018})
+CREATE (d89:DOUTORADO {curso:"Engenharia de Produção", subarea:"Gestão da Qualidade Total", instituição:"UFSC", ano_conclusão:2016})
+CREATE (d90:DOUTORADO {curso:"Sistemas de Informação", subarea:"Engenharia de Ontologias", instituição:"USP", ano_conclusão:2017})
+CREATE (d91:DOUTORADO {curso:"Design", subarea:"Design de Experiência em Ambientes Virtuais", instituição:"Mackenzie", ano_conclusão:2019})
+CREATE (d92:DOUTORADO {curso:"Ciência de Dados", subarea:"Deep Learning para Finanças", instituição:"UNICAMP", ano_conclusão:2020})
+CREATE (d93:DOUTORADO {curso:"Administração", subarea:"Teoria Organizacional", instituição:"FGV", ano_conclusão:2016})
+CREATE (d94:DOUTORADO {curso:"Engenharia de Software", subarea:"Reengenharia de Processos", instituição:"UNB", ano_conclusão:2021})
+CREATE (d95:DOUTORADO {curso:"Matemática Aplicada", subarea:"Otimização Linear", instituição:"ITA", ano_conclusão:2015})
+CREATE (d96:DOUTORADO {curso:"Ciência da Computação", subarea:"Processamento de Imagem Médica", instituição:"UFMG", ano_conclusão:2019})
+CREATE (d97:DOUTORADO {curso:"Gestão de Projetos", subarea:"Gestão de Riscos em Projetos", instituição:"Insper", ano_conclusão:2022})
+CREATE (d98:DOUTORADO {curso:"Marketing", subarea:"Estratégia de Conteúdo", instituição:"ESPM", ano_conclusão:2018})
+CREATE (d99:DOUTORADO {curso:"Engenharia Elétrica", subarea:"Controle de Sistemas", instituição:"CEFET-MG", ano_conclusão:2017})
+CREATE (d100:DOUTORADO {curso:"Design de Interação", subarea:"Tecnologias Assistivas", instituição:"PUCRS", ano_conclusão:2021})
+CREATE (d101:DOUTORADO {curso:"Sistemas de Informação", subarea:"Computação Sustentável", instituição:"UFPR", ano_conclusão:2016})
+CREATE (d102:DOUTORADO {curso:"Ciência de Dados", subarea:"Visão Computacional para Análise de Dados", instituição:"UFPE", ano_conclusão:2020})
+CREATE (d103:DOUTORADO {curso:"Administração Pública", subarea:"E-Governo e Serviços Digitais", instituição:"ENAP", ano_conclusão:2015})
+CREATE (d104:DOUTORADO {curso:"Arquitetura", subarea:"Modelagem de Informação da Construção (BIM)", instituição:"UDESC", ano_conclusão:2019})
+CREATE (d105:DOUTORADO {curso:"Engenharia Química", subarea:"Catálise Computacional", instituição:"UNICAMP", ano_conclusão:2018})
+CREATE (d106:DOUTORADO {curso:"Economia", subarea:"Microeconometria", instituição:"UFRGS", ano_conclusão:2017})
+CREATE (d107:DOUTORADO {curso:"Direito", subarea:"Cibersegurança e Legislação", instituição:"PUC-RJ", ano_conclusão:2020})
+CREATE (d108:DOUTORADO {curso:"Gestão Ambiental", subarea:"Monitoramento por Satélite", instituição:"UNESP", ano_conclusão:2016})
+CREATE (d109:DOUTORADO {curso:"Ciência da Computação", subarea:"Computação em Grade", instituição:"UFRJ", ano_conclusão:2014})
+CREATE (d110:DOUTORADO {curso:"Engenharia de Software", subarea:"Metodologias Ágeis", instituição:"UFPE", ano_conclusão:2018})
+CREATE (d111:DOUTORADO {curso:"Sistemas de Informação", subarea:"Sistemas de Tempo Real", instituição:"ITA", ano_conclusão:2015})
+CREATE (d112:DOUTORADO {curso:"Design", subarea:"Cultura e Design", instituição:"UFBA", ano_conclusão:2019})
+CREATE (d113:DOUTORADO {curso:"Ciência de Dados", subarea:"Análise Preditiva em Saúde", instituição:"PUC Minas", ano_conclusão:2021})
+CREATE (d114:DOUTORADO {curso:"Gestão de Projetos", subarea:"Gerenciamento de Escopo", instituição:"FGV", ano_conclusão:2017})
+CREATE (d115:DOUTORADO {curso:"Inteligência Artificial", subarea:"Aprendizado Federado", instituição:"UnB", ano_conclusão:2020})
+CREATE (d116:DOUTORADO {curso:"Engenharia de Sistemas", subarea:"Otimização Multiobjetivo", instituição:"UFRGS", ano_conclusão:2016})
+CREATE (d117:DOUTORADO {curso:"Ciência da Computação", subarea:"Blockchain e Aplicações", instituição:"UFSCar", ano_conclusão:2018})
+CREATE (d118:DOUTORADO {curso:"Estatística", subarea:"Modelagem de Redes Complexas", instituição:"UNICAMP", ano_conclusão:2021})
+CREATE (d119:DOUTORADO {curso:"Administração", subarea:"Liderança e Gestão da Mudança", instituição:"Insper", ano_conclusão:2017})
+CREATE (d120:DOUTORADO {curso:"Engenharia de Software", subarea:"Design Patterns", instituição:"PUC-Rio", ano_conclusão:2019})
+CREATE (d121:DOUTORADO {curso:"Ciência da Computação", subarea:"Advanced AI Systems", instituição:"UFRRJ", ano_conclusão:2023})
+CREATE (d122:DOUTORADO {curso:"Ciência da Computação", subarea:"Quantum Computing", instituição:"UFRN", ano_conclusão:2022})
+CREATE (d123:DOUTORADO {curso:"Ciência da Computação", subarea:"Bioinformatics", instituição:"UFG", ano_conclusão:2021})
+CREATE (d124:DOUTORADO {curso:"Ciência da Computação", subarea:"Computer Vision", instituição:"UFMA", ano_conclusão:2024})
+CREATE (d125:DOUTORADO {curso:"Ciência da Computação", subarea:"Natural Language Processing", instituição:"UFPB", ano_conclusão:2020})
+CREATE (d126:DOUTORADO {curso:"Engenharia de Software", subarea:"Software Architecture", instituição:"UFPA", ano_conclusão:2023})
+CREATE (d127:DOUTORADO {curso:"Engenharia de Software", subarea:"Formal Methods", instituição:"UFT", ano_conclusão:2022})
+CREATE (d128:DOUTORADO {curso:"Engenharia de Software", subarea:"Software Quality", instituição:"UFAL", ano_conclusão:2021})
+CREATE (d129:DOUTORADO {curso:"Engenharia de Software", subarea:"Software Evolution", instituição:"UFC", ano_conclusão:2024})
+CREATE (d130:DOUTORADO {curso:"Engenharia de Software", subarea:"Empirical Software Engineering", instituição:"UFMS", ano_conclusão:2020})
+CREATE (d131:DOUTORADO {curso:"Ciência de Dados", subarea:"Deep Learning", instituição:"UFMT", ano_conclusão:2023})
+CREATE (d132:DOUTORADO {curso:"Ciência de Dados", subarea:"Big Data Analytics", instituição:"UFPI", ano_conclusão:2022})
+CREATE (d133:DOUTORADO {curso:"Ciência de Dados", subarea:"Data Science Theory", instituição:"UFAC", ano_conclusão:2021})
+CREATE (d134:DOUTORADO {curso:"Ciência de Dados", subarea:"Statistical Learning", instituição:"UFAM", ano_conclusão:2024})
+CREATE (d135:DOUTORADO {curso:"Ciência de Dados", subarea:"Causal Inference", instituição:"UFRR", ano_conclusão:2020})
+CREATE (d136:DOUTORADO {curso:"Inteligência Artificial", subarea:"Reinforcement Learning", instituição:"IFRJ", ano_conclusão:2023})
+CREATE (d137:DOUTORADO {curso:"Inteligência Artificial", subarea:"Explainable AI", instituição:"IFSP", ano_conclusão:2022})
+CREATE (d138:DOUTORADO {curso:"Inteligência Artificial", subarea:"AI Ethics", instituição:"IFMG", ano_conclusão:2021})
+CREATE (d139:DOUTORADO {curso:"Inteligência Artificial", subarea:"Multi-agent Systems", instituição:"IFRS", ano_conclusão:2024})
+CREATE (d140:DOUTORADO {curso:"Inteligência Artificial", subarea:"Cognitive Computing", instituição:"IFBA", ano_conclusão:2020})
+CREATE (d141:DOUTORADO {curso:"Sistemas de Informação", subarea:"Digital Transformation", instituição:"UFV", ano_conclusão:2023})
+CREATE (d142:DOUTORADO {curso:"Sistemas de Informação", subarea:"Information Systems Strategy", instituição:"UFU", ano_conclusão:2022})
+CREATE (d143:DOUTORADO {curso:"Sistemas de Informação", subarea:"IT Governance", instituição:"UFJF", ano_conclusão:2021})
+CREATE (d144:DOUTORADO {curso:"Sistemas de Informação", subarea:"Enterprise Architecture", instituição:"UFPEL", ano_conclusão:2024})
+CREATE (d145:DOUTORADO {curso:"Sistemas de Informação", subarea:"Digital Innovation", instituição:"UFLA", ano_conclusão:2020})
+CREATE (d146:DOUTORADO {curso:"Segurança da Informação", subarea:"Advanced Cryptography", instituição:"UFES", ano_conclusão:2023})
+CREATE (d147:DOUTORADO {curso:"Segurança da Informação", subarea:"Cyber Defense", instituição:"UFRB", ano_conclusão:2022})
+CREATE (d148:DOUTORADO {curso:"Segurança da Informação", subarea:"Privacy Engineering", instituição:"UFCA", ano_conclusão:2021})
+CREATE (d149:DOUTORADO {curso:"Segurança da Informação", subarea:"Security Analytics", instituição:"UFOB", ano_conclusão:2024})
+CREATE (d150:DOUTORADO {curso:"Segurança da Informação", subarea:"Critical Infrastructure", instituição:"UNILA", ano_conclusão:2020})
+CREATE (d151:DOUTORADO {curso:"Engenharia de Dados", subarea:"Data Architecture", instituição:"UFPR", ano_conclusão:2023})
+CREATE (d152:DOUTORADO {curso:"Engenharia de Dados", subarea:"Data Governance", instituição:"UDESC", ano_conclusão:2022})
+CREATE (d153:DOUTORADO {curso:"Engenharia de Dados", subarea:"Data Quality", instituição:"UEM", ano_conclusão:2021})
+CREATE (d154:DOUTORADO {curso:"Engenharia de Dados", subarea:"Data Integration", instituição:"UEL", ano_conclusão:2024})
+CREATE (d155:DOUTORADO {curso:"Engenharia de Dados", subarea:"Master Data Management", instituição:"UEPG", ano_conclusão:2020})
+CREATE (d156:DOUTORADO {curso:"Computação em Nuvem", subarea:"Cloud Security", instituição:"UFSC", ano_conclusão:2023})
+CREATE (d157:DOUTORADO {curso:"Computação em Nuvem", subarea:"Edge Computing", instituição:"UFSM", ano_conclusão:2022})
+CREATE (d158:DOUTORADO {curso:"Computação em Nuvem", subarea:"Fog Computing", instituição:"FURG", ano_conclusão:2021})
+CREATE (d159:DOUTORADO {curso:"Computação em Nuvem", subarea:"Multi-cloud", instituição:"UCPEL", ano_conclusão:2024})
+CREATE (d160:DOUTORADO {curso:"Computação em Nuvem", subarea:"Cloud-native", instituição:"URI", ano_conclusão:2020})
+CREATE (d161:DOUTORADO {curso:"Bioinformática", subarea:"Computational Genomics", instituição:"UNIR", ano_conclusão:2023})
+CREATE (d162:DOUTORADO {curso:"Bioinformática", subarea:"Systems Biology", instituição:"UNIFAP", ano_conclusão:2022})
+CREATE (d163:DOUTORADO {curso:"Bioinformática", subarea:"Medical Informatics", instituição:"UNIFESSPA", ano_conclusão:2021})
+CREATE (d164:DOUTORADO {curso:"Bioinformática", subarea:"Pharmacogenomics", instituição:"UNIVASF", ano_conclusão:2024})
+CREATE (d165:DOUTORADO {curso:"Bioinformática", subarea:"Metabolomics", instituição:"UNILAB", ano_conclusão:2020})
+CREATE (d166:DOUTORADO {curso:"Computação Quântica", subarea:"Quantum Complexity", instituição:"IFCE", ano_conclusão:2023})
+CREATE (d167:DOUTORADO {curso:"Computação Quântica", subarea:"Quantum Information Theory", instituição:"IFGO", ano_conclusão:2022})
+CREATE (d168:DOUTORADO {curso:"Computação Quântica", subarea:"Quantum Algorithms Design", instituição:"IFES", ano_conclusão:2021})
+CREATE (d169:DOUTORADO {curso:"Computação Quântica", subarea:"Quantum Machine Learning", instituição:"IFSUL", ano_conclusão:2024})
+CREATE (d170:DOUTORADO {curso:"Computação Quântica", subarea:"Quantum Error Correction", instituição:"IFNMG", ano_conclusão:2020})
+
+
+// Criação dos nós de POSDOUTORADO
+CREATE (posd1:POSDOUTORADO {
+  curso: "Inteligência Artificial Avançada",
+  subarea: "Deep Learning e Redes Neurais Profundas",
+  instituição: "MIT-Brasil",
+  ano_conclusão: 2023
+})
+
+CREATE (posd2:POSDOUTORADO {
+  curso: "Computação Quântica Aplicada",
+  subarea: "Algoritmos Quânticos para Machine Learning",
+  instituição: "IBM Research Brazil",
+  ano_conclusão: 2022
+})
+
+CREATE (posd3:POSDOUTORADO {
+  curso: "Bioinformática e Genômica Computacional",
+  subarea: "Análise de Dados Genômicos em Larga Escala",
+  instituição: "Harvard-Brasil",
+  ano_conclusão: 2024
+})
+
+CREATE (posd4:POSDOUTORADO {
+  curso: "Cibersegurança e Blockchain",
+  subarea: "Protocolos Seguros para Sistemas Distribuídos",
+  instituição: "Stanford Digital Security Lab",
+  ano_conclusão: 2023
+})
+
+CREATE (posd5:POSDOUTORADO {
+  curso: "Computação em Nuvem de Próxima Geração",
+  subarea: "Arquiteturas Serverless e Edge Computing",
+  instituição: "Google Cloud Research",
+  ano_conclusão: 2022
+})
+
+WITH posd1, posd2, posd3, posd4, posd5
+
+// EXPERIENCIA PROFISSIONAL
+CREATE (exp1:EXPERIENCIA {cargo:"Desenvolvedor Back-End", senioridade:"JUNIOR", duração_meses:18})
+CREATE (exp2:EXPERIENCIA {cargo:"Desenvolvedor Back-End", senioridade:"PLENO", duração_meses:36})
+CREATE (exp3:EXPERIENCIA {cargo:"Engenheiro de Software", senioridade:"SENIOR", duração_meses:72})
+CREATE (exp4:EXPERIENCIA {cargo:"Arquiteto de Sistemas", senioridade:"ARQUITETO", duração_meses:96})
+CREATE (exp5:EXPERIENCIA {cargo:"Desenvolvedor Java", senioridade:"PLENO", duração_meses:48})
+CREATE (exp6:EXPERIENCIA {cargo:"Desenvolvedor Python", senioridade:"SENIOR", duração_meses:60})
+CREATE (exp7:EXPERIENCIA {cargo:"Engenheiro de Software", senioridade:"PLENO", duração_meses:42})
+CREATE (exp8:EXPERIENCIA {cargo:"Desenvolvedor Full Stack", senioridade:"JUNIOR", duração_meses:24})
+CREATE (exp9:EXPERIENCIA {cargo:"Desenvolvedor Full Stack", senioridade:"SENIOR", duração_meses:80})
+CREATE (exp10:EXPERIENCIA {cargo:"Desenvolvedor Node.js", senioridade:"PLENO", duração_meses:30})
+
+// EXPERIÊNCIAS DE FRONT-END E DESIGN
+CREATE (exp11:EXPERIENCIA {cargo:"Desenvolvedor Front-End", senioridade:"PLENO", duração_meses:40})
+CREATE (exp12:EXPERIENCIA {cargo:"UI Designer", senioridade:"JUNIOR", duração_meses:12})
+CREATE (exp13:EXPERIENCIA {cargo:"UX Designer", senioridade:"SENIOR", duração_meses:65})
+CREATE (exp14:EXPERIENCIA {cargo:"Product Designer", senioridade:"PLENO", duração_meses:38})
+CREATE (exp15:EXPERIENCIA {cargo:"UX Researcher", senioridade:"ESPECIALISTA", duração_meses:54})
+CREATE (exp16:EXPERIENCIA {cargo:"Desenvolvedor React", senioridade:"PLENO", duração_meses:33})
+CREATE (exp17:EXPERIENCIA {cargo:"Web Designer", senioridade:"TRAINEE", duração_meses:6})
+CREATE (exp18:EXPERIENCIA {cargo:"Front-End Specialist", senioridade:"ESPECIALISTA", duração_meses:100})
+CREATE (exp19:EXPERIENCIA {cargo:"Analista de Design System", senioridade:"SENIOR", duração_meses:49})
+CREATE (exp20:EXPERIENCIA {cargo:"Desenvolvedor Mobile (iOS)", senioridade:"PLENO", duração_meses:28})
+
+// EXPERIÊNCIAS DE DEVOPS E INFRA
+CREATE (exp21:EXPERIENCIA {cargo:"DevOps Engineer", senioridade:"PLENO", duração_meses:45})
+CREATE (exp22:EXPERIENCIA {cargo:"DevOps Engineer", senioridade:"SENIOR", duração_meses:68})
+CREATE (exp23:EXPERIENCIA {cargo:"Analista de Cloud (AWS)", senioridade:"PLENO", duração_meses:32})
+CREATE (exp24:EXPERIENCIA {cargo:"Arquiteto de Cloud", senioridade:"ARQUITETO", duração_meses:78})
+CREATE (exp25:EXPERIENCIA {cargo:"Engenheiro de Plataforma", senioridade:"ESPECIALISTA", duração_meses:90})
+CREATE (exp26:EXPERIENCIA {cargo:"SysAdmin", senioridade:"JUNIOR", duração_meses:20})
+CREATE (exp27:EXPERIENCIA {cargo:"Engenheiro de SRE", senioridade:"PLENO", duração_meses:36})
+CREATE (exp28:EXPERIENCIA {cargo:"Analista de Redes", senioridade:"SENIOR", duração_meses:55})
+CREATE (exp29:EXPERIENCIA {cargo:"Especialista em Kubernetes", senioridade:"ESPECIALISTA", duração_meses:62})
+CREATE (exp30:EXPERIENCIA {cargo:"Engenheiro de Infraestrutura", senioridade:"PLENO", duração_meses:44})
+
+// EXPERIÊNCIAS DE DADOS E INTELIGÊNCIA ARTIFICIAL
+CREATE (exp31:EXPERIENCIA {cargo:"Cientista de Dados", senioridade:"PLENO", duração_meses:36})
+CREATE (exp32:EXPERIENCIA {cargo:"Cientista de Dados", senioridade:"JUNIOR", duração_meses:24})
+CREATE (exp33:EXPERIENCIA {cargo:"Engenheiro de Dados", senioridade:"SENIOR", duração_meses:66})
+CREATE (exp34:EXPERIENCIA {cargo:"Analista de BI", senioridade:"PLENO", duração_meses:48})
+CREATE (exp35:EXPERIENCIA {cargo:"Engenheiro de Machine Learning", senioridade:"ESPECIALISTA", duração_meses:84})
+CREATE (exp36:EXPERIENCIA {cargo:"DBA", senioridade:"PLENO", duração_meses:40})
+CREATE (exp37:EXPERIENCIA {cargo:"Arquiteto de Dados", senioridade:"ARQUITETO", duração_meses:90})
+CREATE (exp38:EXPERIENCIA {cargo:"Estatístico", senioridade:"PLENO", duração_meses:30})
+CREATE (exp39:EXPERIENCIA {cargo:"Engenheiro de ETL", senioridade:"SENIOR", duração_meses:70})
+CREATE (exp40:EXPERIENCIA {cargo:"Analista de Big Data", senioridade:"PLENO", duração_meses:50})
+
+// EXPERIÊNCIAS DE GESTÃO E PROJETOS
+CREATE (exp41:EXPERIENCIA {cargo:"Gerente de Projetos", senioridade:"GERENTE", duração_meses:80})
+CREATE (exp42:EXPERIENCIA {cargo:"Scrum Master", senioridade:"PLENO", duração_meses:36})
+CREATE (exp43:EXPERIENCIA {cargo:"Product Owner", senioridade:"GESTOR", duração_meses:55})
+CREATE (exp44:EXPERIENCIA {cargo:"Analista de Negócios", senioridade:"PLENO", duração_meses:30})
+CREATE (exp45:EXPERIENCIA {cargo:"Líder Técnico", senioridade:"ESPECIALISTA", duração_meses:110})
+CREATE (exp46:EXPERIENCIA {cargo:"Coordenador de Equipe", senioridade:"GESTOR", duração_meses:60})
+CREATE (exp47:EXPERIENCIA {cargo:"Gerente de Produto", senioridade:"GERENTE", duração_meses:42})
+CREATE (exp48:EXPERIENCIA {cargo:"Analista de PMO", senioridade:"JUNIOR", duração_meses:15})
+CREATE (exp49:EXPERIENCIA {cargo:"Consultor de TI", senioridade:"SENIOR", duração_meses:95})
+CREATE (exp50:EXPERIENCIA {cargo:"Analista de Requisitos", senioridade:"PLENO", duração_meses:28})
+
+// EXPERIÊNCIAS DE QA E SEGURANÇA
+CREATE (exp51:EXPERIENCIA {cargo:"QA Tester", senioridade:"ESTAGIARIO", duração_meses:12})
+CREATE (exp52:EXPERIENCIA {cargo:"QA Engineer", senioridade:"PLENO", duração_meses:36})
+CREATE (exp53:EXPERIENCIA {cargo:"Especialista em Testes Automatizados", senioridade:"ESPECIALISTA", duração_meses:75})
+CREATE (exp54:EXPERIENCIA {cargo:"Analista de Segurança", senioridade:"PLENO", duração_meses:40})
+CREATE (exp55:EXPERIENCIA {cargo:"Engenheiro de Cibersegurança", senioridade:"SENIOR", duração_meses:60})
+CREATE (exp56:EXPERIENCIA {cargo:"Ethical Hacker", senioridade:"ESPECIALISTA", duração_meses:58})
+CREATE (exp57:EXPERIENCIA {cargo:"Analista de Suporte N2", senioridade:"PLENO", duração_meses:30})
+CREATE (exp58:EXPERIENCIA {cargo:"Especialista em Compliance", senioridade:"ESPECIALISTA", duração_meses:65})
+CREATE (exp59:EXPERIENCIA {cargo:"Analista de Vulnerabilidades", senioridade:"JUNIOR", duração_meses:22})
+CREATE (exp60:EXPERIENCIA {cargo:"Consultor de Segurança", senioridade:"PLENO", duração_meses:47})
+
+// EXPERIÊNCIAS DIVERSAS (exp61 a exp100)
+CREATE (exp61:EXPERIENCIA {cargo:"Desenvolvedor Mobile (Android)", senioridade:"SENIOR", duração_meses:68})
+CREATE (exp62:EXPERIENCIA {cargo:"Desenvolvedor Mobile (Flutter)", senioridade:"PLENO", duração_meses:34})
+CREATE (exp63:EXPERIENCIA {cargo:"Engenheiro Front-End", senioridade:"ARQUITETO", duração_meses:90})
+CREATE (exp64:EXPERIENCIA {cargo:"Desenvolvedor PHP", senioridade:"PLENO", duração_meses:41})
+CREATE (exp65:EXPERIENCIA {cargo:"Desenvolvedor C#", senioridade:"SENIOR", duração_meses:77})
+CREATE (exp66:EXPERIENCIA {cargo:"Analista de Marketing", senioridade:"TRAINEE", duração_meses:16})
+CREATE (exp67:EXPERIENCIA {cargo:"Especialista em SEO", senioridade:"PLENO", duração_meses:39})
+CREATE (exp68:EXPERIENCIA {cargo:"Analista de Conteúdo", senioridade:"ESTAGIARIO", duração_meses:9})
+CREATE (exp69:EXPERIENCIA {cargo:"Gestor de Contas", senioridade:"GESTOR", duração_meses:50})
+CREATE (exp70:EXPERIENCIA {cargo:"Sales Engineer", senioridade:"PLENO", duração_meses:46})
+CREATE (exp71:EXPERIENCIA {cargo:"Técnico de Help Desk", senioridade:"JUNIOR", duração_meses:20})
+CREATE (exp72:EXPERIENCIA {cargo:"Supervisor de Equipe", senioridade:"GESTOR", duração_meses:58})
+CREATE (exp73:EXPERIENCIA {cargo:"Especialista em Infraestrutura", senioridade:"PLENO", duração_meses:31})
+CREATE (exp74:EXPERIENCIA {cargo:"Analista de Sistemas", senioridade:"SENIOR", duração_meses:70})
+CREATE (exp75:EXPERIENCIA {cargo:"Engenheiro de Automação", senioridade:"ESPECIALISTA", duração_meses:85})
+CREATE (exp76:EXPERIENCIA {cargo:"Analista de Crédito", senioridade:"PLENO", duração_meses:35})
+CREATE (exp77:EXPERIENCIA {cargo:"Desenvolvedor RPA", senioridade:"SENIOR", duração_meses:63})
+CREATE (exp78:EXPERIENCIA {cargo:"Analista de BI", senioridade:"JUNIOR", duração_meses:14})
+CREATE (exp79:EXPERIENCIA {cargo:"Gerente de Área", senioridade:"GERENTE", duração_meses:120})
+CREATE (exp80:EXPERIENCIA {cargo:"Analista de Dados", senioridade:"PLENO", duração_meses:43})
+CREATE (exp81:EXPERIENCIA {cargo:"Desenvolvedor Front-End", senioridade:"JUNIOR", duração_meses:21})
+CREATE (exp82:EXPERIENCIA {cargo:"Desenvolvedor Back-End", senioridade:"PLENO", duração_meses:39})
+CREATE (exp83:EXPERIENCIA {cargo:"Especialista em DevOps", senioridade:"ESPECIALISTA", duração_meses:76})
+CREATE (exp84:EXPERIENCIA {cargo:"UX/UI Designer", senioridade:"PLENO", duração_meses:37})
+CREATE (exp85:EXPERIENCIA {cargo:"Analista de Testes", senioridade:"ESTAGIARIO", duração_meses:17})
+CREATE (exp86:EXPERIENCIA {cargo:"Gerente de Contas", senioridade:"GERENTE", duração_meses:52})
+CREATE (exp87:EXPERIENCIA {cargo:"Engenheiro de Dados", senioridade:"PLENO", duração_meses:45})
+CREATE (exp88:EXPERIENCIA {cargo:"DBA Sênior", senioridade:"SENIOR", duração_meses:88})
+CREATE (exp89:EXPERIENCIA {cargo:"Product Manager", senioridade:"GESTOR", duração_meses:105})
+CREATE (exp90:EXPERIENCIA {cargo:"Desenvolvedor Python", senioridade:"PLENO", duração_meses:33})
+CREATE (exp91:EXPERIENCIA {cargo:"Analista de Suporte N3", senioridade:"SENIOR", duração_meses:61})
+CREATE (exp92:EXPERIENCIA {cargo:"Analista de Requisitos", senioridade:"PLENO", duração_meses:38})
+CREATE (exp93:EXPERIENCIA {cargo:"Especialista em QA", senioridade:"ESPECIALISTA", duração_meses:94})
+CREATE (exp94:EXPERIENCIA {cargo:"Engenheiro de Machine Learning", senioridade:"SENIOR", duração_meses:73})
+CREATE (exp95:EXPERIENCIA {cargo:"Analista de RH (TI)", senioridade:"PLENO", duração_meses:29})
+CREATE (exp96:EXPERIENCIA {cargo:"Consultor Estratégico", senioridade:"ESPECIALISTA", duração_meses:82})
+CREATE (exp97:EXPERIENCIA {cargo:"Desenvolvedor C++", senioridade:"PLENO", duração_meses:35})
+CREATE (exp98:EXPERIENCIA {cargo:"Analista de Cibersegurança", senioridade:"JUNIOR", duração_meses:19})
+CREATE (exp99:EXPERIENCIA {cargo:"Gerente de Engenharia", senioridade:"GERENTE", duração_meses:115})
+CREATE (exp100:EXPERIENCIA {cargo:"Arquiteto de Sistemas Legados", senioridade:"ARQUITETO", duração_meses:98})
+
+// CANDIDATO 1 - Desenvolvedor Sênior (8-9 competências)
+CREATE (cand1:CANDIDATO {nome:"João Silva", cargo:"Desenvolvedor Back-End", senioridade:"SENIOR", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-99999-9999", email:"joao.silva@email.com"})
+CREATE (cand1)-[:FORMADO_EM]->(g3)
+CREATE (cand1)-[:TRABALHOU_EM]->(exp8)
+CREATE (cand1)-[:TRABALHOU_EM]->(exp1)
+CREATE (cand1)-[:TRABALHOU_EM]->(exp2)
+CREATE (cand1)-[:TRABALHOU_EM]->(exp3)
+CREATE (cand1)-[:HÁBIL_EM {peso:8}]->(comp1)
+CREATE (cand1)-[:HÁBIL_EM {peso:7}]->(comp4)
+CREATE (cand1)-[:HÁBIL_EM {peso:6}]->(comp16)
+CREATE (cand1)-[:HÁBIL_EM {peso:9}]->(comp20)
+CREATE (cand1)-[:HÁBIL_EM {peso:8}]->(comp9)
+CREATE (cand1)-[:HÁBIL_EM {peso:7}]->(comp58)
+CREATE (cand1)-[:HÁBIL_EM {peso:6}]->(comp59)
+CREATE (cand1)-[:HÁBIL_EM {peso:8}]->(comp68)
+
+// CANDIDATO 2 - Cientista de Dados Pleno (6-7 competências)
+CREATE (cand2:CANDIDATO {nome:"Maria Santos", cargo:"Cientista de Dados", senioridade:"PLENO", país:"Brasil", cidade:"Rio de Janeiro", telefone:"+55-21-98888-8888", email:"maria.santos@email.com"})
+CREATE (cand2)-[:FORMADO_EM]->(g23)
+CREATE (cand2)-[:FORMADO_EM]->(m12)
+CREATE (cand2)-[:TRABALHOU_EM]->(exp32)
+CREATE (cand2)-[:TRABALHOU_EM]->(exp31)
+CREATE (cand2)-[:TRABALHOU_EM]->(exp35)
+CREATE (cand2)-[:HÁBIL_EM {peso:9}]->(comp2)
+CREATE (cand2)-[:HÁBIL_EM {peso:8}]->(comp6)
+CREATE (cand2)-[:HÁBIL_EM {peso:7}]->(comp33)
+CREATE (cand2)-[:HÁBIL_EM {peso:6}]->(comp34)
+CREATE (cand2)-[:HÁBIL_EM {peso:8}]->(comp4)
+CREATE (cand2)-[:HÁBIL_EM {peso:7}]->(comp52)
+
+// CANDIDATO 3 - Arquiteto de Sistemas (8-9 competências)
+CREATE (cand3:CANDIDATO {nome:"Carlos Oliveira", cargo:"Arquiteto de Sistemas", senioridade:"ARQUITETO", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-97777-7777", email:"carlos.oliveira@email.com"})
+CREATE (cand3)-[:FORMADO_EM]->(g22)
+CREATE (cand3)-[:FORMADO_EM]->(m4)
+CREATE (cand3)-[:FORMADO_EM]->(d3)
+CREATE (cand3)-[:TRABALHOU_EM]->(exp7)
+CREATE (cand3)-[:TRABALHOU_EM]->(exp3)
+CREATE (cand3)-[:TRABALHOU_EM]->(exp4)
+CREATE (cand3)-[:TRABALHOU_EM]->(exp100)
+CREATE (cand3)-[:HÁBIL_EM {peso:10}]->(comp17)
+CREATE (cand3)-[:HÁBIL_EM {peso:9}]->(comp1)
+CREATE (cand3)-[:HÁBIL_EM {peso:8}]->(comp59)
+CREATE (cand3)-[:HÁBIL_EM {peso:7}]->(comp60)
+CREATE (cand3)-[:HÁBIL_EM {peso:9}]->(comp20)
+CREATE (cand3)-[:HÁBIL_EM {peso:8}]->(comp12)
+CREATE (cand3)-[:HÁBIL_EM {peso:7}]->(comp5)
+
+// CANDIDATO 4 - UX Designer Pleno (6-7 competências)
+CREATE (cand4:CANDIDATO {nome:"Ana Costa", cargo:"UX Designer", senioridade:"PLENO", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-96666-6666", email:"ana.costa@email.com"})
+CREATE (cand4)-[:FORMADO_EM]->(g2)
+CREATE (cand4)-[:TRABALHOU_EM]->(exp12)
+CREATE (cand4)-[:TRABALHOU_EM]->(exp14)
+CREATE (cand4)-[:TRABALHOU_EM]->(exp13)
+CREATE (cand4)-[:HÁBIL_EM {peso:8}]->(comp8)
+CREATE (cand4)-[:HÁBIL_EM {peso:9}]->(comp29)
+CREATE (cand4)-[:HÁBIL_EM {peso:7}]->(comp30)
+CREATE (cand4)-[:HÁBIL_EM {peso:6}]->(comp27)
+CREATE (cand4)-[:HÁBIL_EM {peso:7}]->(comp28)
+CREATE (cand4)-[:HÁBIL_EM {peso:6}]->(comp78)
+
+// CANDIDATO 5 - Engenheiro de DevOps Pleno (6-7 competências)
+CREATE (cand5:CANDIDATO {nome:"Pedro Almeida", cargo:"DevOps Engineer", senioridade:"PLENO", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-95555-5555", email:"pedro.almeida@email.com"})
+CREATE (cand5)-[:FORMADO_EM]->(g15)
+CREATE (cand5)-[:FORMADO_EM]->(m75)
+CREATE (cand5)-[:TRABALHOU_EM]->(exp26)
+CREATE (cand5)-[:TRABALHOU_EM]->(exp21)
+CREATE (cand5)-[:TRABALHOU_EM]->(exp22)
+CREATE (cand5)-[:TRABALHOU_EM]->(exp83)
+CREATE (cand5)-[:HÁBIL_EM {peso:9}]->(comp11)
+CREATE (cand5)-[:HÁBIL_EM {peso:8}]->(comp7)
+CREATE (cand5)-[:HÁBIL_EM {peso:7}]->(comp12)
+CREATE (cand5)-[:HÁBIL_EM {peso:8}]->(comp5)
+CREATE (cand5)-[:HÁBIL_EM {peso:7}]->(comp56)
+CREATE (cand5)-[:HÁBIL_EM {peso:6}]->(comp57)
+
+// CANDIDATO 6 - Especialista em IA (8-9 competências)
+CREATE (cand6:CANDIDATO {nome:"Fernanda Lima", cargo:"Especialista em IA", senioridade:"ESPECIALISTA", país:"Brasil", cidade:"Campinas", telefone:"+55-19-94444-4444", email:"fernanda.lima@email.com"})
+CREATE (cand6)-[:FORMADO_EM]->(g117)
+CREATE (cand6)-[:FORMADO_EM]->(m80)
+CREATE (cand6)-[:FORMADO_EM]->(d2)
+CREATE (cand6)-[:TRABALHOU_EM]->(exp32)
+CREATE (cand6)-[:TRABALHOU_EM]->(exp35)
+CREATE (cand6)-[:TRABALHOU_EM]->(exp94)
+CREATE (cand6)-[:TRABALHOU_EM]->(exp96)
+CREATE (cand6)-[:HÁBIL_EM {peso:10}]->(comp6)
+CREATE (cand6)-[:HÁBIL_EM {peso:9}]->(comp34)
+CREATE (cand6)-[:HÁBIL_EM {peso:8}]->(comp35)
+CREATE (cand6)-[:HÁBIL_EM {peso:7}]->(comp2)
+CREATE (cand6)-[:HÁBIL_EM {peso:9}]->(comp33)
+CREATE (cand6)-[:HÁBIL_EM {peso:8}]->(comp52)
+CREATE (cand6)-[:HÁBIL_EM {peso:7}]->(comp66)
+
+// CANDIDATO 7 - Product Manager (6-7 competências)
+CREATE (cand7:CANDIDATO {nome:"Ricardo Souza", cargo:"Product Manager", senioridade:"GESTOR", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-93333-3333", email:"ricardo.souza@email.com"})
+CREATE (cand7)-[:FORMADO_EM]->(g36)
+CREATE (cand7)-[:FORMADO_EM]->(m24)
+CREATE (cand7)-[:TRABALHOU_EM]->(exp44)
+CREATE (cand7)-[:TRABALHOU_EM]->(exp43)
+CREATE (cand7)-[:TRABALHOU_EM]->(exp89)
+CREATE (cand7)-[:HÁBIL_EM {peso:8}]->(comp9)
+CREATE (cand7)-[:HÁBIL_EM {peso:7}]->(comp44)
+CREATE (cand7)-[:HÁBIL_EM {peso:6}]->(comp76)
+CREATE (cand7)-[:HÁBIL_EM {peso:5}]->(comp78)
+CREATE (cand7)-[:HÁBIL_EM {peso:7}]->(comp10)
+CREATE (cand7)-[:HÁBIL_EM {peso:6}]->(comp75)
+
+// CANDIDATO 8 - Desenvolvedor Full Stack Júnior (3-4 competências)
+CREATE (cand8:CANDIDATO {nome:"Juliana Pereira", cargo:"Desenvolvedor Full Stack", senioridade:"JUNIOR", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-92222-2222", email:"juliana.pereira@email.com"})
+CREATE (cand8)-[:FORMADO_EM]->(g14)
+CREATE (cand8)-[:TRABALHOU_EM]->(exp17)
+CREATE (cand8)-[:TRABALHOU_EM]->(exp8)
+CREATE (cand8)-[:HÁBIL_EM {peso:6}]->(comp3)
+CREATE (cand8)-[:HÁBIL_EM {peso:5}]->(comp16)
+CREATE (cand8)-[:HÁBIL_EM {peso:4}]->(comp27)
+CREATE (cand8)-[:HÁBIL_EM {peso:3}]->(comp4)
+
+// CANDIDATO 9 - Engenheiro de Dados Sênior (8-9 competências)
+CREATE (cand9:CANDIDATO {nome:"Roberto Martins", cargo:"Engenheiro de Dados", senioridade:"SENIOR", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-91111-1111", email:"roberto.martins@email.com"})
+CREATE (cand9)-[:FORMADO_EM]->(g44)
+CREATE (cand9)-[:FORMADO_EM]->(m21)
+CREATE (cand9)-[:TRABALHOU_EM]->(exp36)
+CREATE (cand9)-[:TRABALHOU_EM]->(exp39)
+CREATE (cand9)-[:TRABALHOU_EM]->(exp33)
+CREATE (cand9)-[:TRABALHOU_EM]->(exp37)
+CREATE (cand9)-[:HÁBIL_EM {peso:9}]->(comp36)
+CREATE (cand9)-[:HÁBIL_EM {peso:8}]->(comp31)
+CREATE (cand9)-[:HÁBIL_EM {peso:7}]->(comp37)
+CREATE (cand9)-[:HÁBIL_EM {peso:8}]->(comp4)
+CREATE (cand9)-[:HÁBIL_EM {peso:7}]->(comp66)
+CREATE (cand9)-[:HÁBIL_EM {peso:8}]->(comp64)
+CREATE (cand9)-[:HÁBIL_EM {peso:7}]->(comp38)
+
+// CANDIDATO 10 - Especialista em Segurança (8-9 competências)
+CREATE (cand10:CANDIDATO {nome:"Patrícia Rocha", cargo:"Especialista em Segurança", senioridade:"ESPECIALISTA", país:"Brasil", cidade:"Brasília", telefone:"+55-61-90000-0000", email:"patricia.rocha@email.com"})
+CREATE (cand10)-[:FORMADO_EM]->(g17)
+CREATE (cand10)-[:FORMADO_EM]->(m88)
+CREATE (cand10)-[:FORMADO_EM]->(d54)
+CREATE (cand10)-[:TRABALHOU_EM]->(exp59)
+CREATE (cand10)-[:TRABALHOU_EM]->(exp54)
+CREATE (cand10)-[:TRABALHOU_EM]->(exp55)
+CREATE (cand10)-[:TRABALHOU_EM]->(exp56)
+CREATE (cand10)-[:TRABALHOU_EM]->(exp98)
+CREATE (cand10)-[:HÁBIL_EM {peso:10}]->(comp42)
+CREATE (cand10)-[:HÁBIL_EM {peso:9}]->(comp43)
+CREATE (cand10)-[:HÁBIL_EM {peso:8}]->(comp47)
+CREATE (cand10)-[:HÁBIL_EM {peso:7}]->(comp74)
+CREATE (cand10)-[:HÁBIL_EM {peso:9}]->(comp5)
+CREATE (cand10)-[:HÁBIL_EM {peso:8}]->(comp57)
+
+// Continuação para os candidatos 11-50 seguindo o mesmo padrão...
+
+// CANDIDATO 11 - Desenvolvedor Front-End Sênior (8-9 competências)
+CREATE (c11:CANDIDATO {nome:"Lucas Ferreira", cargo:"Desenvolvedor Front-End", senioridade:"SENIOR", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-98888-7777", email:"lucas.ferreira@email.com"})
+CREATE (c11)-[:FORMADO_EM]->(g46)
+CREATE (c11)-[:TRABALHOU_EM]->(exp81)
+CREATE (c11)-[:TRABALHOU_EM]->(exp11)
+CREATE (c11)-[:TRABALHOU_EM]->(exp18)
+CREATE (c11)-[:HÁBIL_EM {nivel:9}]->(comp3)
+CREATE (c11)-[:HÁBIL_EM {nivel:8}]->(comp25)
+CREATE (c11)-[:HÁBIL_EM {nivel:7}]->(comp27)
+CREATE (c11)-[:HÁBIL_EM {nivel:8}]->(comp23)
+CREATE (c11)-[:HÁBIL_EM {nivel:7}]->(comp26)
+CREATE (c11)-[:HÁBIL_EM {nivel:6}]->(comp67)
+CREATE (c11)-[:HÁBIL_EM {nivel:8}]->(comp58)
+
+// CANDIDATO 12 - Analista de Dados Pleno (6-7 competências)
+CREATE (c12:CANDIDATO {nome:"Camila Rocha", cargo:"Analista de Dados", senioridade:"PLENO", país:"Brasil", cidade:"Rio de Janeiro", telefone:"+55-21-97777-6666", email:"camila.rocha@email.com"})
+CREATE (c12)-[:FORMADO_EM]->(g115)
+CREATE (c12)-[:TRABALHOU_EM]->(exp78)
+CREATE (c12)-[:TRABALHOU_EM]->(exp80)
+CREATE (c12)-[:HÁBIL_EM {nivel:8}]->(comp2)
+CREATE (c12)-[:HÁBIL_EM {nivel:7}]->(comp4)
+CREATE (c12)-[:HÁBIL_EM {nivel:6}]->(comp33)
+CREATE (c12)-[:HÁBIL_EM {nivel:7}]->(comp38)
+CREATE (c12)-[:HÁBIL_EM {nivel:6}]->(comp65)
+CREATE (c12)-[:HÁBIL_EM {nivel:5}]->(comp52)
+
+// CANDIDATO 13 - Engenheiro de Machine Learning Especialista (8-9 competências)
+CREATE (c13:CANDIDATO {nome:"Rafael Santos", cargo:"Engenheiro de ML", senioridade:"ESPECIALISTA", país:"Brasil", cidade:"Campinas", telefone:"+55-19-96666-5555", email:"rafael.santos@email.com"})
+CREATE (c13)-[:FORMADO_EM]->(g117)
+CREATE (c13)-[:FORMADO_EM]->(m14)
+CREATE (c13)-[:FORMADO_EM]->(d5)
+CREATE (c13)-[:TRABALHOU_EM]->(exp32)
+CREATE (c13)-[:TRABALHOU_EM]->(exp35)
+CREATE (c13)-[:TRABALHOU_EM]->(exp94)
+CREATE (c13)-[:HÁBIL_EM {nivel:10}]->(comp34)
+CREATE (c13)-[:HÁBIL_EM {nivel:9}]->(comp35)
+CREATE (c13)-[:HÁBIL_EM {nivel:8}]->(comp6)
+CREATE (c13)-[:HÁBIL_EM {nivel:9}]->(comp2)
+CREATE (c13)-[:HÁBIL_EM {nivel:8}]->(comp33)
+CREATE (c13)-[:HÁBIL_EM {nivel:7}]->(comp66)
+
+// CANDIDATO 14 - Product Owner Sênior (6-7 competências)
+CREATE (c14:CANDIDATO {nome:"Isabela Martins", cargo:"Product Owner", senioridade:"GESTOR", país:"Brasil", cidade:"Belo Horizonte", telefone:"+55-31-95555-4444", email:"isabela.martins@email.com"})
+CREATE (c14)-[:FORMADO_EM]->(g36)
+CREATE (c14)-[:FORMADO_EM]->(m29)
+CREATE (c14)-[:TRABALHOU_EM]->(exp44)
+CREATE (c14)-[:TRABALHOU_EM]->(exp43)
+CREATE (c14)-[:TRABALHOU_EM]->(exp89)
+CREATE (c14)-[:HÁBIL_EM {nivel:9}]->(comp9)
+CREATE (c14)-[:HÁBIL_EM {nivel:8}]->(comp76)
+CREATE (c14)-[:HÁBIL_EM {nivel:7}]->(comp10)
+CREATE (c14)-[:HÁBIL_EM {nivel:8}]->(comp44)
+CREATE (c14)-[:HÁBIL_EM {nivel:7}]->(comp78)
+CREATE (c14)-[:HÁBIL_EM {nivel:6}]->(comp75)
+
+// CANDIDATO 15 - DevOps Engineer Júnior (3-4 competências)
+CREATE (c15:CANDIDATO {nome:"Diego Costa", cargo:"DevOps Engineer", senioridade:"JUNIOR", país:"Brasil", cidade:"Porto Alegre", telefone:"+55-51-94444-3333", email:"diego.costa@email.com"})
+CREATE (c15)-[:FORMADO_EM]->(g166)
+CREATE (c15)-[:TRABALHOU_EM]->(exp26)
+CREATE (c15)-[:TRABALHOU_EM]->(exp21)
+CREATE (c15)-[:HÁBIL_EM {nivel:7}]->(comp11)
+CREATE (c15)-[:HÁBIL_EM {nivel:6}]->(comp7)
+CREATE (c15)-[:HÁBIL_EM {nivel:5}]->(comp12)
+CREATE (c15)-[:HÁBIL_EM {nivel:4}]->(comp56)
+
+// CANDIDATO 16 - Arquiteto de Dados Sênior (8-9 competências)
+CREATE (c16:CANDIDATO {nome:"Vanessa Lima", cargo:"Arquiteto de Dados", senioridade:"ARQUITETO", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-93333-2222", email:"vanessa.lima@email.com"})
+CREATE (c16)-[:FORMADO_EM]->(g44)
+CREATE (c16)-[:FORMADO_EM]->(m55)
+CREATE (c16)-[:TRABALHOU_EM]->(exp36)
+CREATE (c16)-[:TRABALHOU_EM]->(exp39)
+CREATE (c16)-[:TRABALHOU_EM]->(exp33)
+CREATE (c16)-[:TRABALHOU_EM]->(exp37)
+CREATE (c16)-[:HÁBIL_EM {nivel:9}]->(comp64)
+CREATE (c16)-[:HÁBIL_EM {nivel:8}]->(comp38)
+CREATE (c16)-[:HÁBIL_EM {nivel:8}]->(comp37)
+CREATE (c16)-[:HÁBIL_EM {nivel:7}]->(comp31)
+CREATE (c16)-[:HÁBIL_EM {nivel:8}]->(comp36)
+CREATE (c16)-[:HÁBIL_EM {nivel:7}]->(comp66)
+CREATE (c16)-[:HÁBIL_EM {nivel:8}]->(comp4)
+
+// CANDIDATO 17 - Desenvolvedor Mobile Pleno (6-7 competências)
+CREATE (c17:CANDIDATO {nome:"Thiago Oliveira", cargo:"Desenvolvedor Mobile", senioridade:"PLENO", país:"Brasil", cidade:"Recife", telefone:"+55-81-92222-1111", email:"thiago.oliveira@email.com"})
+CREATE (c17)-[:FORMADO_EM]->(g16)
+CREATE (c17)-[:TRABALHOU_EM]->(exp20)
+CREATE (c17)-[:TRABALHOU_EM]->(exp61)
+CREATE (c17)-[:TRABALHOU_EM]->(exp62)
+CREATE (c17)-[:HÁBIL_EM {nivel:8}]->(comp3)
+CREATE (c17)-[:HÁBIL_EM {nivel:7}]->(comp25)
+CREATE (c17)-[:HÁBIL_EM {nivel:6}]->(comp16)
+CREATE (c17)-[:HÁBIL_EM {nivel:7}]->(comp27)
+CREATE (c17)-[:HÁBIL_EM {nivel:6}]->(comp58)
+CREATE (c17)-[:HÁBIL_EM {nivel:5}]->(comp68)
+
+// CANDIDATO 18 - Cientista de Dados Pleno (6-7 competências)
+CREATE (c18:CANDIDATO {nome:"Patrícia Silva", cargo:"Cientista de Dados", senioridade:"PLENO", país:"Brasil", cidade:"Brasília", telefone:"+55-61-91111-0000", email:"patricia.silva@email.com"})
+CREATE (c18)-[:FORMADO_EM]->(g23)
+CREATE (c18)-[:FORMADO_EM]->(m57)
+CREATE (c18)-[:TRABALHOU_EM]->(exp32)
+CREATE (c18)-[:TRABALHOU_EM]->(exp31)
+CREATE (c18)-[:HÁBIL_EM {nivel:8}]->(comp2)
+CREATE (c18)-[:HÁBIL_EM {nivel:7}]->(comp33)
+CREATE (c18)-[:HÁBIL_EM {nivel:6}]->(comp52)
+CREATE (c18)-[:HÁBIL_EM {nivel:7}]->(comp6)
+CREATE (c18)-[:HÁBIL_EM {nivel:6}]->(comp4)
+CREATE (c18)-[:HÁBIL_EM {nivel:5}]->(comp38)
+
+// CANDIDATO 19 - Engenheiro de Software Sênior (8-9 competências)
+CREATE (c19:CANDIDATO {nome:"Marcos Santos", cargo:"Engenheiro de Software", senioridade:"SENIOR", país:"Brasil", cidade:"Florianópolis", telefone:"+55-48-90000-9999", email:"marcos.santos@email.com"})
+CREATE (c19)-[:FORMADO_EM]->(g3)
+CREATE (c19)-[:TRABALHOU_EM]->(exp8)
+CREATE (c19)-[:TRABALHOU_EM]->(exp7)
+CREATE (c19)-[:TRABALHOU_EM]->(exp3)
+CREATE (c19)-[:HÁBIL_EM {nivel:9}]->(comp1)
+CREATE (c19)-[:HÁBIL_EM {nivel:8}]->(comp20)
+CREATE (c19)-[:HÁBIL_EM {nivel:7}]->(comp17)
+CREATE (c19)-[:HÁBIL_EM {nivel:8}]->(comp59)
+CREATE (c19)-[:HÁBIL_EM {nivel:7}]->(comp60)
+CREATE (c19)-[:HÁBIL_EM {nivel:8}]->(comp9)
+CREATE (c19)-[:HÁBIL_EM {nivel:7}]->(comp68)
+
+// CANDIDATO 20 - UX/UI Designer Pleno (6-7 competências)
+CREATE (c20:CANDIDATO {nome:"Amanda Costa", cargo:"UX/UI Designer", senioridade:"PLENO", país:"Brasil", cidade:"Salvador", telefone:"+55-71-98888-8888", email:"amanda.costa@email.com"})
+CREATE (c20)-[:FORMADO_EM]->(g27)
+CREATE (c20)-[:TRABALHOU_EM]->(exp12)
+CREATE (c20)-[:TRABALHOU_EM]->(exp84)
+CREATE (c20)-[:HÁBIL_EM {nivel:8}]->(comp8)
+CREATE (c20)-[:HÁBIL_EM {nivel:7}]->(comp29)
+CREATE (c20)-[:HÁBIL_EM {nivel:6}]->(comp30)
+CREATE (c20)-[:HÁBIL_EM {nivel:7}]->(comp27)
+CREATE (c20)-[:HÁBIL_EM {nivel:6}]->(comp28)
+CREATE (c20)-[:HÁBIL_EM {nivel:5}]->(comp78)
+
+// CANDIDATO 21 - Especialista em Cloud (8-9 competências)
+CREATE (c21:CANDIDATO {nome:"Bruno Alves", cargo:"Especialista em Cloud", senioridade:"ESPECIALISTA", país:"Brasil", cidade:"Remoto", telefone:"+55-11-97777-7777", email:"bruno.alves@email.com"})
+CREATE (c21)-[:FORMADO_EM]->(g21)
+CREATE (c21)-[:FORMADO_EM]->(m156)
+CREATE (c21)-[:TRABALHOU_EM]->(exp23)
+CREATE (c21)-[:TRABALHOU_EM]->(exp24)
+CREATE (c21)-[:TRABALHOU_EM]->(exp25)
+CREATE (c21)-[:HÁBIL_EM {nivel:9}]->(comp5)
+CREATE (c21)-[:HÁBIL_EM {nivel:8}]->(comp69)
+CREATE (c21)-[:HÁBIL_EM {nivel:7}]->(comp70)
+CREATE (c21)-[:HÁBIL_EM {nivel:8}]->(comp11)
+CREATE (c21)-[:HÁBIL_EM {nivel:7}]->(comp12)
+CREATE (c21)-[:HÁBIL_EM {nivel:8}]->(comp13)
+CREATE (c21)-[:HÁBIL_EM {nivel:7}]->(comp57)
+
+// CANDIDATO 22 - QA Engineer Sênior (8-9 competências)
+CREATE (c22:CANDIDATO {nome:"Carla Mendes", cargo:"QA Engineer", senioridade:"SENIOR", país:"Brasil", cidade:"Curitiba", telefone:"+55-41-96666-6666", email:"carla.mendes@email.com"})
+CREATE (c22)-[:FORMADO_EM]->(g14)
+CREATE (c22)-[:TRABALHOU_EM]->(exp51)
+CREATE (c22)-[:TRABALHOU_EM]->(exp52)
+CREATE (c22)-[:TRABALHOU_EM]->(exp53)
+CREATE (c22)-[:HÁBIL_EM {nivel:9}]->(comp39)
+CREATE (c22)-[:HÁBIL_EM {nivel:8}]->(comp40)
+CREATE (c22)-[:HÁBIL_EM {nivel:7}]->(comp41)
+CREATE (c22)-[:HÁBIL_EM {nivel:8}]->(comp68)
+CREATE (c22)-[:HÁBIL_EM {nivel:7}]->(comp4)
+CREATE (c22)-[:HÁBIL_EM {nivel:8}]->(comp58)
+CREATE (c22)-[:HÁBIL_EM {nivel:7}]->(comp9)
+
+// CANDIDATO 23 - Desenvolvedor Back-End Júnior (3-4 competências)
+CREATE (c23:CANDIDATO {nome:"Felipe Rodrigues", cargo:"Desenvolvedor Back-End", senioridade:"JUNIOR", país:"Brasil", cidade:"Fortaleza", telefone:"+55-85-95555-5555", email:"felipe.rodrigues@email.com"})
+CREATE (c23)-[:FORMADO_EM]->(g136)
+CREATE (c23)-[:TRABALHOU_EM]->(exp1)
+CREATE (c23)-[:HÁBIL_EM {nivel:6}]->(comp1)
+CREATE (c23)-[:HÁBIL_EM {nivel:5}]->(comp4)
+CREATE (c23)-[:HÁBIL_EM {nivel:4}]->(comp16)
+CREATE (c23)-[:HÁBIL_EM {nivel:3}]->(comp58)
+
+// CANDIDATO 24 - Gerente de TI (8-9 competências)
+CREATE (c24:CANDIDATO {nome:"Daniela Lima", cargo:"Gerente de TI", senioridade:"GERENTE", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-94444-4444", email:"daniela.lima@email.com"})
+CREATE (c24)-[:FORMADO_EM]->(g97)
+CREATE (c24)-[:FORMADO_EM]->(m101)
+CREATE (c24)-[:TRABALHOU_EM]->(exp42)
+CREATE (c24)-[:TRABALHOU_EM]->(exp41)
+CREATE (c24)-[:TRABALHOU_EM]->(exp79)
+CREATE (c24)-[:HÁBIL_EM {nivel:9}]->(comp44)
+CREATE (c24)-[:HÁBIL_EM {nivel:8}]->(comp10)
+CREATE (c24)-[:HÁBIL_EM {nivel:7}]->(comp75)
+CREATE (c24)-[:HÁBIL_EM {nivel:8}]->(comp9)
+CREATE (c24)-[:HÁBIL_EM {nivel:7}]->(comp76)
+CREATE (c24)-[:HÁBIL_EM {nivel:8}]->(comp78)
+CREATE (c24)-[:HÁBIL_EM {nivel:7}]->(comp79)
+
+// CANDIDATO 25 - Engenheiro de Dados Pleno (6-7 competências)
+CREATE (c25:CANDIDATO {nome:"Roberto Silva", cargo:"Engenheiro de Dados", senioridade:"PLENO", país:"Brasil", cidade:"Rio de Janeiro", telefone:"+55-21-93333-3333", email:"roberto.silva@email.com"})
+CREATE (c25)-[:FORMADO_EM]->(g78)
+CREATE (c25)-[:TRABALHOU_EM]->(exp36)
+CREATE (c25)-[:TRABALHOU_EM]->(exp87)
+CREATE (c25)-[:HÁBIL_EM {nivel:8}]->(comp31)
+CREATE (c25)-[:HÁBIL_EM {nivel:7}]->(comp36)
+CREATE (c25)-[:HÁBIL_EM {nivel:6}]->(comp66)
+CREATE (c25)-[:HÁBIL_EM {nivel:7}]->(comp4)
+CREATE (c25)-[:HÁBIL_EM {nivel:6}]->(comp37)
+CREATE (c25)-[:HÁBIL_EM {nivel:5}]->(comp65)
+
+// CANDIDATO 26 - Desenvolvedor Full Stack Sênior (8-9 competências)
+CREATE (c26:CANDIDATO {nome:"Larissa Santos", cargo:"Desenvolvedor Full Stack", senioridade:"SENIOR", país:"Brasil", cidade:"Belo Horizonte", telefone:"+55-31-92222-2222", email:"larissa.santos@email.com"})
+CREATE (c26)-[:FORMADO_EM]->(g47)
+CREATE (c26)-[:TRABALHOU_EM]->(exp8)
+CREATE (c26)-[:TRABALHOU_EM]->(exp9)
+CREATE (c26)-[:TRABALHOU_EM]->(exp63)
+CREATE (c26)-[:HÁBIL_EM {nivel:9}]->(comp3)
+CREATE (c26)-[:HÁBIL_EM {nivel:8}]->(comp16)
+CREATE (c26)-[:HÁBIL_EM {nivel:7}]->(comp4)
+CREATE (c26)-[:HÁBIL_EM {nivel:8}]->(comp25)
+CREATE (c26)-[:HÁBIL_EM {nivel:7}]->(comp27)
+CREATE (c26)-[:HÁBIL_EM {nivel:8}]->(comp20)
+CREATE (c26)-[:HÁBIL_EM {nivel:7}]->(comp58)
+
+// CANDIDATO 27 - Analista de Segurança Júnior (3-4 competências)
+CREATE (c27:CANDIDATO {nome:"Vinícius Costa", cargo:"Analista de Segurança", senioridade:"JUNIOR", país:"Brasil", cidade:"Porto Alegre", telefone:"+55-51-91111-1111", email:"vinicius.costa@email.com"})
+CREATE (c27)-[:FORMADO_EM]->(g161)
+CREATE (c27)-[:TRABALHOU_EM]->(exp59)
+CREATE (c27)-[:TRABALHOU_EM]->(exp98)
+CREATE (c27)-[:HÁBIL_EM {nivel:7}]->(comp42)
+CREATE (c27)-[:HÁBIL_EM {nivel:6}]->(comp43)
+CREATE (c27)-[:HÁBIL_EM {nivel:5}]->(comp74)
+CREATE (c27)-[:HÁBIL_EM {nivel:4}]->(comp57)
+
+// CANDIDATO 28 - Product Manager Sênior (8-9 competências)
+CREATE (c28:CANDIDATO {nome:"Tatiane Almeida", cargo:"Product Manager", senioridade:"GESTOR", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-90000-0000", email:"tatiane.almeida@email.com"})
+CREATE (c28)-[:FORMADO_EM]->(g36)
+CREATE (c28)-[:FORMADO_EM]->(m95)
+CREATE (c28)-[:TRABALHOU_EM]->(exp44)
+CREATE (c28)-[:TRABALHOU_EM]->(exp47)
+CREATE (c28)-[:TRABALHOU_EM]->(exp89)
+CREATE (c28)-[:HÁBIL_EM {nivel:9}]->(comp76)
+CREATE (c28)-[:HÁBIL_EM {nivel:8}]->(comp9)
+CREATE (c28)-[:HÁBIL_EM {nivel:7}]->(comp10)
+CREATE (c28)-[:HÁBIL_EM {nivel:8}]->(comp44)
+CREATE (c28)-[:HÁBIL_EM {nivel:7}]->(comp75)
+CREATE (c28)-[:HÁBIL_EM {nivel:8}]->(comp78)
+CREATE (c28)-[:HÁBIL_EM {nivel:7}]->(comp79)
+
+// CANDIDATO 29 - DevOps Specialist (8-9 competências)
+CREATE (c29:CANDIDATO {nome:"Gustavo Pereira", cargo:"DevOps Specialist", senioridade:"ESPECIALISTA", país:"Brasil", cidade:"Remoto", telefone:"+55-11-98888-9999", email:"gustavo.pereira@email.com"})
+CREATE (c29)-[:FORMADO_EM]->(g15)
+CREATE (c29)-[:FORMADO_EM]->(m157)
+CREATE (c29)-[:TRABALHOU_EM]->(exp21)
+CREATE (c29)-[:TRABALHOU_EM]->(exp22)
+CREATE (c29)-[:TRABALHOU_EM]->(exp83)
+CREATE (c29)-[:HÁBIL_EM {nivel:9}]->(comp11)
+CREATE (c29)-[:HÁBIL_EM {nivel:8}]->(comp7)
+CREATE (c29)-[:HÁBIL_EM {nivel:8}]->(comp12)
+CREATE (c29)-[:HÁBIL_EM {nivel:7}]->(comp5)
+CREATE (c29)-[:HÁBIL_EM {nivel:8}]->(comp56)
+CREATE (c29)-[:HÁBIL_EM {nivel:7}]->(comp57)
+CREATE (c29)-[:HÁBIL_EM {nivel:8}]->(comp13)
+
+// CANDIDATO 30 - Desenvolvedor Python Pleno (6-7 competências)
+CREATE (c30:CANDIDATO {nome:"Renata Oliveira", cargo:"Desenvolvedor Python", senioridade:"PLENO", país:"Brasil", cidade:"Recife", telefone:"+55-81-97777-8888", email:"renata.oliveira@email.com"})
+CREATE (c30)-[:FORMADO_EM]->(g105)
+CREATE (c30)-[:TRABALHOU_EM]->(exp6)
+CREATE (c30)-[:TRABALHOU_EM]->(exp90)
+CREATE (c30)-[:HÁBIL_EM {nivel:8}]->(comp2)
+CREATE (c30)-[:HÁBIL_EM {nivel:7}]->(comp20)
+CREATE (c30)-[:HÁBIL_EM {nivel:6}]->(comp4)
+CREATE (c30)-[:HÁBIL_EM {nivel:7}]->(comp58)
+CREATE (c30)-[:HÁBIL_EM {nivel:6}]->(comp59)
+CREATE (c30)-[:HÁBIL_EM {nivel:5}]->(comp68)
+
+// CANDIDATO 31 - Arquiteto de Software (8-9 competências)
+CREATE (c31:CANDIDATO {nome:"Sérgio Martins", cargo:"Arquiteto de Software", senioridade:"ARQUITETO", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-96666-7777", email:"sergio.martins@email.com"})
+CREATE (c31)-[:FORMADO_EM]->(g107)
+CREATE (c31)-[:FORMADO_EM]->(m4)
+CREATE (c31)-[:TRABALHOU_EM]->(exp7)
+CREATE (c31)-[:TRABALHOU_EM]->(exp4)
+CREATE (c31)-[:TRABALHOU_EM]->(exp100)
+CREATE (c31)-[:HÁBIL_EM {nivel:10}]->(comp17)
+CREATE (c31)-[:HÁBIL_EM {nivel:9}]->(comp59)
+CREATE (c31)-[:HÁBIL_EM {nivel:8}]->(comp60)
+CREATE (c31)-[:HÁBIL_EM {nivel:9}]->(comp1)
+CREATE (c31)-[:HÁBIL_EM {nivel:8}]->(comp20)
+CREATE (c31)-[:HÁBIL_EM {nivel:7}]->(comp12)
+CREATE (c31)-[:HÁBIL_EM {nivel:8}]->(comp5)
+
+// CANDIDATO 32 - Cientista de Dados Júnior (3-4 competências)
+CREATE (c32:CANDIDATO {nome:"Beatriz Santos", cargo:"Cientista de Dados", senioridade:"JUNIOR", país:"Brasil", cidade:"Brasília", telefone:"+55-61-95555-6666", email:"beatriz.santos@email.com"})
+CREATE (c32)-[:FORMADO_EM]->(g118)
+CREATE (c32)-[:TRABALHOU_EM]->(exp32)
+CREATE (c32)-[:HÁBIL_EM {nivel:7}]->(comp2)
+CREATE (c32)-[:HÁBIL_EM {nivel:6}]->(comp33)
+CREATE (c32)-[:HÁBIL_EM {nivel:5}]->(comp6)
+CREATE (c32)-[:HÁBIL_EM {nivel:4}]->(comp4)
+
+// CANDIDATO 33 - Engenheiro de Front-End Sênior (8-9 competências)
+CREATE (c33:CANDIDATO {nome:"Ricardo Lima", cargo:"Engenheiro de Front-End", senioridade:"SENIOR", país:"Brasil", cidade:"Florianópolis", telefone:"+55-48-94444-5555", email:"ricardo.lima@email.com"})
+CREATE (c33)-[:FORMADO_EM]->(g151)
+CREATE (c33)-[:TRABALHOU_EM]->(exp81)
+CREATE (c33)-[:TRABALHOU_EM]->(exp11)
+CREATE (c33)-[:TRABALHOU_EM]->(exp18)
+CREATE (c33)-[:HÁBIL_EM {nivel:9}]->(comp3)
+CREATE (c33)-[:HÁBIL_EM {nivel:8}]->(comp25)
+CREATE (c33)-[:HÁBIL_EM {nivel:7}]->(comp24)
+CREATE (c33)-[:HÁBIL_EM {nivel:8}]->(comp27)
+CREATE (c33)-[:HÁBIL_EM {nivel:7}]->(comp26)
+CREATE (c33)-[:HÁBIL_EM {nivel:8}]->(comp67)
+CREATE (c33)-[:HÁBIL_EM {nivel:7}]->(comp58)
+
+// CANDIDATO 34 - Analista de BI Sênior (8-9 competências)
+CREATE (c34:CANDIDATO {nome:"Carolina Rocha", cargo:"Analista de BI", senioridade:"SENIOR", país:"Brasil", cidade:"Rio de Janeiro", telefone:"+55-21-93333-4444", email:"carolina.rocha@email.com"})
+CREATE (c34)-[:FORMADO_EM]->(g11)
+CREATE (c34)-[:TRABALHOU_EM]->(exp78)
+CREATE (c34)-[:TRABALHOU_EM]->(exp34)
+CREATE (c34)-[:TRABALHOU_EM]->(exp80)
+CREATE (c34)-[:HÁBIL_EM {nivel:9}]->(comp4)
+CREATE (c34)-[:HÁBIL_EM {nivel:8}]->(comp38)
+CREATE (c34)-[:HÁBIL_EM {nivel:7}]->(comp65)
+CREATE (c34)-[:HÁBIL_EM {nivel:8}]->(comp33)
+CREATE (c34)-[:HÁBIL_EM {nivel:7}]->(comp2)
+CREATE (c34)-[:HÁBIL_EM {nivel:8}]->(comp36)
+CREATE (c34)-[:HÁBIL_EM {nivel:7}]->(comp66)
+
+// CANDIDATO 35 - Product Designer Pleno (6-7 competências)
+CREATE (c35:CANDIDATO {nome:"Fernando Costa", cargo:"Product Designer", senioridade:"PLENO", país:"Brasil", cidade:"Salvador", telefone:"+55-71-92222-3333", email:"fernando.costa@email.com"})
+CREATE (c35)-[:FORMADO_EM]->(g67)
+CREATE (c35)-[:TRABALHOU_EM]->(exp12)
+CREATE (c35)-[:TRABALHOU_EM]->(exp14)
+CREATE (c35)-[:HÁBIL_EM {nivel:8}]->(comp8)
+CREATE (c35)-[:HÁBIL_EM {nivel:7}]->(comp29)
+CREATE (c35)-[:HÁBIL_EM {nivel:6}]->(comp30)
+CREATE (c35)-[:HÁBIL_EM {nivel:7}]->(comp28)
+CREATE (c35)-[:HÁBIL_EM {nivel:6}]->(comp27)
+CREATE (c35)-[:HÁBIL_EM {nivel:5}]->(comp78)
+
+// CANDIDATO 36 - Especialista em ML (8-9 competências)
+CREATE (c36:CANDIDATO {nome:"Mariana Alves", cargo:"Especialista em ML", senioridade:"ESPECIALISTA", país:"Brasil", cidade:"Campinas", telefone:"+55-19-91111-2222", email:"mariana.alves@email.com"})
+CREATE (c36)-[:FORMADO_EM]->(g117)
+CREATE (c36)-[:FORMADO_EM]->(m80)
+CREATE (c36)-[:TRABALHOU_EM]->(exp35)
+CREATE (c36)-[:TRABALHOU_EM]->(exp94)
+CREATE (c36)-[:HÁBIL_EM {nivel:9}]->(comp34)
+CREATE (c36)-[:HÁBIL_EM {nivel:8}]->(comp35)
+CREATE (c36)-[:HÁBIL_EM {nivel:7}]->(comp6)
+CREATE (c36)-[:HÁBIL_EM {nivel:8}]->(comp2)
+CREATE (c36)-[:HÁBIL_EM {nivel:7}]->(comp33)
+CREATE (c36)-[:HÁBIL_EM {nivel:8}]->(comp52)
+CREATE (c36)-[:HÁBIL_EM {nivel:7}]->(comp66)
+
+// CANDIDATO 37 - DevOps Engineer Pleno (6-7 competências)
+CREATE (c37:CANDIDATO {nome:"Paulo Mendes", cargo:"DevOps Engineer", senioridade:"PLENO", país:"Brasil", cidade:"Curitiba", telefone:"+55-41-90000-1111", email:"paulo.mendes@email.com"})
+CREATE (c37)-[:FORMADO_EM]->(g168)
+CREATE (c37)-[:TRABALHOU_EM]->(exp26)
+CREATE (c37)-[:TRABALHOU_EM]->(exp21)
+CREATE (c37)-[:TRABALHOU_EM]->(exp27)
+CREATE (c37)-[:HÁBIL_EM {nivel:8}]->(comp11)
+CREATE (c37)-[:HÁBIL_EM {nivel:7}]->(comp7)
+CREATE (c37)-[:HÁBIL_EM {nivel:6}]->(comp12)
+CREATE (c37)-[:HÁBIL_EM {nivel:7}]->(comp5)
+CREATE (c37)-[:HÁBIL_EM {nivel:6}]->(comp56)
+CREATE (c37)-[:HÁBIL_EM {nivel:5}]->(comp57)
+
+// CANDIDATO 38 - Arquiteto de Cloud (8-9 competências)
+CREATE (c38:CANDIDATO {nome:"Juliana Rodrigues", cargo:"Arquiteto de Cloud", senioridade:"ARQUITETO", país:"Brasil", cidade:"Remoto", telefone:"+55-11-98888-0000", email:"juliana.rodrigues@email.com"})
+CREATE (c38)-[:FORMADO_EM]->(g21)
+CREATE (c38)-[:FORMADO_EM]->(m9)
+CREATE (c38)-[:TRABALHOU_EM]->(exp23)
+CREATE (c38)-[:TRABALHOU_EM]->(exp24)
+CREATE (c38)-[:HÁBIL_EM {nivel:9}]->(comp5)
+CREATE (c38)-[:HÁBIL_EM {nivel:8}]->(comp13)
+CREATE (c38)-[:HÁBIL_EM {nivel:7}]->(comp11)
+CREATE (c38)-[:HÁBIL_EM {nivel:8}]->(comp69)
+CREATE (c38)-[:HÁBIL_EM {nivel:7}]->(comp70)
+CREATE (c38)-[:HÁBIL_EM {nivel:8}]->(comp12)
+CREATE (c38)-[:HÁBIL_EM {nivel:7}]->(comp56)
+
+// CANDIDATO 39 - QA Specialist (8-9 competências)
+CREATE (c39:CANDIDATO {nome:"Rodrigo Silva", cargo:"QA Specialist", senioridade:"ESPECIALISTA", país:"Brasil", cidade:"Fortaleza", telefone:"+55-85-97777-9999", email:"rodrigo.silva@email.com"})
+CREATE (c39)-[:FORMADO_EM]->(g14)
+CREATE (c39)-[:TRABALHOU_EM]->(exp51)
+CREATE (c39)-[:TRABALHOU_EM]->(exp52)
+CREATE (c39)-[:TRABALHOU_EM]->(exp53)
+CREATE (c39)-[:HÁBIL_EM {nivel:9}]->(comp39)
+CREATE (c39)-[:HÁBIL_EM {nivel:8}]->(comp40)
+CREATE (c39)-[:HÁBIL_EM {nivel:7}]->(comp68)
+CREATE (c39)-[:HÁBIL_EM {nivel:8}]->(comp41)
+CREATE (c39)-[:HÁBIL_EM {nivel:7}]->(comp4)
+CREATE (c39)-[:HÁBIL_EM {nivel:8}]->(comp58)
+CREATE (c39)-[:HÁBIL_EM {nivel:7}]->(comp9)
+
+// CANDIDATO 40 - Desenvolvedor Back-End Pleno (6-7 competências)
+CREATE (c40:CANDIDATO {nome:"Patrícia Lima", cargo:"Desenvolvedor Back-End", senioridade:"PLENO", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-96666-0000", email:"patricia.lima@email.com"})
+CREATE (c40)-[:FORMADO_EM]->(g102)
+CREATE (c40)-[:TRABALHOU_EM]->(exp1)
+CREATE (c40)-[:TRABALHOU_EM]->(exp2)
+CREATE (c40)-[:HÁBIL_EM {nivel:8}]->(comp1)
+CREATE (c40)-[:HÁBIL_EM {nivel:7}]->(comp4)
+CREATE (c40)-[:HÁBIL_EM {nivel:6}]->(comp20)
+CREATE (c40)-[:HÁBIL_EM {nivel:7}]->(comp58)
+CREATE (c40)-[:HÁBIL_EM {nivel:6}]->(comp59)
+CREATE (c40)-[:HÁBIL_EM {nivel:5}]->(comp68)
+
+// CANDIDATO 41 - Engenheiro de Dados Sênior (8-9 competências)
+CREATE (c41:CANDIDATO {nome:"Eduardo Santos", cargo:"Engenheiro de Dados", senioridade:"SENIOR", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-95555-1111", email:"eduardo.santos@email.com"})
+CREATE (c41)-[:FORMADO_EM]->(g44)
+CREATE (c41)-[:FORMADO_EM]->(m21)
+CREATE (c41)-[:TRABALHOU_EM]->(exp36)
+CREATE (c41)-[:TRABALHOU_EM]->(exp39)
+CREATE (c41)-[:TRABALHOU_EM]->(exp33)
+CREATE (c41)-[:TRABALHOU_EM]->(exp87)
+CREATE (c41)-[:HÁBIL_EM {nivel:9}]->(comp31)
+CREATE (c41)-[:HÁBIL_EM {nivel:8}]->(comp36)
+CREATE (c41)-[:HÁBIL_EM {nivel:7}]->(comp37)
+CREATE (c41)-[:HÁBIL_EM {nivel:8}]->(comp66)
+CREATE (c41)-[:HÁBIL_EM {nivel:7}]->(comp4)
+CREATE (c41)-[:HÁBIL_EM {nivel:8}]->(comp64)
+CREATE (c41)-[:HÁBIL_EM {nivel:7}]->(comp38)
+
+// CANDIDATO 42 - Desenvolvedor Full Stack Júnior (3-4 competências)
+CREATE (c42:CANDIDATO {nome:"Laura Costa", cargo:"Desenvolvedor Full Stack", senioridade:"JUNIOR", país:"Brasil", cidade:"Rio de Janeiro", telefone:"+55-21-94444-2222", email:"laura.costa@email.com"})
+CREATE (c42)-[:FORMADO_EM]->(g87)
+CREATE (c42)-[:TRABALHOU_EM]->(exp17)
+CREATE (c42)-[:TRABALHOU_EM]->(exp8)
+CREATE (c42)-[:HÁBIL_EM {nivel:6}]->(comp3)
+CREATE (c42)-[:HÁBIL_EM {nivel:5}]->(comp16)
+CREATE (c42)-[:HÁBIL_EM {nivel:4}]->(comp27)
+CREATE (c42)-[:HÁBIL_EM {nivel:3}]->(comp58)
+
+// CANDIDATO 43 - Especialista em Segurança da Informação (8-9 competências)
+CREATE (c43:CANDIDATO {nome:"Marcelo Oliveira", cargo:"Especialista em Segurança", senioridade:"ESPECIALISTA", país:"Brasil", cidade:"Brasília", telefone:"+55-61-93333-5555", email:"marcelo.oliveira@email.com"})
+CREATE (c43)-[:FORMADO_EM]->(g17)
+CREATE (c43)-[:FORMADO_EM]->(m88)
+CREATE (c43)-[:TRABALHOU_EM]->(exp59)
+CREATE (c43)-[:TRABALHOU_EM]->(exp54)
+CREATE (c43)-[:TRABALHOU_EM]->(exp55)
+CREATE (c43)-[:TRABALHOU_EM]->(exp56)
+CREATE (c43)-[:HÁBIL_EM {nivel:10}]->(comp42)
+CREATE (c43)-[:HÁBIL_EM {nivel:9}]->(comp43)
+CREATE (c43)-[:HÁBIL_EM {nivel:8}]->(comp74)
+CREATE (c43)-[:HÁBIL_EM {nivel:9}]->(comp47)
+CREATE (c43)-[:HÁBIL_EM {nivel:8}]->(comp5)
+CREATE (c43)-[:HÁBIL_EM {nivel:7}]->(comp57)
+CREATE (c43)-[:HÁBIL_EM {nivel:8}]->(comp56)
+
+// CANDIDATO 44 - Product Manager Pleno (6-7 competências)
+CREATE (c44:CANDIDATO {nome:"Tatiana Silva", cargo:"Product Manager", senioridade:"GESTOR", país:"Brasil", cidade:"Belo Horizonte", telefone:"+55-31-92222-4444", email:"tatiana.silva@email.com"})
+CREATE (c44)-[:FORMADO_EM]->(g36)
+CREATE (c44)-[:FORMADO_EM]->(m24)
+CREATE (c44)-[:TRABALHOU_EM]->(exp44)
+CREATE (c44)-[:TRABALHOU_EM]->(exp47)
+CREATE (c44)-[:TRABALHOU_EM]->(exp89)
+CREATE (c44)-[:HÁBIL_EM {nivel:8}]->(comp76)
+CREATE (c44)-[:HÁBIL_EM {nivel:7}]->(comp9)
+CREATE (c44)-[:HÁBIL_EM {nivel:6}]->(comp10)
+CREATE (c44)-[:HÁBIL_EM {nivel:7}]->(comp44)
+CREATE (c44)-[:HÁBIL_EM {nivel:6}]->(comp75)
+CREATE (c44)-[:HÁBIL_EM {nivel:5}]->(comp78)
+
+// CANDIDATO 45 - DevOps Engineer Sênior (8-9 competências)
+CREATE (c45:CANDIDATO {nome:"Rafaela Martins", cargo:"DevOps Engineer", senioridade:"SENIOR", país:"Brasil", cidade:"Porto Alegre", telefone:"+55-51-91111-3333", email:"rafaela.martins@email.com"})
+CREATE (c45)-[:FORMADO_EM]->(g15)
+CREATE (c45)-[:TRABALHOU_EM]->(exp26)
+CREATE (c45)-[:TRABALHOU_EM]->(exp21)
+CREATE (c45)-[:TRABALHOU_EM]->(exp22)
+CREATE (c45)-[:TRABALHOU_EM]->(exp83)
+CREATE (c45)-[:HÁBIL_EM {nivel:9}]->(comp11)
+CREATE (c45)-[:HÁBIL_EM {nivel:8}]->(comp7)
+CREATE (c45)-[:HÁBIL_EM {nivel:7}]->(comp12)
+CREATE (c45)-[:HÁBIL_EM {nivel:8}]->(comp5)
+CREATE (c45)-[:HÁBIL_EM {nivel:7}]->(comp56)
+CREATE (c45)-[:HÁBIL_EM {nivel:8}]->(comp57)
+CREATE (c45)-[:HÁBIL_EM {nivel:7}]->(comp13)
+
+// CANDIDATO 46 - Cientista de Dados Pleno (6-7 competências)
+CREATE (c46:CANDIDATO {nome:"Leonardo Almeida", cargo:"Cientista de Dados", senioridade:"PLENO", país:"Brasil", cidade:"Campinas", telefone:"+55-19-90000-2222", email:"leonardo.almeida@email.com"})
+CREATE (c46)-[:FORMADO_EM]->(g23)
+CREATE (c46)-[:TRABALHOU_EM]->(exp32)
+CREATE (c46)-[:TRABALHOU_EM]->(exp31)
+CREATE (c46)-[:TRABALHOU_EM]->(exp35)
+CREATE (c46)-[:HÁBIL_EM {nivel:8}]->(comp2)
+CREATE (c46)-[:HÁBIL_EM {nivel:7}]->(comp6)
+CREATE (c46)-[:HÁBIL_EM {nivel:6}]->(comp33)
+CREATE (c46)-[:HÁBIL_EM {nivel:7}]->(comp52)
+CREATE (c46)-[:HÁBIL_EM {nivel:6}]->(comp4)
+CREATE (c46)-[:HÁBIL_EM {nivel:5}]->(comp38)
+
+// CANDIDATO 47 - Arquiteto de Software (8-9 competências)
+CREATE (c47:CANDIDATO {nome:"Vanessa Costa", cargo:"Arquiteto de Software", senioridade:"ARQUITETO", país:"Brasil", cidade:"São Paulo", telefone:"+55-11-98888-1111", email:"vanessa.costa@email.com"})
+CREATE (c47)-[:FORMADO_EM]->(g3)
+CREATE (c47)-[:FORMADO_EM]->(m4)
+CREATE (c47)-[:TRABALHOU_EM]->(exp7)
+CREATE (c47)-[:TRABALHOU_EM]->(exp3)
+CREATE (c47)-[:TRABALHOU_EM]->(exp4)
+CREATE (c47)-[:HÁBIL_EM {nivel:10}]->(comp17)
+CREATE (c47)-[:HÁBIL_EM {nivel:9}]->(comp59)
+CREATE (c47)-[:HÁBIL_EM {nivel:8}]->(comp60)
+CREATE (c47)-[:HÁBIL_EM {nivel:9}]->(comp1)
+CREATE (c47)-[:HÁBIL_EM {nivel:8}]->(comp20)
+CREATE (c47)-[:HÁBIL_EM {nivel:7}]->(comp12)
+CREATE (c47)-[:HÁBIL_EM {nivel:8}]->(comp5)
+
+// CANDIDATO 48 - UX Researcher Pleno (6-7 competências)
+CREATE (c48:CANDIDATO {nome:"Gabriela Lima", cargo:"UX Researcher", senioridade:"PLENO", país:"Brasil", cidade:"Recife", telefone:"+55-81-96666-3333", email:"gabriela.lima@email.com"})
+CREATE (c48)-[:FORMADO_EM]->(g2)
+CREATE (c48)-[:TRABALHOU_EM]->(exp12)
+CREATE (c48)-[:TRABALHOU_EM]->(exp15)
+CREATE (c48)-[:HÁBIL_EM {nivel:8}]->(comp8)
+CREATE (c48)-[:HÁBIL_EM {nivel:7}]->(comp29)
+CREATE (c48)-[:HÁBIL_EM {nivel:6}]->(comp30)
+CREATE (c48)-[:HÁBIL_EM {nivel:7}]->(comp78)
+CREATE (c48)-[:HÁBIL_EM {nivel:6}]->(comp27)
+CREATE (c48)-[:HÁBIL_EM {nivel:5}]->(comp28)
+
+// CANDIDATO 49 - Engenheiro de Machine Learning Sênior (8-9 competências)
+CREATE (c49:CANDIDATO {nome:"André Pereira", cargo:"Engenheiro de ML", senioridade:"SENIOR", país:"Brasil", cidade:"Florianópolis", telefone:"+55-48-93333-6666", email:"andre.pereira@email.com"})
+CREATE (c49)-[:FORMADO_EM]->(g117)
+CREATE (c49)-[:FORMADO_EM]->(m14)
+CREATE (c49)-[:TRABALHOU_EM]->(exp35)
+CREATE (c49)-[:TRABALHOU_EM]->(exp94)
+CREATE (c49)-[:TRABALHOU_EM]->(exp96)
+CREATE (c49)-[:HÁBIL_EM {nivel:9}]->(comp34)
+CREATE (c49)-[:HÁBIL_EM {nivel:8}]->(comp35)
+CREATE (c49)-[:HÁBIL_EM {nivel:7}]->(comp6)
+CREATE (c49)-[:HÁBIL_EM {nivel:8}]->(comp2)
+CREATE (c49)-[:HÁBIL_EM {nivel:7}]->(comp33)
+CREATE (c49)-[:HÁBIL_EM {nivel:8}]->(comp52)
+CREATE (c49)-[:HÁBIL_EM {nivel:7}]->(comp66)
+
+// CANDIDATO 50 - Analista de Dados Júnior (3-4 competências)
+CREATE (c50:CANDIDATO {nome:"Isabela Santos", cargo:"Analista de Dados", senioridade:"JUNIOR", país:"Brasil", cidade:"Salvador", telefone:"+55-71-95555-7777", email:"isabela.santos@email.com"})
+CREATE (c50)-[:FORMADO_EM]->(g115)
+CREATE (c50)-[:TRABALHOU_EM]->(exp78)
+CREATE (c50)-[:TRABALHOU_EM]->(exp80)
+CREATE (c50)-[:HÁBIL_EM {nivel:7}]->(comp2)
+CREATE (c50)-[:HÁBIL_EM {nivel:6}]->(comp4)
+CREATE (c50)-[:HÁBIL_EM {nivel:5}]->(comp33)
+CREATE (c50)-[:HÁBIL_EM {nivel:4}]->(comp38)
+
+
+// VAGA 1 - Desenvolvedor Back-End Pleno (apenas graduação) - 5-6 competências
+CREATE (vaga1:VAGA {
+  empresa: "Tech Solutions BR",
+  cargo: "Desenvolvedor Back-End Java",
+  senioridade: "PLENO",
+  modalidade: "HIBRIDO",
+  cidade: "São Paulo"
+})
+CREATE (vaga1)-[:REQUISITA_FORMACAO_EM]->(g3)
+CREATE (vaga1)-[:REQUISITA_EXPERIENCIA_EM]->(exp1)
+CREATE (vaga1)-[:REQUISITA_EXPERIENCIA_EM]->(exp2)
+CREATE (vaga1)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp1)
+CREATE (vaga1)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp20)
+CREATE (vaga1)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp4)
+CREATE (vaga1)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp58)
+CREATE (vaga1)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp59)
+CREATE (vaga1)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp9)
+
+// VAGA 2 - Cientista de Dados Sênior (graduação + mestrado) - 7-8 competências
+CREATE (vaga2:VAGA {
+  empresa: "Data Insights Corp",
+  cargo: "Cientista de Dados Sênior",
+  senioridade: "SENIOR",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga2)-[:REQUISITA_FORMACAO_EM]->(g23)
+CREATE (vaga2)-[:REQUISITA_FORMACAO_EM]->(m12)
+CREATE (vaga2)-[:REQUISITA_EXPERIENCIA_EM]->(exp31)
+CREATE (vaga2)-[:REQUISITA_EXPERIENCIA_EM]->(exp35)
+CREATE (vaga2)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp2)
+CREATE (vaga2)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp6)
+CREATE (vaga2)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp33)
+CREATE (vaga2)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp34)
+CREATE (vaga2)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp4)
+CREATE (vaga2)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp52)
+CREATE (vaga2)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp38)
+
+// VAGA 3 - Arquiteto de Sistemas (graduação + mestrado + doutorado) - 8-9 competências
+CREATE (vaga3:VAGA {
+  empresa: "Enterprise Systems SA",
+  cargo: "Arquiteto de Sistemas",
+  senioridade: "ARQUITETO",
+  modalidade: "PRESENCIAL",
+  cidade: "Rio de Janeiro"
+})
+CREATE (vaga3)-[:REQUISITA_FORMACAO_EM]->(g22)
+CREATE (vaga3)-[:REQUISITA_FORMACAO_EM]->(m4)
+CREATE (vaga3)-[:REQUISITA_FORMACAO_EM]->(d3)
+CREATE (vaga3)-[:REQUISITA_EXPERIENCIA_EM]->(exp3)
+CREATE (vaga3)-[:REQUISITA_EXPERIENCIA_EM]->(exp4)
+CREATE (vaga3)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp17)
+CREATE (vaga3)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp59)
+CREATE (vaga3)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp60)
+CREATE (vaga3)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp1)
+CREATE (vaga3)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp20)
+CREATE (vaga3)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp12)
+CREATE (vaga3)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp5)
+CREATE (vaga3)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp68)
+
+// VAGA 4 - DevOps Engineer Pleno (apenas graduação) - 5-6 competências
+CREATE (vaga4:VAGA {
+  empresa: "Cloud Native Tech",
+  cargo: "DevOps Engineer",
+  senioridade: "PLENO",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga4)-[:REQUISITA_FORMACAO_EM]->(g15)
+CREATE (vaga4)-[:REQUISITA_EXPERIENCIA_EM]->(exp21)
+CREATE (vaga4)-[:REQUISITA_EXPERIENCIA_EM]->(exp27)
+CREATE (vaga4)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp11)
+CREATE (vaga4)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp12)
+CREATE (vaga4)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp5)
+CREATE (vaga4)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp56)
+CREATE (vaga4)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp57)
+CREATE (vaga4)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp7)
+
+// VAGA 5 - Engenheiro de Machine Learning (graduação + mestrado) - 7-8 competências
+CREATE (vaga5:VAGA {
+  empresa: "AI Innovations",
+  cargo: "Engenheiro de Machine Learning",
+  senioridade: "ESPECIALISTA",
+  modalidade: "HIBRIDO",
+  cidade: "Campinas"
+})
+CREATE (vaga5)-[:REQUISITA_FORMACAO_EM]->(g117)
+CREATE (vaga5)-[:REQUISITA_FORMACAO_EM]->(m14)
+CREATE (vaga5)-[:REQUISITA_EXPERIENCIA_EM]->(exp35)
+CREATE (vaga5)-[:REQUISITA_EXPERIENCIA_EM]->(exp94)
+CREATE (vaga5)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp34)
+CREATE (vaga5)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp35)
+CREATE (vaga5)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp2)
+CREATE (vaga5)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp6)
+CREATE (vaga5)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp33)
+CREATE (vaga5)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp52)
+CREATE (vaga5)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp66)
+
+// VAGA 6 - Product Manager (graduação + mestrado) - 6-7 competências
+CREATE (vaga6:VAGA {
+  empresa: "Digital Products Ltda",
+  cargo: "Product Manager",
+  senioridade: "GESTOR",
+  modalidade: "HIBRIDO",
+  cidade: "São Paulo"
+})
+CREATE (vaga6)-[:REQUISITA_FORMACAO_EM]->(g36)
+CREATE (vaga6)-[:REQUISITA_FORMACAO_EM]->(m24)
+CREATE (vaga6)-[:REQUISITA_EXPERIENCIA_EM]->(exp43)
+CREATE (vaga6)-[:REQUISITA_EXPERIENCIA_EM]->(exp89)
+CREATE (vaga6)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp76)
+CREATE (vaga6)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp9)
+CREATE (vaga6)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp10)
+CREATE (vaga6)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp44)
+CREATE (vaga6)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp75)
+CREATE (vaga6)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp78)
+
+// VAGA 7 - Desenvolvedor Front-End Júnior (apenas graduação) - 3-4 competências
+CREATE (vaga7:VAGA {
+  empresa: "Startup Inovadora",
+  cargo: "Desenvolvedor Front-End",
+  senioridade: "JUNIOR",
+  modalidade: "PRESENCIAL",
+  cidade: "Belo Horizonte"
+})
+CREATE (vaga7)-[:REQUISITA_FORMACAO_EM]->(g46)
+CREATE (vaga7)-[:REQUISITA_EXPERIENCIA_EM]->(exp17)
+CREATE (vaga7)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp3)
+CREATE (vaga7)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp27)
+CREATE (vaga7)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 3}]->(comp25)
+CREATE (vaga7)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 2}]->(comp58)
+
+// VAGA 8 - Engenheiro de Dados Sênior (graduação + mestrado) - 7-8 competências
+CREATE (vaga8:VAGA {
+  empresa: "Big Data Analytics",
+  cargo: "Engenheiro de Dados Sênior",
+  senioridade: "SENIOR",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga8)-[:REQUISITA_FORMACAO_EM]->(g44)
+CREATE (vaga8)-[:REQUISITA_FORMACAO_EM]->(m21)
+CREATE (vaga8)-[:REQUISITA_EXPERIENCIA_EM]->(exp33)
+CREATE (vaga8)-[:REQUISITA_EXPERIENCIA_EM]->(exp39)
+CREATE (vaga8)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp36)
+CREATE (vaga8)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp31)
+CREATE (vaga8)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp4)
+CREATE (vaga8)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp37)
+CREATE (vaga8)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp66)
+CREATE (vaga8)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp64)
+CREATE (vaga8)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp38)
+
+// VAGA 9 - Especialista em Segurança (graduação + mestrado + doutorado) - 8-9 competências
+CREATE (vaga9:VAGA {
+  empresa: "Cyber Security Partners",
+  cargo: "Especialista em Segurança da Informação",
+  senioridade: "ESPECIALISTA",
+  modalidade: "PRESENCIAL",
+  cidade: "Brasília"
+})
+CREATE (vaga9)-[:REQUISITA_FORMACAO_EM]->(g17)
+CREATE (vaga9)-[:REQUISITA_FORMACAO_EM]->(m88)
+CREATE (vaga9)-[:REQUISITA_FORMACAO_EM]->(d54)
+CREATE (vaga9)-[:REQUISITA_EXPERIENCIA_EM]->(exp55)
+CREATE (vaga9)-[:REQUISITA_EXPERIENCIA_EM]->(exp56)
+CREATE (vaga9)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp42)
+CREATE (vaga9)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp43)
+CREATE (vaga9)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp47)
+CREATE (vaga9)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp74)
+CREATE (vaga9)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp5)
+CREATE (vaga9)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp57)
+CREATE (vaga9)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp56)
+
+// VAGA 10 - UX/UI Designer Pleno (apenas graduação) - 5-6 competências
+CREATE (vaga10:VAGA {
+  empresa: "Design Studio Creative",
+  cargo: "UX/UI Designer",
+  senioridade: "PLENO",
+  modalidade: "HIBRIDO",
+  cidade: "Porto Alegre"
+})
+CREATE (vaga10)-[:REQUISITA_FORMACAO_EM]->(g2)
+CREATE (vaga10)-[:REQUISITA_EXPERIENCIA_EM]->(exp12)
+CREATE (vaga10)-[:REQUISITA_EXPERIENCIA_EM]->(exp14)
+CREATE (vaga10)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp8)
+CREATE (vaga10)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp29)
+CREATE (vaga10)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp30)
+CREATE (vaga10)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp27)
+CREATE (vaga10)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp28)
+CREATE (vaga10)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp78)
+
+// VAGA 11 - Desenvolvedor Full Stack Sênior - 7-8 competências
+CREATE (vaga11:VAGA {
+  empresa: "FullStack Tech",
+  cargo: "Desenvolvedor Full Stack Sênior",
+  senioridade: "SENIOR",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga11)-[:REQUISITA_FORMACAO_EM]->(g47)
+CREATE (vaga11)-[:REQUISITA_EXPERIENCIA_EM]->(exp9)
+CREATE (vaga11)-[:REQUISITA_EXPERIENCIA_EM]->(exp63)
+CREATE (vaga11)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp3)
+CREATE (vaga11)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp16)
+CREATE (vaga11)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp4)
+CREATE (vaga11)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp25)
+CREATE (vaga11)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp27)
+CREATE (vaga11)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp20)
+CREATE (vaga11)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp58)
+
+// VAGA 12 - Analista de BI Pleno - 5-6 competências
+CREATE (vaga12:VAGA {
+  empresa: "Business Intelligence SA",
+  cargo: "Analista de Business Intelligence",
+  senioridade: "PLENO",
+  modalidade: "PRESENCIAL",
+  cidade: "Curitiba"
+})
+CREATE (vaga12)-[:REQUISITA_FORMACAO_EM]->(g11)
+CREATE (vaga12)-[:REQUISITA_EXPERIENCIA_EM]->(exp34)
+CREATE (vaga12)-[:REQUISITA_EXPERIENCIA_EM]->(exp80)
+CREATE (vaga12)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp4)
+CREATE (vaga12)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp38)
+CREATE (vaga12)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp65)
+CREATE (vaga12)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp33)
+CREATE (vaga12)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp2)
+CREATE (vaga12)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp36)
+
+// VAGA 13 - Arquiteto de Cloud - 8-9 competências
+CREATE (vaga13:VAGA {
+  empresa: "Cloud Architecture Experts",
+  cargo: "Arquiteto de Cloud",
+  senioridade: "ARQUITETO",
+  modalidade: "HIBRIDO",
+  cidade: "São Paulo"
+})
+CREATE (vaga13)-[:REQUISITA_FORMACAO_EM]->(g21)
+CREATE (vaga13)-[:REQUISITA_FORMACAO_EM]->(m9)
+CREATE (vaga13)-[:REQUISITA_EXPERIENCIA_EM]->(exp24)
+CREATE (vaga13)-[:REQUISITA_EXPERIENCIA_EM]->(exp25)
+CREATE (vaga13)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp5)
+CREATE (vaga13)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp13)
+CREATE (vaga13)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp11)
+CREATE (vaga13)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp69)
+CREATE (vaga13)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp70)
+CREATE (vaga13)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp12)
+CREATE (vaga13)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp56)
+
+// VAGA 14 - QA Engineer Sênior - 7-8 competências
+CREATE (vaga14:VAGA {
+  empresa: "Quality Assurance Tech",
+  cargo: "QA Engineer Sênior",
+  senioridade: "SENIOR",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga14)-[:REQUISITA_FORMACAO_EM]->(g14)
+CREATE (vaga14)-[:REQUISITA_EXPERIENCIA_EM]->(exp52)
+CREATE (vaga14)-[:REQUISITA_EXPERIENCIA_EM]->(exp53)
+CREATE (vaga14)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp39)
+CREATE (vaga14)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp40)
+CREATE (vaga14)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp41)
+CREATE (vaga14)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp68)
+CREATE (vaga14)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp4)
+CREATE (vaga14)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp58)
+CREATE (vaga14)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp9)
+
+// VAGA 15 - Desenvolvedor Mobile iOS - 4-5 competências
+CREATE (vaga15:VAGA {
+  empresa: "Mobile First Solutions",
+  cargo: "Desenvolvedor Mobile iOS",
+  senioridade: "PLENO",
+  modalidade: "HIBRIDO",
+  cidade: "Florianópolis"
+})
+CREATE (vaga15)-[:REQUISITA_FORMACAO_EM]->(g16)
+CREATE (vaga15)-[:REQUISITA_EXPERIENCIA_EM]->(exp20)
+CREATE (vaga15)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp3)
+CREATE (vaga15)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp25)
+CREATE (vaga15)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp27)
+CREATE (vaga15)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp58)
+
+// VAGA 16 - Engenheiro de Dados Pleno - 5-6 competências
+CREATE (vaga16:VAGA {
+  empresa: "Data Engineering Corp",
+  cargo: "Engenheiro de Dados",
+  senioridade: "PLENO",
+  modalidade: "PRESENCIAL",
+  cidade: "Rio de Janeiro"
+})
+CREATE (vaga16)-[:REQUISITA_FORMACAO_EM]->(g78)
+CREATE (vaga16)-[:REQUISITA_EXPERIENCIA_EM]->(exp87)
+CREATE (vaga16)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp31)
+CREATE (vaga16)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp36)
+CREATE (vaga16)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp66)
+CREATE (vaga16)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp4)
+CREATE (vaga16)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp37)
+CREATE (vaga16)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp65)
+
+// VAGA 17 - Product Owner Sênior - 6-7 competências
+CREATE (vaga17:VAGA {
+  empresa: "Agile Products Ltda",
+  cargo: "Product Owner Sênior",
+  senioridade: "GESTOR",
+  modalidade: "HIBRIDO",
+  cidade: "São Paulo"
+})
+CREATE (vaga17)-[:REQUISITA_FORMACAO_EM]->(g36)
+CREATE (vaga17)-[:REQUISITA_FORMACAO_EM]->(m29)
+CREATE (vaga17)-[:REQUISITA_EXPERIENCIA_EM]->(exp43)
+CREATE (vaga17)-[:REQUISITA_EXPERIENCIA_EM]->(exp89)
+CREATE (vaga17)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp9)
+CREATE (vaga17)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp76)
+CREATE (vaga17)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp10)
+CREATE (vaga17)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp44)
+CREATE (vaga17)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp78)
+CREATE (vaga17)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp75)
+
+// VAGA 18 - DevOps Engineer Júnior - 3-4 competências
+CREATE (vaga18:VAGA {
+  empresa: "Infrastructure Tech",
+  cargo: "DevOps Engineer Júnior",
+  senioridade: "JUNIOR",
+  modalidade: "PRESENCIAL",
+  cidade: "Belo Horizonte"
+})
+CREATE (vaga18)-[:REQUISITA_FORMACAO_EM]->(g166)
+CREATE (vaga18)-[:REQUISITA_EXPERIENCIA_EM]->(exp26)
+CREATE (vaga18)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp11)
+CREATE (vaga18)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp7)
+CREATE (vaga18)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 3}]->(comp56)
+
+// VAGA 19 - Cientista de Dados Júnior - 3-4 competências
+CREATE (vaga19:VAGA {
+  empresa: "Data Science StartUp",
+  cargo: "Cientista de Dados Júnior",
+  senioridade: "JUNIOR",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga19)-[:REQUISITA_FORMACAO_EM]->(g118)
+CREATE (vaga19)-[:REQUISITA_EXPERIENCIA_EM]->(exp32)
+CREATE (vaga19)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp2)
+CREATE (vaga19)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp33)
+CREATE (vaga19)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp4)
+
+// VAGA 20 - Arquiteto de Dados - 8-9 competências
+CREATE (vaga20:VAGA {
+  empresa: "Enterprise Data Solutions",
+  cargo: "Arquiteto de Dados",
+  senioridade: "ARQUITETO",
+  modalidade: "PRESENCIAL",
+  cidade: "São Paulo"
+})
+CREATE (vaga20)-[:REQUISITA_FORMACAO_EM]->(g44)
+CREATE (vaga20)-[:REQUISITA_FORMACAO_EM]->(m55)
+CREATE (vaga20)-[:REQUISITA_EXPERIENCIA_EM]->(exp37)
+CREATE (vaga20)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp64)
+CREATE (vaga20)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp38)
+CREATE (vaga20)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp37)
+CREATE (vaga20)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp31)
+CREATE (vaga20)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp36)
+CREATE (vaga20)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp66)
+CREATE (vaga20)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp4)
+
+// Continuação para as demais vagas 21-50 seguindo o mesmo padrão...
+
+// VAGA 21 - Desenvolvedor Python Sênior - 7-8 competências
+CREATE (vaga21:VAGA {
+  empresa: "Python Development House",
+  cargo: "Desenvolvedor Python Sênior",
+  senioridade: "SENIOR",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga21)-[:REQUISITA_FORMACAO_EM]->(g105)
+CREATE (vaga21)-[:REQUISITA_EXPERIENCIA_EM]->(exp6)
+CREATE (vaga21)-[:REQUISITA_EXPERIENCIA_EM]->(exp90)
+CREATE (vaga21)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp2)
+CREATE (vaga21)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp20)
+CREATE (vaga21)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp4)
+CREATE (vaga21)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp58)
+CREATE (vaga21)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp59)
+CREATE (vaga21)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp68)
+
+// VAGA 22 - UX Researcher - 4-5 competências
+CREATE (vaga22:VAGA {
+  empresa: "User Experience Lab",
+  cargo: "UX Researcher",
+  senioridade: "PLENO",
+  modalidade: "HIBRIDO",
+  cidade: "Recife"
+})
+CREATE (vaga22)-[:REQUISITA_FORMACAO_EM]->(g2)
+CREATE (vaga22)-[:REQUISITA_EXPERIENCIA_EM]->(exp15)
+CREATE (vaga22)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp30)
+CREATE (vaga22)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp29)
+CREATE (vaga22)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp8)
+CREATE (vaga22)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp78)
+
+// VAGA 23 - Engenheiro de SRE - 6-7 competências
+CREATE (vaga23:VAGA {
+  empresa: "Reliability Systems",
+  cargo: "Site Reliability Engineer",
+  senioridade: "SENIOR",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga23)-[:REQUISITA_FORMACAO_EM]->(g15)
+CREATE (vaga23)-[:REQUISITA_EXPERIENCIA_EM]->(exp27)
+CREATE (vaga23)-[:REQUISITA_EXPERIENCIA_EM]->(exp22)
+CREATE (vaga23)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp11)
+CREATE (vaga23)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp12)
+CREATE (vaga23)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp5)
+CREATE (vaga23)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp56)
+CREATE (vaga23)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp57)
+
+// VAGA 24 - Analista de Segurança Júnior - 3-4 competências
+CREATE (vaga24:VAGA {
+  empresa: "Cyber Defense Corp",
+  cargo: "Analista de Segurança da Informação",
+  senioridade: "JUNIOR",
+  modalidade: "PRESENCIAL",
+  cidade: "Brasília"
+})
+CREATE (vaga24)-[:REQUISITA_FORMACAO_EM]->(g161)
+CREATE (vaga24)-[:REQUISITA_EXPERIENCIA_EM]->(exp59)
+CREATE (vaga24)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp42)
+CREATE (vaga24)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp43)
+CREATE (vaga24)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp74)
+
+// VAGA 25 - Scrum Master - 4-5 competências
+CREATE (vaga25:VAGA {
+  empresa: "Agile Transformation Co",
+  cargo: "Scrum Master",
+  senioridade: "PLENO",
+  modalidade: "HIBRIDO",
+  cidade: "Curitiba"
+})
+CREATE (vaga25)-[:REQUISITA_FORMACAO_EM]->(g50)
+CREATE (vaga25)-[:REQUISITA_EXPERIENCIA_EM]->(exp42)
+CREATE (vaga25)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp9)
+CREATE (vaga25)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp45)
+CREATE (vaga25)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp10)
+CREATE (vaga25)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp78)
+
+// VAGA 26 - Desenvolvedor Node.js Pleno - 5-6 competências
+CREATE (vaga26:VAGA {
+  empresa: "Node.js Specialists",
+  cargo: "Desenvolvedor Node.js",
+  senioridade: "PLENO",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga26)-[:REQUISITA_FORMACAO_EM]->(g14)
+CREATE (vaga26)-[:REQUISITA_EXPERIENCIA_EM]->(exp10)
+CREATE (vaga26)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp16)
+CREATE (vaga26)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp20)
+CREATE (vaga26)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp4)
+CREATE (vaga26)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp58)
+CREATE (vaga26)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp59)
+CREATE (vaga26)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp68)
+
+// VAGA 27 - Especialista em Machine Learning - 8-9 competências
+CREATE (vaga27:VAGA {
+  empresa: "Advanced AI Labs",
+  cargo: "Especialista em Machine Learning",
+  senioridade: "ESPECIALISTA",
+  modalidade: "PRESENCIAL",
+  cidade: "Campinas"
+})
+CREATE (vaga27)-[:REQUISITA_FORMACAO_EM]->(g117)
+CREATE (vaga27)-[:REQUISITA_FORMACAO_EM]->(m80)
+CREATE (vaga27)-[:REQUISITA_EXPERIENCIA_EM]->(exp94)
+CREATE (vaga27)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp34)
+CREATE (vaga27)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp35)
+CREATE (vaga27)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp6)
+CREATE (vaga27)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp2)
+CREATE (vaga27)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp33)
+CREATE (vaga27)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp52)
+CREATE (vaga27)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp66)
+
+// VAGA 28 - Analista de Dados Pleno - 5-6 competências
+CREATE (vaga28:VAGA {
+  empresa: "Analytics Pro",
+  cargo: "Analista de Dados",
+  senioridade: "PLENO",
+  modalidade: "HIBRIDO",
+  cidade: "Rio de Janeiro"
+})
+CREATE (vaga28)-[:REQUISITA_FORMACAO_EM]->(g115)
+CREATE (vaga28)-[:REQUISITA_EXPERIENCIA_EM]->(exp80)
+CREATE (vaga28)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp4)
+CREATE (vaga28)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp33)
+CREATE (vaga28)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp2)
+CREATE (vaga28)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp38)
+CREATE (vaga28)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp65)
+CREATE (vaga28)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp36)
+
+// VAGA 29 - Desenvolvedor Front-End Angular - 5-6 competências
+CREATE (vaga29:VAGA {
+  empresa: "Angular Development Team",
+  cargo: "Desenvolvedor Front-End Angular",
+  senioridade: "PLENO",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga29)-[:REQUISITA_FORMACAO_EM]->(g151)
+CREATE (vaga29)-[:REQUISITA_EXPERIENCIA_EM]->(exp11)
+CREATE (vaga29)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp24)
+CREATE (vaga29)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp25)
+CREATE (vaga29)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp3)
+CREATE (vaga29)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp27)
+CREATE (vaga29)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp58)
+CREATE (vaga29)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp26)
+
+// VAGA 30 - DBA Sênior - 7-8 competências
+CREATE (vaga30:VAGA {
+  empresa: "Database Management Inc",
+  cargo: "Database Administrator Sênior",
+  senioridade: "SENIOR",
+  modalidade: "PRESENCIAL",
+  cidade: "São Paulo"
+})
+CREATE (vaga30)-[:REQUISITA_FORMACAO_EM]->(g18)
+CREATE (vaga30)-[:REQUISITA_EXPERIENCIA_EM]->(exp36)
+CREATE (vaga30)-[:REQUISITA_EXPERIENCIA_EM]->(exp88)
+CREATE (vaga30)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp4)
+CREATE (vaga30)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp50)
+CREATE (vaga30)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp61)
+CREATE (vaga30)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp62)
+CREATE (vaga30)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp64)
+CREATE (vaga30)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp38)
+CREATE (vaga30)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp65)
+
+// VAGA 31 - Engenheiro de Plataforma - 7-8 competências
+CREATE (vaga31:VAGA {
+  empresa: "Platform Engineering Group",
+  cargo: "Engenheiro de Plataforma",
+  senioridade: "ESPECIALISTA",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga31)-[:REQUISITA_FORMACAO_EM]->(g22)
+CREATE (vaga31)-[:REQUISITA_EXPERIENCIA_EM]->(exp25)
+CREATE (vaga31)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp11)
+CREATE (vaga31)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp12)
+CREATE (vaga31)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp13)
+CREATE (vaga31)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp5)
+CREATE (vaga31)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp56)
+CREATE (vaga31)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp57)
+CREATE (vaga31)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp7)
+
+// VAGA 32 - Product Designer Sênior - 7-8 competências
+CREATE (vaga32:VAGA {
+  empresa: "Design Innovation Studio",
+  cargo: "Product Designer Sênior",
+  senioridade: "SENIOR",
+  modalidade: "HIBRIDO",
+  cidade: "Porto Alegre"
+})
+CREATE (vaga32)-[:REQUISITA_FORMACAO_EM]->(g67)
+CREATE (vaga32)-[:REQUISITA_EXPERIENCIA_EM]->(exp14)
+CREATE (vaga32)-[:REQUISITA_EXPERIENCIA_EM]->(exp19)
+CREATE (vaga32)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp8)
+CREATE (vaga32)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp28)
+CREATE (vaga32)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp29)
+CREATE (vaga32)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp30)
+CREATE (vaga32)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp27)
+CREATE (vaga32)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp78)
+CREATE (vaga32)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp79)
+
+// VAGA 33 - Desenvolvedor Java Júnior - 3-4 competências
+CREATE (vaga33:VAGA {
+  empresa: "Java Enterprise Solutions",
+  cargo: "Desenvolvedor Java Júnior",
+  senioridade: "JUNIOR",
+  modalidade: "PRESENCIAL",
+  cidade: "Belo Horizonte"
+})
+CREATE (vaga33)-[:REQUISITA_FORMACAO_EM]->(g136)
+CREATE (vaga33)-[:REQUISITA_EXPERIENCIA_EM]->(exp1)
+CREATE (vaga33)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp1)
+CREATE (vaga33)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp4)
+CREATE (vaga33)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 3}]->(comp58)
+CREATE (vaga33)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 2}]->(comp20)
+
+// VAGA 34 - Arquiteto de Soluções - 8-9 competências
+CREATE (vaga34:VAGA {
+  empresa: "Solution Architecture Partners",
+  cargo: "Arquiteto de Soluções",
+  senioridade: "ARQUITETO",
+  modalidade: "PRESENCIAL",
+  cidade: "São Paulo"
+})
+CREATE (vaga34)-[:REQUISITA_FORMACAO_EM]->(g107)
+CREATE (vaga34)-[:REQUISITA_FORMACAO_EM]->(m4)
+CREATE (vaga34)-[:REQUISITA_EXPERIENCIA_EM]->(exp4)
+CREATE (vaga34)-[:REQUISITA_EXPERIENCIA_EM]->(exp100)
+CREATE (vaga34)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp17)
+CREATE (vaga34)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp59)
+CREATE (vaga34)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp60)
+CREATE (vaga34)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp1)
+CREATE (vaga34)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp20)
+CREATE (vaga34)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp12)
+CREATE (vaga34)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp5)
+
+// VAGA 35 - Analista de Business Intelligence - 5-6 competências
+CREATE (vaga35:VAGA {
+  empresa: "BI Analytics Group",
+  cargo: "Analista de BI",
+  senioridade: "PLENO",
+  modalidade: "HIBRIDO",
+  cidade: "Curitiba"
+})
+CREATE (vaga35)-[:REQUISITA_FORMACAO_EM]->(g11)
+CREATE (vaga35)-[:REQUISITA_EXPERIENCIA_EM]->(exp34)
+CREATE (vaga35)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp4)
+CREATE (vaga35)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp38)
+CREATE (vaga35)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp65)
+CREATE (vaga35)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp33)
+CREATE (vaga35)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp2)
+CREATE (vaga35)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp36)
+
+// VAGA 36 - Engenheiro de Machine Learning Pleno - 6-7 competências
+CREATE (vaga36:VAGA {
+  empresa: "ML Engineering Team",
+  cargo: "Engenheiro de Machine Learning",
+  senioridade: "PLENO",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga36)-[:REQUISITA_FORMACAO_EM]->(g117)
+CREATE (vaga36)-[:REQUISITA_EXPERIENCIA_EM]->(exp35)
+CREATE (vaga36)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp6)
+CREATE (vaga36)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp34)
+CREATE (vaga36)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp2)
+CREATE (vaga36)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp33)
+CREATE (vaga36)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp52)
+CREATE (vaga36)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp66)
+
+// VAGA 37 - Desenvolvedor React Native - 5-6 competências
+CREATE (vaga37:VAGA {
+  empresa: "Mobile Cross Platform",
+  cargo: "Desenvolvedor React Native",
+  senioridade: "PLENO",
+  modalidade: "HIBRIDO",
+  cidade: "Florianópolis"
+})
+CREATE (vaga37)-[:REQUISITA_FORMACAO_EM]->(g16)
+CREATE (vaga37)-[:REQUISITA_EXPERIENCIA_EM]->(exp62)
+CREATE (vaga37)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp3)
+CREATE (vaga37)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp25)
+CREATE (vaga37)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp16)
+CREATE (vaga37)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp27)
+CREATE (vaga37)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp58)
+CREATE (vaga37)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp68)
+
+// VAGA 38 - Especialista em DevOps - 8-9 competências
+CREATE (vaga38:VAGA {
+  empresa: "DevOps Excellence",
+  cargo: "Especialista em DevOps",
+  senioridade: "ESPECIALISTA",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga38)-[:REQUISITA_FORMACAO_EM]->(g15)
+CREATE (vaga38)-[:REQUISITA_FORMACAO_EM]->(m157)
+CREATE (vaga38)-[:REQUISITA_EXPERIENCIA_EM]->(exp83)
+CREATE (vaga38)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp11)
+CREATE (vaga38)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp12)
+CREATE (vaga38)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp5)
+CREATE (vaga38)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp56)
+CREATE (vaga38)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp57)
+CREATE (vaga38)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp13)
+CREATE (vaga38)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp7)
+
+// VAGA 39 - QA Analyst Júnior - 3-4 competências
+CREATE (vaga39:VAGA {
+  empresa: "Quality Testing Solutions",
+  cargo: "QA Analyst Júnior",
+  senioridade: "JUNIOR",
+  modalidade: "PRESENCIAL",
+  cidade: "Salvador"
+})
+CREATE (vaga39)-[:REQUISITA_FORMACAO_EM]->(g14)
+CREATE (vaga39)-[:REQUISITA_EXPERIENCIA_EM]->(exp51)
+CREATE (vaga39)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp39)
+CREATE (vaga39)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp68)
+CREATE (vaga39)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 3}]->(comp58)
+CREATE (vaga39)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 2}]->(comp4)
+
+// VAGA 40 - Gerente de Projetos de TI - 8-9 competências
+CREATE (vaga40:VAGA {
+  empresa: "IT Project Management Corp",
+  cargo: "Gerente de Projetos de TI",
+  senioridade: "GERENTE",
+  modalidade: "HIBRIDO",
+  cidade: "São Paulo"
+})
+CREATE (vaga40)-[:REQUISITA_FORMACAO_EM]->(g97)
+CREATE (vaga40)-[:REQUISITA_FORMACAO_EM]->(m101)
+CREATE (vaga40)-[:REQUISITA_EXPERIENCIA_EM]->(exp41)
+CREATE (vaga40)-[:REQUISITA_EXPERIENCIA_EM]->(exp79)
+CREATE (vaga40)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp44)
+CREATE (vaga40)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp10)
+CREATE (vaga40)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp9)
+CREATE (vaga40)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp75)
+CREATE (vaga40)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp76)
+CREATE (vaga40)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp78)
+CREATE (vaga40)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp79)
+
+// VAGA 41 - Desenvolvedor Back-End .NET - 5-6 competências
+CREATE (vaga41:VAGA {
+  empresa: "Microsoft Solutions BR",
+  cargo: "Desenvolvedor Back-End .NET",
+  senioridade: "PLENO",
+  modalidade: "HIBRIDO",
+  cidade: "São Paulo"
+})
+CREATE (vaga41)-[:REQUISITA_FORMACAO_EM]->(g3)
+CREATE (vaga41)-[:REQUISITA_EXPERIENCIA_EM]->(exp65)
+CREATE (vaga41)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp15)
+CREATE (vaga41)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp4)
+CREATE (vaga41)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp20)
+CREATE (vaga41)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp58)
+CREATE (vaga41)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp59)
+CREATE (vaga41)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp68)
+
+// VAGA 42 - Cientista de Dados Sênior com Doutorado - 8-9 competências
+CREATE (vaga42:VAGA {
+  empresa: "Advanced Research Institute",
+  cargo: "Cientista de Dados Sênior",
+  senioridade: "SENIOR",
+  modalidade: "PRESENCIAL",
+  cidade: "Campinas"
+})
+CREATE (vaga42)-[:REQUISITA_FORMACAO_EM]->(g23)
+CREATE (vaga42)-[:REQUISITA_FORMACAO_EM]->(m12)
+CREATE (vaga42)-[:REQUISITA_FORMACAO_EM]->(d5)
+CREATE (vaga42)-[:REQUISITA_EXPERIENCIA_EM]->(exp35)
+CREATE (vaga42)-[:REQUISITA_EXPERIENCIA_EM]->(exp94)
+CREATE (vaga42)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp34)
+CREATE (vaga42)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp35)
+CREATE (vaga42)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp6)
+CREATE (vaga42)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp2)
+CREATE (vaga42)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp33)
+CREATE (vaga42)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp52)
+CREATE (vaga42)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp66)
+
+// VAGA 43 - DevOps Engineer AWS - 5-6 competências
+CREATE (vaga43:VAGA {
+  empresa: "AWS Cloud Partners",
+  cargo: "DevOps Engineer AWS",
+  senioridade: "PLENO",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga43)-[:REQUISITA_FORMACAO_EM]->(g21)
+CREATE (vaga43)-[:REQUISITA_EXPERIENCIA_EM]->(exp23)
+CREATE (vaga43)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp5)
+CREATE (vaga43)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp11)
+CREATE (vaga43)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp12)
+CREATE (vaga43)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp56)
+CREATE (vaga43)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp57)
+CREATE (vaga43)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp7)
+
+// VAGA 44 - UX/UI Designer Júnior - 3-4 competências
+CREATE (vaga44:VAGA {
+  empresa: "Creative Design Agency",
+  cargo: "UX/UI Designer Júnior",
+  senioridade: "JUNIOR",
+  modalidade: "PRESENCIAL",
+  cidade: "Rio de Janeiro"
+})
+CREATE (vaga44)-[:REQUISITA_FORMACAO_EM]->(g27)
+CREATE (vaga44)-[:REQUISITA_EXPERIENCIA_EM]->(exp12)
+CREATE (vaga44)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp8)
+CREATE (vaga44)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp27)
+CREATE (vaga44)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 3}]->(comp29)
+CREATE (vaga44)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 2}]->(comp78)
+
+// VAGA 45 - Arquiteto de Machine Learning - 8-9 competências
+CREATE (vaga45:VAGA {
+  empresa: "AI Architecture Labs",
+  cargo: "Arquiteto de Machine Learning",
+  senioridade: "ARQUITETO",
+  modalidade: "HIBRIDO",
+  cidade: "São Paulo"
+})
+CREATE (vaga45)-[:REQUISITA_FORMACAO_EM]->(g117)
+CREATE (vaga45)-[:REQUISITA_FORMACAO_EM]->(m14)
+CREATE (vaga45)-[:REQUISITA_EXPERIENCIA_EM]->(exp94)
+CREATE (vaga45)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp34)
+CREATE (vaga45)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp6)
+CREATE (vaga45)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp35)
+CREATE (vaga45)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp2)
+CREATE (vaga45)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp33)
+CREATE (vaga45)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp52)
+CREATE (vaga45)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp66)
+
+// VAGA 46 - Desenvolvedor Full Stack Júnior - 3-4 competências
+CREATE (vaga46:VAGA {
+  empresa: "Tech Academy Startup",
+  cargo: "Desenvolvedor Full Stack Júnior",
+  senioridade: "JUNIOR",
+  modalidade: "PRESENCIAL",
+  cidade: "Belo Horizonte"
+})
+CREATE (vaga46)-[:REQUISITA_FORMACAO_EM]->(g87)
+CREATE (vaga46)-[:REQUISITA_EXPERIENCIA_EM]->(exp17)
+CREATE (vaga46)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp3)
+CREATE (vaga46)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp16)
+CREATE (vaga46)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 3}]->(comp27)
+CREATE (vaga46)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 2}]->(comp58)
+
+// VAGA 47 - Especialista em Segurança Cloud - 8-9 competências
+CREATE (vaga47:VAGA {
+  empresa: "Cloud Security Experts",
+  cargo: "Especialista em Segurança Cloud",
+  senioridade: "ESPECIALISTA",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga47)-[:REQUISITA_FORMACAO_EM]->(g17)
+CREATE (vaga47)-[:REQUISITA_FORMACAO_EM]->(m88)
+CREATE (vaga47)-[:REQUISITA_EXPERIENCIA_EM]->(exp55)
+CREATE (vaga47)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp42)
+CREATE (vaga47)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp5)
+CREATE (vaga47)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp43)
+CREATE (vaga47)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp74)
+CREATE (vaga47)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp47)
+CREATE (vaga47)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp57)
+CREATE (vaga47)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp56)
+
+// VAGA 48 - Product Manager Pleno - 6-7 competências
+CREATE (vaga48:VAGA {
+  empresa: "Product Leadership Co",
+  cargo: "Product Manager",
+  senioridade: "GESTOR",
+  modalidade: "HIBRIDO",
+  cidade: "São Paulo"
+})
+CREATE (vaga48)-[:REQUISITA_FORMACAO_EM]->(g36)
+CREATE (vaga48)-[:REQUISITA_FORMACAO_EM]->(m24)
+CREATE (vaga48)-[:REQUISITA_EXPERIENCIA_EM]->(exp47)
+CREATE (vaga48)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp76)
+CREATE (vaga48)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp9)
+CREATE (vaga48)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp10)
+CREATE (vaga48)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp44)
+CREATE (vaga48)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp75)
+CREATE (vaga48)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp78)
+
+// VAGA 49 - Engenheiro de Dados Big Data - 7-8 competências
+CREATE (vaga49:VAGA {
+  empresa: "Big Data Enterprise",
+  cargo: "Engenheiro de Dados Big Data",
+  senioridade: "SENIOR",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga49)-[:REQUISITA_FORMACAO_EM]->(g78)
+CREATE (vaga49)-[:REQUISITA_EXPERIENCIA_EM]->(exp33)
+CREATE (vaga49)-[:REQUISITA_EXPERIENCIA_EM]->(exp40)
+CREATE (vaga49)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp31)
+CREATE (vaga49)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp66)
+CREATE (vaga49)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp36)
+CREATE (vaga49)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp37)
+CREATE (vaga49)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp4)
+CREATE (vaga49)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp64)
+CREATE (vaga49)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp38)
+
+// VAGA 50 - Desenvolvedor Vue.js - 5-6 competências
+CREATE (vaga50:VAGA {
+  empresa: "Vue.js Development Team",
+  cargo: "Desenvolvedor Vue.js",
+  senioridade: "PLENO",
+  modalidade: "REMOTO",
+  cidade: "N/A"
+})
+CREATE (vaga50)-[:REQUISITA_FORMACAO_EM]->(g46)
+CREATE (vaga50)-[:REQUISITA_EXPERIENCIA_EM]->(exp11)
+CREATE (vaga50)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 7}]->(comp23)
+CREATE (vaga50)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp25)
+CREATE (vaga50)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp3)
+CREATE (vaga50)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 6}]->(comp27)
+CREATE (vaga50)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 5}]->(comp58)
+CREATE (vaga50)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 4}]->(comp68)
+
+
+
+// Ajustar vagas exigentes para requisitar POSDOUTORADO
+
+// VAGA 3 - Arquiteto de Sistemas (agora com POSDOUTORADO)
+MATCH (v3:VAGA {cargo:"Arquiteto de Sistemas"})
+MATCH (posd1:POSDOUTORADO {curso:"Inteligência Artificial Avançada"})
+CREATE (v3)-[:REQUISITA_POSDOUTORADO_EM]->(posd1)
+
+// VAGA 9 - Especialista em Segurança (agora com POSDOUTORADO)
+MATCH (v9:VAGA {cargo:"Especialista em Segurança da Informação"})
+MATCH (posd4:POSDOUTORADO {curso:"Cibersegurança e Blockchain"})
+CREATE (v9)-[:REQUISITA_POSDOUTORADO_EM]->(posd4)
+
+// VAGA 27 - Especialista em Machine Learning (agora com POSDOUTORADO)
+MATCH (v27:VAGA {cargo:"Especialista em Machine Learning"})
+MATCH (posd2:POSDOUTORADO {curso:"Computação Quântica Aplicada"})
+CREATE (v27)-[:REQUISITA_POSDOUTORADO_EM]->(posd2)
+
+// VAGA 42 - Cientista de Dados Sênior (agora com POSDOUTORADO)
+MATCH (v42:VAGA {cargo:"Cientista de Dados Sênior"})
+MATCH (posd3:POSDOUTORADO {curso:"Bioinformática e Genômica Computacional"})
+CREATE (v42)-[:REQUISITA_POSDOUTORADO_EM]->(posd3)
+
+// VAGA 45 - Arquiteto de Machine Learning (agora com POSDOUTORADO)
+MATCH (v45:VAGA {cargo:"Arquiteto de Machine Learning"})
+MATCH (posd5:POSDOUTORADO {curso:"Computação em Nuvem de Próxima Geração"})
+CREATE (v45)-[:REQUISITA_POSDOUTORADO_EM]->(posd5)
+
+// Adicionar mais competências a essas vagas exigentes para refletir o maior nível de exigência
+
+// VAGA 3 - Arquiteto de Sistemas (mais competências)
+MATCH (v3:VAGA {cargo:"Arquiteto de Sistemas"})
+CREATE (v3)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp13)
+CREATE (v3)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp14)
+
+// VAGA 9 - Especialista em Segurança (mais competências)
+MATCH (v9:VAGA {cargo:"Especialista em Segurança da Informação"})
+CREATE (v9)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp74)
+CREATE (v9)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp56)
+
+// VAGA 27 - Especialista em Machine Learning (mais competências)
+MATCH (v27:VAGA {cargo:"Especialista em Machine Learning"})
+CREATE (v27)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp52)
+CREATE (v27)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp66)
+
+// VAGA 42 - Cientista de Dados Sênior (mais competências)
+MATCH (v42:VAGA {cargo:"Cientista de Dados Sênior"})
+CREATE (v42)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 9}]->(comp33)
+CREATE (v42)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp52)
+
+// VAGA 45 - Arquiteto de Machine Learning (mais competências)
+MATCH (v45:VAGA {cargo:"Arquiteto de Machine Learning"})
+CREATE (v45)-[:REQUISITA_COMPETENCIA_EM {peso_ minimo: 9}]->(comp35)
+CREATE (v45)-[:REQUISITA_COMPETENCIA_EM {peso_minimo: 8}]->(comp66)
+
+// REMOVER RELACIONAMENTOS DE GRADUAÇÃO EXISTENTES
+MATCH (v:VAGA)-[r:REQUISITA_FORMACAO_EM]->()
+DELETE r;
+
+// VAGA 1 - Desenvolvedor Back-End Java - Graduações correlatas em TI
+MATCH (v1:VAGA {cargo:"Desenvolvedor Back-End Java"})
+MATCH (g1:GRADUACAO) WHERE g1.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Engenharia da Computação"]
+CREATE (v1)-[:REQUISITA_FORMACAO_EM]->(g1);
+
+// VAGA 2 - Cientista de Dados Sênior - Graduações correlatas em Dados e Computação
+MATCH (v2:VAGA {cargo:"Cientista de Dados Sênior"})
+MATCH (g2:GRADUACAO) WHERE g2.curso IN ["Ciência da Computação", "Ciência de Dados", "Estatística", "Matemática", "Engenharia de Software"]
+CREATE (v2)-[:REQUISITA_FORMACAO_EM]->(g2);
+
+// VAGA 3 - Arquiteto de Sistemas - Graduações correlatas em Engenharia e Computação
+MATCH (v3:VAGA {cargo:"Arquiteto de Sistemas"})
+MATCH (g3:GRADUACAO) WHERE g3.curso IN ["Engenharia de Software", "Ciência da Computação", "Engenharia da Computação", "Sistemas de Informação"]
+CREATE (v3)-[:REQUISITA_FORMACAO_EM]->(g3);
+
+// VAGA 4 - DevOps Engineer - Graduações correlatas em Redes e Computação
+MATCH (v4:VAGA {cargo:"DevOps Engineer"})
+MATCH (g4:GRADUACAO) WHERE g4.curso IN ["Redes de Computadores", "Ciência da Computação", "Engenharia de Software", "Sistemas para Internet"]
+CREATE (v4)-[:REQUISITA_FORMACAO_EM]->(g4);
+
+// VAGA 5 - Engenheiro de Machine Learning - Graduações correlatas em Computação e Matemática
+MATCH (v5:VAGA {cargo:"Engenheiro de Machine Learning"})
+MATCH (g5:GRADUACAO) WHERE g5.curso IN ["Ciência da Computação", "Engenharia de Software", "Matemática", "Estatística", "Ciência de Dados"]
+CREATE (v5)-[:REQUISITA_FORMACAO_EM]->(g5);
+
+// VAGA 6 - Product Manager - Graduações correlatas em Administração e TI
+MATCH (v6:VAGA {cargo:"Product Manager"})
+MATCH (g6:GRADUACAO) WHERE g6.curso IN ["Administração", "Marketing", "Sistemas de Informação", "Engenharia de Produção", "Ciência da Computação"]
+CREATE (v6)-[:REQUISITA_FORMACAO_EM]->(g6);
+
+// VAGA 7 - Desenvolvedor Front-End - Graduações correlatas em Computação e Design
+MATCH (v7:VAGA {cargo:"Desenvolvedor Front-End"})
+MATCH (g7:GRADUACAO) WHERE g7.curso IN ["Ciência da Computação", "Sistemas de Informação", "Design Digital", "Análise e Desenvolvimento de Sistemas"]
+CREATE (v7)-[:REQUISITA_FORMACAO_EM]->(g7);
+
+// VAGA 8 - Engenheiro de Dados Sênior - Graduações correlatas em Dados e Computação
+MATCH (v8:VAGA {cargo:"Engenheiro de Dados Sênior"})
+MATCH (g8:GRADUACAO) WHERE g8.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Ciência de Dados", "Estatística"]
+CREATE (v8)-[:REQUISITA_FORMACAO_EM]->(g8);
+
+// VAGA 9 - Especialista em Segurança - Graduações correlatas em Segurança e Computação
+MATCH (v9:VAGA {cargo:"Especialista em Segurança da Informação"})
+MATCH (g9:GRADUACAO) WHERE g9.curso IN ["Segurança da Informação", "Ciência da Computação", "Redes de Computadores", "Engenharia de Software"]
+CREATE (v9)-[:REQUISITA_FORMACAO_EM]->(g9);
+
+// VAGA 10 - UX/UI Designer - Graduações correlatas em Design
+MATCH (v10:VAGA {cargo:"UX/UI Designer"})
+MATCH (g10:GRADUACAO) WHERE g10.curso IN ["Design Digital", "Design Gráfico", "Sistemas para Internet", "Artes Visuais"]
+CREATE (v10)-[:REQUISITA_FORMACAO_EM]->(g10);
+
+// VAGA 11 - Desenvolvedor Full Stack Sênior - Graduações correlatas em Computação
+MATCH (v11:VAGA {cargo:"Desenvolvedor Full Stack Sênior"})
+MATCH (g11:GRADUACAO) WHERE g11.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Análise e Desenvolvimento de Sistemas"]
+CREATE (v11)-[:REQUISITA_FORMACAO_EM]->(g11);
+
+// VAGA 12 - Analista de BI - Graduações correlatas em Dados e Administração
+MATCH (v12:VAGA {cargo:"Analista de Business Intelligence"})
+MATCH (g12:GRADUACAO) WHERE g12.curso IN ["Administração", "Ciência da Computação", "Estatística", "Sistemas de Informação", "Economia"]
+CREATE (v12)-[:REQUISITA_FORMACAO_EM]->(g12);
+
+// VAGA 13 - Arquiteto de Cloud - Graduações correlatas em Computação e Redes
+MATCH (v13:VAGA {cargo:"Arquiteto de Cloud"})
+MATCH (g13:GRADUACAO) WHERE g13.curso IN ["Ciência da Computação", "Engenharia de Software", "Redes de Computadores", "Sistemas de Informação"]
+CREATE (v13)-[:REQUISITA_FORMACAO_EM]->(g13);
+
+// VAGA 14 - QA Engineer Sênior - Graduações correlatas em Computação
+MATCH (v14:VAGA {cargo:"QA Engineer Sênior"})
+MATCH (g14:GRADUACAO) WHERE g14.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Análise e Desenvolvimento de Sistemas"]
+CREATE (v14)-[:REQUISITA_FORMACAO_EM]->(g14);
+
+// VAGA 15 - Desenvolvedor Mobile iOS - Graduações correlatas em Computação
+MATCH (v15:VAGA {cargo:"Desenvolvedor Mobile iOS"})
+MATCH (g15:GRADUACAO) WHERE g15.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Jogos Digitais"]
+CREATE (v15)-[:REQUISITA_FORMACAO_EM]->(g15);
+
+// VAGA 16 - Engenheiro de Dados - Graduações correlatas em Dados e Computação
+MATCH (v16:VAGA {cargo:"Engenheiro de Dados"})
+MATCH (g16:GRADUACAO) WHERE g16.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Ciência de Dados"]
+CREATE (v16)-[:REQUISITA_FORMACAO_EM]->(g16);
+
+// VAGA 17 - Product Owner Sênior - Graduações correlatas em Gestão e TI
+MATCH (v17:VAGA {cargo:"Product Owner Sênior"})
+MATCH (g17:GRADUACAO) WHERE g17.curso IN ["Administração", "Sistemas de Informação", "Engenharia de Produção", "Marketing"]
+CREATE (v17)-[:REQUISITA_FORMACAO_EM]->(g17);
+
+// VAGA 18 - DevOps Engineer Júnior - Graduações correlatas em Redes e Computação
+MATCH (v18:VAGA {cargo:"DevOps Engineer Júnior"})
+MATCH (g18:GRADUACAO) WHERE g18.curso IN ["Redes de Computadores", "Ciência da Computação", "Sistemas de Informação", "Análise e Desenvolvimento de Sistemas"]
+CREATE (v18)-[:REQUISITA_FORMACAO_EM]->(g18);
+
+// VAGA 19 - Cientista de Dados Júnior - Graduações correlatas em Dados e Computação
+MATCH (v19:VAGA {cargo:"Cientista de Dados Júnior"})
+MATCH (g19:GRADUACAO) WHERE g19.curso IN ["Ciência da Computação", "Estatística", "Matemática", "Ciência de Dados", "Engenharia de Software"]
+CREATE (v19)-[:REQUISITA_FORMACAO_EM]->(g19);
+
+// VAGA 20 - Arquiteto de Dados - Graduações correlatas em Dados e Computação
+MATCH (v20:VAGA {cargo:"Arquiteto de Dados"})
+MATCH (g20:GRADUACAO) WHERE g20.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Ciência de Dados"]
+CREATE (v20)-[:REQUISITA_FORMACAO_EM]->(g20);
+
+// VAGA 21 - Desenvolvedor Python Sênior - Graduações correlatas em Computação
+MATCH (v21:VAGA {cargo:"Desenvolvedor Python Sênior"})
+MATCH (g21:GRADUACAO) WHERE g21.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Análise e Desenvolvimento de Sistemas"]
+CREATE (v21)-[:REQUISITA_FORMACAO_EM]->(g21);
+
+// VAGA 22 - UX Researcher - Graduações correlatas em Design e Pesquisa
+MATCH (v22:VAGA {cargo:"UX Researcher"})
+MATCH (g22:GRADUACAO) WHERE g22.curso IN ["Design Digital", "Psicologia", "Comunicação Social", "Marketing"]
+CREATE (v22)-[:REQUISITA_FORMACAO_EM]->(g22);
+
+// VAGA 23 - Site Reliability Engineer - Graduações correlatas em Computação e Redes
+MATCH (v23:VAGA {cargo:"Site Reliability Engineer"})
+MATCH (g23:GRADUACAO) WHERE g23.curso IN ["Ciência da Computação", "Engenharia de Software", "Redes de Computadores", "Sistemas de Informação"]
+CREATE (v23)-[:REQUISITA_FORMACAO_EM]->(g23);
+
+// VAGA 24 - Analista de Segurança - Graduações correlatas em Segurança
+MATCH (v24:VAGA {cargo:"Analista de Segurança da Informação"})
+MATCH (g24:GRADUACAO) WHERE g24.curso IN ["Segurança da Informação", "Redes de Computadores", "Ciência da Computação", "Sistemas de Informação"]
+CREATE (v24)-[:REQUISITA_FORMACAO_EM]->(g24);
+
+// VAGA 25 - Scrum Master - Graduações correlatas em Gestão e TI
+MATCH (v25:VAGA {cargo:"Scrum Master"})
+MATCH (g25:GRADUACAO) WHERE g25.curso IN ["Administração", "Sistemas de Informação", "Engenharia de Produção", "Gestão de TI"]
+CREATE (v25)-[:REQUISITA_FORMACAO_EM]->(g25);
+
+// VAGA 26 - Desenvolvedor Node.js - Graduações correlatas em Computação
+MATCH (v26:VAGA {cargo:"Desenvolvedor Node.js"})
+MATCH (g26:GRADUACAO) WHERE g26.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Análise e Desenvolvimento de Sistemas"]
+CREATE (v26)-[:REQUISITA_FORMACAO_EM]->(g26);
+
+// VAGA 27 - Especialista em Machine Learning - Graduações correlatas em Computação e Matemática
+MATCH (v27:VAGA {cargo:"Especialista em Machine Learning"})
+MATCH (g27:GRADUACAO) WHERE g27.curso IN ["Ciência da Computação", "Engenharia de Software", "Matemática", "Estatística", "Ciência de Dados"]
+CREATE (v27)-[:REQUISITA_FORMACAO_EM]->(g27);
+
+// VAGA 28 - Analista de Dados - Graduações correlatas em Dados
+MATCH (v28:VAGA {cargo:"Analista de Dados"})
+MATCH (g28:GRADUACAO) WHERE g28.curso IN ["Ciência da Computação", "Estatística", "Administração", "Sistemas de Informação", "Ciência de Dados"]
+CREATE (v28)-[:REQUISITA_FORMACAO_EM]->(g28);
+
+// VAGA 29 - Desenvolvedor Front-End Angular - Graduações correlatas em Computação
+MATCH (v29:VAGA {cargo:"Desenvolvedor Front-End Angular"})
+MATCH (g29:GRADUACAO) WHERE g29.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Design Digital"]
+CREATE (v29)-[:REQUISITA_FORMACAO_EM]->(g29);
+
+// VAGA 30 - Database Administrator Sênior - Graduações correlatas em Computação
+MATCH (v30:VAGA {cargo:"Database Administrator Sênior"})
+MATCH (g30:GRADUACAO) WHERE g30.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Tecnologia em Banco de Dados"]
+CREATE (v30)-[:REQUISITA_FORMACAO_EM]->(g30);
+
+// VAGA 31 - Engenheiro de Plataforma - Graduações correlatas em Computação
+MATCH (v31:VAGA {cargo:"Engenheiro de Plataforma"})
+MATCH (g31:GRADUACAO) WHERE g31.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Engenharia da Computação"]
+CREATE (v31)-[:REQUISITA_FORMACAO_EM]->(g31);
+
+// VAGA 32 - Product Designer Sênior - Graduações correlatas em Design
+MATCH (v32:VAGA {cargo:"Product Designer Sênior"})
+MATCH (g32:GRADUACAO) WHERE g32.curso IN ["Design Digital", "Design Gráfico", "Design de Produto", "Arquitetura"]
+CREATE (v32)-[:REQUISITA_FORMACAO_EM]->(g32);
+
+// VAGA 33 - Desenvolvedor Java Júnior - Graduações correlatas em Computação
+MATCH (v33:VAGA {cargo:"Desenvolvedor Java Júnior"})
+MATCH (g33:GRADUACAO) WHERE g33.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Análise e Desenvolvimento de Sistemas"]
+CREATE (v33)-[:REQUISITA_FORMACAO_EM]->(g33);
+
+// VAGA 34 - Arquiteto de Soluções - Graduações correlatas em Engenharia e Computação
+MATCH (v34:VAGA {cargo:"Arquiteto de Soluções"})
+MATCH (g34:GRADUACAO) WHERE g34.curso IN ["Engenharia de Software", "Ciência da Computação", "Engenharia da Computação", "Sistemas de Informação"]
+CREATE (v34)-[:REQUISITA_FORMACAO_EM]->(g34);
+
+// VAGA 35 - Analista de BI - Graduações correlatas em Dados e Administração
+MATCH (v35:VAGA {cargo:"Analista de BI"})
+MATCH (g35:GRADUACAO) WHERE g35.curso IN ["Administração", "Ciência da Computação", "Estatística", "Sistemas de Informação"]
+CREATE (v35)-[:REQUISITA_FORMACAO_EM]->(g35);
+
+// VAGA 36 - Engenheiro de Machine Learning - Graduações correlatas em Computação e Matemática
+MATCH (v36:VAGA {cargo:"Engenheiro de Machine Learning"})
+MATCH (g36:GRADUACAO) WHERE g36.curso IN ["Ciência da Computação", "Engenharia de Software", "Matemática", "Estatística", "Ciência de Dados"]
+CREATE (v36)-[:REQUISITA_FORMACAO_EM]->(g36);
+
+// VAGA 37 - Desenvolvedor React Native - Graduações correlatas em Computação
+MATCH (v37:VAGA {cargo:"Desenvolvedor React Native"})
+MATCH (g37:GRADUACAO) WHERE g37.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Jogos Digitais"]
+CREATE (v37)-[:REQUISITA_FORMACAO_EM]->(g37);
+
+// VAGA 38 - Especialista em DevOps - Graduações correlatas em Computação e Redes
+MATCH (v38:VAGA {cargo:"Especialista em DevOps"})
+MATCH (g38:GRADUACAO) WHERE g38.curso IN ["Ciência da Computação", "Engenharia de Software", "Redes de Computadores", "Sistemas de Informação"]
+CREATE (v38)-[:REQUISITA_FORMACAO_EM]->(g38);
+
+// VAGA 39 - QA Analyst Júnior - Graduações correlatas em Computação
+MATCH (v39:VAGA {cargo:"QA Analyst Júnior"})
+MATCH (g39:GRADUACAO) WHERE g39.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Análise e Desenvolvimento de Sistemas"]
+CREATE (v39)-[:REQUISITA_FORMACAO_EM]->(g39);
+
+// VAGA 40 - Gerente de Projetos de TI - Graduações correlatas em Gestão e TI
+MATCH (v40:VAGA {cargo:"Gerente de Projetos de TI"})
+MATCH (g40:GRADUACAO) WHERE g40.curso IN ["Administração", "Sistemas de Informação", "Engenharia de Produção", "Gestão de TI"]
+CREATE (v40)-[:REQUISITA_FORMACAO_EM]->(g40);
+
+// VAGA 41 - Desenvolvedor Back-End .NET - Graduações correlatas em Computação
+MATCH (v41:VAGA {cargo:"Desenvolvedor Back-End .NET"})
+MATCH (g41:GRADUACAO) WHERE g41.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Análise e Desenvolvimento de Sistemas"]
+CREATE (v41)-[:REQUISITA_FORMACAO_EM]->(g41);
+
+// VAGA 42 - Cientista de Dados Sênior - Graduações correlatas em Dados e Computação
+MATCH (v42:VAGA {cargo:"Cientista de Dados Sênior"})
+MATCH (g42:GRADUACAO) WHERE g42.curso IN ["Ciência da Computação", "Ciência de Dados", "Estatística", "Matemática", "Engenharia de Software"]
+CREATE (v42)-[:REQUISITA_FORMACAO_EM]->(g42);
+
+// VAGA 43 - DevOps Engineer AWS - Graduações correlatas em Computação e Redes
+MATCH (v43:VAGA {cargo:"DevOps Engineer AWS"})
+MATCH (g43:GRADUACAO) WHERE g43.curso IN ["Ciência da Computação", "Engenharia de Software", "Redes de Computadores", "Sistemas para Internet"]
+CREATE (v43)-[:REQUISITA_FORMACAO_EM]->(g43);
+
+// VAGA 44 - UX/UI Designer Júnior - Graduações correlatas em Design
+MATCH (v44:VAGA {cargo:"UX/UI Designer Júnior"})
+MATCH (g44:GRADUACAO) WHERE g44.curso IN ["Design Digital", "Design Gráfico", "Sistemas para Internet", "Artes Visuais"]
+CREATE (v44)-[:REQUISITA_FORMACAO_EM]->(g44);
+
+// VAGA 45 - Arquiteto de Machine Learning - Graduações correlatas em Computação e Matemática
+MATCH (v45:VAGA {cargo:"Arquiteto de Machine Learning"})
+MATCH (g45:GRADUACAO) WHERE g45.curso IN ["Ciência da Computação", "Engenharia de Software", "Matemática", "Estatística", "Ciência de Dados"]
+CREATE (v45)-[:REQUISITA_FORMACAO_EM]->(g45);
+
+// VAGA 46 - Desenvolvedor Full Stack Júnior - Graduações correlatas em Computação
+MATCH (v46:VAGA {cargo:"Desenvolvedor Full Stack Júnior"})
+MATCH (g46:GRADUACAO) WHERE g46.curso IN ["Ciência da Computação", "Sistemas de Informação", "Análise e Desenvolvimento de Sistemas", "Engenharia de Software"]
+CREATE (v46)-[:REQUISITA_FORMACAO_EM]->(g46);
+
+// VAGA 47 - Especialista em Segurança Cloud - Graduações correlatas em Segurança e Computação
+MATCH (v47:VAGA {cargo:"Especialista em Segurança Cloud"})
+MATCH (g47:GRADUACAO) WHERE g47.curso IN ["Segurança da Informação", "Ciência da Computação", "Redes de Computadores", "Engenharia de Software"]
+CREATE (v47)-[:REQUISITA_FORMACAO_EM]->(g47);
+
+// VAGA 48 - Product Manager - Graduações correlatas em Gestão e TI
+MATCH (v48:VAGA {cargo:"Product Manager"})
+MATCH (g48:GRADUACAO) WHERE g48.curso IN ["Administração", "Marketing", "Sistemas de Informação", "Engenharia de Produção", "Ciência da Computação"]
+CREATE (v48)-[:REQUISITA_FORMACAO_EM]->(g48);
+
+// VAGA 49 - Engenheiro de Dados Big Data - Graduações correlatas em Dados e Computação
+MATCH (v49:VAGA {cargo:"Engenheiro de Dados Big Data"})
+MATCH (g49:GRADUACAO) WHERE g49.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Ciência de Dados"]
+CREATE (v49)-[:REQUISITA_FORMACAO_EM]->(g49);
+
+// VAGA 50 - Desenvolvedor Vue.js - Graduações correlatas em Computação
+MATCH (v50:VAGA {cargo:"Desenvolvedor Vue.js"})
+MATCH (g50:GRADUACAO) WHERE g50.curso IN ["Ciência da Computação", "Engenharia de Software", "Sistemas de Informação", "Análise e Desenvolvimento de Sistemas"]
+CREATE (v50)-[:REQUISITA_FORMACAO_EM]->(g50);

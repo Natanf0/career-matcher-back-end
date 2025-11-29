@@ -33,47 +33,52 @@ public class RankerService {
         Para vagas Presenciais ou Híbridas, será recompensado o candidato que reside na mesma região da vaga e penalizado caso contrário
         Ou seja, se a Empresa estiver localizada na região Centro-Oeste do Brasil, os candidatos que residem em qualquer estado desta região obterão esta recompensa
          */
-        if(!vaga.getModalidade().equals(Modalidade.Remoto)){
+        if(!vaga.getModalidade().equals(Modalidade.REMOTO)){
             if(getIdRegiao(getRegioes(), vaga.getCidade()).equals(getIdRegiao(getRegioes(), candidato.getCidade()))) return PesosRanker.LOCALIDADE_CUMPRIDA.getPeso();
         }
         return PesosRanker.LOCALIDADE_NAO_CUMPRIDA.getPeso();
     }
 
     public int graduacaoRanker(Vaga vaga, Candidato candidato){
+        if(vaga.getGraduacao() == null) return 0; // a vaga não exige nenhuma graduação
+
         int rank;
         int rankMax =0;
-        if(vaga.getGraduacao() != null){
-            for(Graduacao graduacaoVaga : vaga.getGraduacao()){
-                rank = 0;
-                rankMax = 0;
-                if(graduacaoVaga.getCurso().equalsIgnoreCase(candidato.getGraduacao().getCurso()) && graduacaoVaga.getTipoGraduacao()==candidato.getGraduacao().getTipoGraduacao()){
-                    rank = PesosRanker.GRADUACAO_CURSO_CUMPRIDO.getPeso();
-                    if(graduacaoVaga.getInstituicao().equalsIgnoreCase(candidato.getGraduacao().getInstituicao())){
-                        rank += PesosRanker.GRADUACAO_INSTITUICAO_CUMPRIDO.getPeso();
-                    }
-                    if(graduacaoVaga.getAno_conclusao() >= candidato.getGraduacao().getAno_conclusao()){
-                        rank += PesosRanker.GRADUACAO_TEMPO_CONCLUIDO_CUMPRIDO.getPeso();
-                    }
+        for(Graduacao graduacaoVaga : vaga.getGraduacao()){
+            rank = 0;
+            rankMax = 0;
+            if(graduacaoVaga.getCurso().equalsIgnoreCase(candidato.getGraduacao().getCurso()) && graduacaoVaga.getTipoGraduacao()==candidato.getGraduacao().getTipoGraduacao()){
+                rank = PesosRanker.GRADUACAO_CURSO_CUMPRIDO.getPeso();
+                if(graduacaoVaga.getInstituicao().equalsIgnoreCase(candidato.getGraduacao().getInstituicao())){
+                    rank += PesosRanker.GRADUACAO_INSTITUICAO_CUMPRIDO.getPeso();
                 }
-                if(rank > rankMax){rankMax = rank;}
+                if(graduacaoVaga.getAno_conclusao() >= candidato.getGraduacao().getAno_conclusao()){
+                    rank += PesosRanker.GRADUACAO_TEMPO_CONCLUIDO_CUMPRIDO.getPeso();
+                }
             }
+            if(rank > rankMax){rankMax = rank;}
         }
-        return (rankMax == 0 && vaga.getGraduacao()!=null) ? PesosRanker.GRADUACAO_NAO_CUMPRIDA.getPeso() : rankMax ;
+        return (rankMax == 0) ? PesosRanker.GRADUACAO_NAO_CUMPRIDA.getPeso() : rankMax ;
     }
 
     public int experienciaRanker(Vaga vaga, Candidato candidato){
+        if(vaga.getExperiencia() == null) return 0;
+        if(candidato.getExperiencias() == null) return PesosRanker.EXPERIENCIA_NAO_CUMPRIDA.getPeso();
+
         List<Experiencia> experienciasFiltradas = candidato.getExperiencias().stream().filter(exp -> exp.getCargo().equalsIgnoreCase(vaga.getCargo())).toList();
         int totalMesesExperiencia = 0, rank = 0;
-        for(Experiencia experiencia : experienciasFiltradas){
-            totalMesesExperiencia += experiencia.getDuracao_meses();
+        if(!experienciasFiltradas.isEmpty()){
+            for(Experiencia experiencia : experienciasFiltradas){
+                totalMesesExperiencia += experiencia.getDuração_meses();
 
-            if(experiencia.getSenioridade().getValor() >= candidato.getSenioridade().getValor()){ // quebrar em iguak ou maior
-                rank += PesosRanker.EXPERIENCIA_SENIORIODADE_ACIMA.getPeso();
+                if(experiencia.getSenioridade().getValor() >= candidato.getSenioridade().getValor()){ // quebrar em iguak ou maior
+                    rank += PesosRanker.EXPERIENCIA_SENIORIODADE_ACIMA.getPeso();
 
-            }else rank += PesosRanker.EXPERIENCIA_SENIORIODADE_ABAIXO.getPeso();
+                }else rank += PesosRanker.EXPERIENCIA_SENIORIODADE_ABAIXO.getPeso();
+            }
+
+            rank += (int) (PesosRanker.EXPERIENCIA_TEMPO.getPeso() * (totalMesesExperiencia / vaga.getExperiencia().getDuração_meses()));
         }
-
-        rank += (int) (PesosRanker.EXPERIENCIA_TEMPO.getPeso() * (totalMesesExperiencia / vaga.getExperiencia().getDuracao_meses()));
         return rank;
     }
 

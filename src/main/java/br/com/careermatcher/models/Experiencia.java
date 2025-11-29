@@ -15,6 +15,6 @@ public class Experiencia {
     private Long id;
 
     private String cargo;
-    private Float duracao_meses;
+    private Integer duração_meses;
     private Senioridade senioridade;
 }

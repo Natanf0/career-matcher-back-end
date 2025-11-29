@@ -1,10 +1,10 @@
 package br.com.careermatcher.models;
 
 import br.com.careermatcher.enums.Senioridade;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
@@ -38,5 +38,6 @@ public class Candidato {
     @Relationship(type = "FORMADO_EM", direction = Relationship.Direction.OUTGOING)
     private PosDoutorado posDoutorado;
 
-    private List<Vaga> listaPreferenciaVagas;
+    @Transient
+    private List<Vaga> listaPreferenciaVagas; // Aqui, vou alocar as Vagas em ordem de preferencia do candidato
 }

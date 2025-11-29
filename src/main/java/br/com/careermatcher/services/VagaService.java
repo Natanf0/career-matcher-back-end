@@ -8,8 +8,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -20,36 +20,43 @@ public class VagaService {
     private RankerService rankerService;
 
     public List<Vaga> findAll(){
-        return vagaRepository.findAll();
+        return vagaRepository.findAllWithRelationships();
     }
 
 
-    public List<Candidato> createRankedListVagas(){
+    public HashMap<Integer, List<Candidato>> createRankedListVagas(){
         /*
             Função que cria uma lista de preferências de Candidatos para uma Vaga
          */
-
-        List<Candidato> rankedListVagas = new ArrayList<>();
         List<Vaga> vagas = vagaRepository.findAll();
         List<Candidato> candidatos = candidatoRepository.findAll();
 
-        for(Vaga vaga : vagas){
-            List<Candidato> candidatoesFiltradosCargo = candidatos.stream().filter(x -> x.getCargo().equalsIgnoreCase(vaga.getCargo())).toList(); // Filtra os candidatos que possuem o mesmo carga da vaga
+        HashMap<Integer, List<Candidato>> rankedListVagasMap = new HashMap<>();
+        List<Candidato> candidatosVagas = new ArrayList<>();
 
-            for(Candidato candidato : candidatoesFiltradosCargo) {
+        for(Vaga vaga : vagas){
+            for(Candidato candidatoCargoDiferente : candidatos.stream().filter(x -> ! (x.getCargo().equalsIgnoreCase(vaga.getCargo()))).toList()) {
+                candidatosVagas.add(candidatoCargoDiferente);
+                rankedListVagasMap.put(0, candidatosVagas);
+            }
+
+            for(Candidato candidatoCargoDaVaga : candidatos.stream().filter(x -> x.getCargo().equalsIgnoreCase(vaga.getCargo())).toList()) {
                 int rank = 0;
 
-                rank   += rankerService.senioridadeRanker(vaga, candidato)
-                        + rankerService.localidadeXmodalidadeRanker(vaga, candidato)
-                        + rankerService.graduacaoRanker(vaga, candidato)
-                        + rankerService.experienciaRanker(vaga, candidato)
-                        + rankerService.competenciasRanker(vaga, candidato)
-                        + rankerService.mestradoRanker(vaga, candidato)
-                        + rankerService.doutoradoRanker(vaga, candidato)
-                        + rankerService.posDoutoradoRanker(vaga, candidato);
+                rank   += rankerService.senioridadeRanker(vaga, candidatoCargoDaVaga)
+                        + rankerService.localidadeXmodalidadeRanker(vaga, candidatoCargoDaVaga)
+                        + rankerService.graduacaoRanker(vaga, candidatoCargoDaVaga)
+                        + rankerService.experienciaRanker(vaga, candidatoCargoDaVaga)
+                        + rankerService.competenciasRanker(vaga, candidatoCargoDaVaga)
+                        + rankerService.mestradoRanker(vaga, candidatoCargoDaVaga)
+                        + rankerService.doutoradoRanker(vaga, candidatoCargoDaVaga)
+                        + rankerService.posDoutoradoRanker(vaga, candidatoCargoDaVaga);
+
+                candidatosVagas.add(candidatoCargoDaVaga);
+                rankedListVagasMap.put(rank, candidatosVagas);
             }
         }
-        return rankedListVagas;
+        return rankedListVagasMap;
     }
 
 
