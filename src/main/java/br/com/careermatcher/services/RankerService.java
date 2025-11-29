@@ -140,5 +140,19 @@ public class RankerService {
         return ( rank == 0 && vaga.getPosDoutorado() != null) ? PesosRanker.POSDOUTORADO_NAO_CUMPRIDO.getPeso() : rank ;
     }
 
+    public int calcularScoreTotal(Vaga vaga, Candidato candidato){
+        int score = 0;
+        
+        score += senioridadeRanker(vaga, candidato);
+        score += localidadeXmodalidadeRanker(vaga, candidato);
+        score += graduacaoRanker(vaga, candidato);
+        score += experienciaRanker(vaga, candidato);
+        score += competenciasRanker(vaga, candidato);
+        score += mestradoRanker(vaga, candidato);
+        score += doutoradoRanker(vaga, candidato);
+        score += posDoutoradoRanker(vaga, candidato);
+        
+        return score;
+    }
 
 }
