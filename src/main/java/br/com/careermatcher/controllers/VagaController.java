@@ -1,7 +1,9 @@
 package br.com.careermatcher.controllers;
-
-
 import br.com.careermatcher.models.Vaga;
+import br.com.careermatcher.repositories.CandidatoRepository;
+import br.com.careermatcher.repositories.VagaRepository;
+import br.com.careermatcher.services.CandidatoService;
+import br.com.careermatcher.services.GaleShapley;
 import br.com.careermatcher.services.VagaService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,11 +20,16 @@ import java.util.List;
 public class VagaController {
 
     private final VagaService vagaService;
+    private final CandidatoService candidatoService;
+    private final VagaRepository vagaRepository;
+    private final CandidatoRepository candidatoRepository;
+    private final GaleShapley galeShapley;
 
     @GetMapping("/")
     public ResponseEntity<List<Vaga>> findAllVagas(){
-        //System.out.println("--------------------------------------------------------------------------");
-        //vagaService.createRankedListVagas();
+        //vagaService.createRankedListCandidatosTodasAsVagas();
+        //candidatoService.createRankedListVagasTodosOsCandidatos();
+        //galeShapley.galeShapleyAlgorithm();
         return new ResponseEntity<>(vagaService.findAll(), HttpStatus.OK);
     }
 
