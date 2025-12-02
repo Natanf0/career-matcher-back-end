@@ -19,7 +19,7 @@ public class CandidatoController {
     private final CandidatoService candidatoService;
 
     @GetMapping("/")
-    public ResponseEntity<List<Candidato>> findAllVagas(){
+    public ResponseEntity<List<Candidato>> findAllCandidatos(){
         return new ResponseEntity<>(candidatoService.findAll(), HttpStatus.OK);
     }
 }
