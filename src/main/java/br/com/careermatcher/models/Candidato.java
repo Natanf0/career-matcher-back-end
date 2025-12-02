@@ -1,7 +1,7 @@
 package br.com.careermatcher.models;
 
 import br.com.careermatcher.enums.Senioridade;
-import br.com.careermatcher.models.relations.HabilEm;
+import br.com.careermatcher.relations.HabilEm;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

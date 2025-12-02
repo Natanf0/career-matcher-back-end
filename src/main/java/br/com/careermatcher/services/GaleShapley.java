@@ -1,10 +1,6 @@
 package br.com.careermatcher.services;
-
-import br.com.careermatcher.enums.Modalidade;
 import br.com.careermatcher.models.Candidato;
 import br.com.careermatcher.models.Vaga;
-import br.com.careermatcher.repositories.CandidatoRepository;
-import br.com.careermatcher.repositories.VagaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,29 +10,33 @@ import java.util.*;
 @AllArgsConstructor
 public class GaleShapley {
 
-    private CandidatoRepository candidatoRepository;
-    private VagaRepository vagaRepository;
+    private CandidatoService candidatoService;
+    private VagaService vagaService;
 
-    public void galeShapleyAlgorithm() {
+    public void galeShapleyAlgorithm(List<Candidato> todosOsCandidatos, List<Vaga> todasAsVagas) {
         // Inicializa todos os candidatos e vagas como livres
-        for(Candidato candidato: candidatoRepository.findAll()) {
+        for(Candidato candidato: todosOsCandidatos) {
             candidato.setVagaEscolhida(null);
         }
-        for(Vaga vaga: vagaRepository.findAll()) {
+        for(Vaga vaga: todasAsVagas) {
             vaga.setCandidatoEscolhido(null);
         }
 
+        // Computa as listas de preferencias:
+        vagaService.createRankedListCandidatosTodasAsVagas(todasAsVagas,  todosOsCandidatos);
+        candidatoService.createRankedListVagasTodosOsCandidatos(todosOsCandidatos, todasAsVagas);
+
         // Fila de candidatos livres
-        Queue<Candidato> candidatosLivres = new LinkedList<>(candidatoRepository.findAll());
+        Queue<Candidato> candidatosLivres = new LinkedList<>(todosOsCandidatos);
 
         // Mapa para controlar o próximo índice de proposta de cada candidato
         Map<Candidato, Integer> indiceProposta = new HashMap<>();
-        for(Candidato candidato : candidatoRepository.findAll()) {
+        for(Candidato candidato : todosOsCandidatos) {
             indiceProposta.put(candidato, 0);
         }
 
         // Algoritmo Gale-Shapley
-        while(!candidatosLivres.isEmpty() && existeVagaSemCandidato()) {
+        while(!candidatosLivres.isEmpty() && existeVagaSemCandidato(todasAsVagas)) {
             Candidato candidato = candidatosLivres.poll();
             int proximoIndice = indiceProposta.get(candidato);
 
@@ -86,30 +86,11 @@ public class GaleShapley {
         return indiceNovo < indiceAtual;
     }
 
-    private boolean existeVagaSemCandidato() {
-        long qtdeVagasSemCandidato = vagaRepository.findAll()
+    private boolean existeVagaSemCandidato(List<Vaga> vagas) {
+        long qtdeVagasSemCandidato = vagas
                 .stream()
                 .filter(v -> v.getCandidatoEscolhido() == null)
                 .count();
         return qtdeVagasSemCandidato > 0;
-    }
-
-    // Método auxiliar para verificar o matching resultante
-    public void mostrarResultado() {
-        System.out.println("=== RESULTADO DO MATCHING GALE-SHAPLEY ===");
-        for(Vaga vaga : vagaRepository.findAll()) {
-            if(vaga.getCandidatoEscolhido() != null) {
-                System.out.println("Vaga: " + vaga.getId() + " → Candidato: " + vaga.getCandidatoEscolhido().getId());
-            } else {
-                System.out.println("Vaga: " + vaga.getId() + " → SEM CANDIDATO");
-            }
-        }
-
-        System.out.println("\nCandidatos sem vaga:");
-        for(Candidato cand : candidatoRepository.findAll()) {
-            if(cand.getVagaEscolhida() == null) {
-                System.out.println("Candidato: " + cand.getId() + " → SEM VAGA");
-            }
-        }
     }
 }

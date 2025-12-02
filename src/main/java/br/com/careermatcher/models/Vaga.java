@@ -2,7 +2,7 @@ package br.com.careermatcher.models;
 
 import br.com.careermatcher.enums.Modalidade;
 import br.com.careermatcher.enums.Senioridade;
-import br.com.careermatcher.models.relations.RequisitaCompetenciaEm;
+import br.com.careermatcher.relations.RequisitaCompetenciaEm;
 import lombok.*;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
@@ -10,7 +10,6 @@ import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
 
-import java.util.HashMap;
 import java.util.List;
 
 @Node("VAGA")

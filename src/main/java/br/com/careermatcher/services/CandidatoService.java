@@ -3,6 +3,7 @@ import br.com.careermatcher.models.Candidato;
 import br.com.careermatcher.models.Vaga;
 import br.com.careermatcher.repositories.CandidatoRepository;
 import br.com.careermatcher.repositories.VagaRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,37 +13,25 @@ import java.util.Map;
 
 
 @Service
+@AllArgsConstructor
 public class CandidatoService {
     private final CandidatoRepository candidatoRepository;
-    private final VagaRepository vagaRepository;
     private final RankerService rankerService;
 
-    public CandidatoService(CandidatoRepository candidatoRepository, VagaRepository vagaRepository, RankerService rankerService) {
-        this.candidatoRepository = candidatoRepository;
-        this.vagaRepository = vagaRepository;
-        this.rankerService = rankerService;
-    }
+    public List<Candidato> findAll(){return candidatoRepository.findAll();}
 
-    public List<Candidato> findAllmodificado(){
-        return candidatoRepository.findAllWithRelations(); // apenas para testar
-    }
-
-    public void createRankedListVagasTodosOsCandidatos(){
-        for(Candidato candidato : candidatoRepository.findAll()){
-            createRankedListVagas(candidato);
-            System.out.println("SUCESSO NTNTNTNTTTTTTTT");
+    public void createRankedListVagasTodosOsCandidatos(List<Candidato> todosOsCandidatos, List<Vaga> todasAsVagas){
+        for(Candidato candidato : todosOsCandidatos ){
+            createRankedListVagas(candidato, todasAsVagas);
         }
     }
 
-    private void createRankedListVagas(Candidato candidato){
+    private void createRankedListVagas(Candidato candidato, List<Vaga> todasAsVagas){
         Map<Vaga, Double> rankedMapVagas = new HashMap<>();
         List<Vaga> rankedListVagas = new ArrayList<>();
         double rank;
 
-        for(Vaga vaga: vagaRepository.findAll()){
-            if(!vaga.getCargo().equals(candidato.getCargo())) {
-                rankedMapVagas.put(vaga,0.) ;
-            }else{
+        for(Vaga vaga: todasAsVagas ){
                 rank = 0.;
                 rank+= rankerService.senioridadeRanker(vaga, candidato)
                         + rankerService.modalidadeRanker(vaga, candidato)
@@ -54,7 +43,6 @@ public class CandidatoService {
                         + rankerService.posDoutoradoRanker(vaga, candidato);
 
                 rankedMapVagas.put(vaga,rank);
-                }
             }
 
             rankedListVagas = orderByRank(rankedMapVagas);

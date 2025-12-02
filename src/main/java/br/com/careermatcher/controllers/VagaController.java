@@ -27,9 +27,7 @@ public class VagaController {
 
     @GetMapping("/")
     public ResponseEntity<List<Vaga>> findAllVagas(){
-        //vagaService.createRankedListCandidatosTodasAsVagas();
-        //candidatoService.createRankedListVagasTodosOsCandidatos();
-        //galeShapley.galeShapleyAlgorithm();
+        galeShapley.galeShapleyAlgorithm(candidatoService.findAll(),  vagaService.findAll());
         return new ResponseEntity<>(vagaService.findAll(), HttpStatus.OK);
     }
 
