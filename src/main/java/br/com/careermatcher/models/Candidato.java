@@ -1,9 +1,11 @@
 package br.com.careermatcher.models;
 
 import br.com.careermatcher.enums.Senioridade;
+import br.com.careermatcher.models.relations.HabilEm;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
@@ -21,23 +23,26 @@ public class Candidato {
     @NonNull private Senioridade senioridade;
 
     @Relationship(type = "HABIL_EM", direction = Relationship.Direction.OUTGOING)
-    private List<Competencia> competencias;
+    private List<HabilEm> competencias;
 
     @Relationship(type = "TRABALHOU_EM", direction = Relationship.Direction.OUTGOING)
     private List<Experiencia> experiencias;
 
-    @Relationship(type = "FORMADO_EM", direction = Relationship.Direction.OUTGOING)
+    @Relationship(type = "GRADUADO_EM", direction = Relationship.Direction.OUTGOING)
     private Graduacao graduacao;
 
-    @Relationship(type = "FORMADO_EM", direction = Relationship.Direction.OUTGOING)
+    @Relationship(type = "MESTRE_EM", direction = Relationship.Direction.OUTGOING)
     private Mestrado mestrado;
 
-    @Relationship(type = "FORMADO_EM", direction = Relationship.Direction.OUTGOING)
+    @Relationship(type = "DOUTOR_EM", direction = Relationship.Direction.OUTGOING)
     private Doutorado doutorado;
 
-    @Relationship(type = "FORMADO_EM", direction = Relationship.Direction.OUTGOING)
+    @Relationship(type = "POSDOUTOR_EM", direction = Relationship.Direction.OUTGOING)
     private PosDoutorado posDoutorado;
 
-    @Transient
+    @Transient @Setter
     private List<Vaga> listaPreferenciaVagas; // Aqui, vou alocar as Vagas em ordem de preferencia do candidato
+
+    @Transient @Setter
+    private Vaga vagaEscolhida;
 }

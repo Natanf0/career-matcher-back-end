@@ -6,13 +6,10 @@ import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 
 @Node("MESTRADO")
-@AllArgsConstructor
 @Getter
-public class Mestrado {
-    @Id @GeneratedValue
-    private Long id;
+public class Mestrado extends PosGraduacao{
 
-    private String curso, instituicao, subarea;
-    private Integer ano_conclusao;
-    private Boolean concluido;
+    public Mestrado(Long id, String curso, String instituicao, String subarea, Integer ano_conclusao) {
+        super(id, curso, instituicao, subarea, ano_conclusao);
+    }
 }
