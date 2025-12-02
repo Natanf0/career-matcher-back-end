@@ -19,7 +19,10 @@ public class Vaga {
     @Id @GeneratedValue private Long id;
     @NonNull private String empresa, cargo, cidade;
     @NonNull private Senioridade senioridade;
-     @NonNull private Modalidade  modalidade;
+    @NonNull private Modalidade  modalidade;
+
+    @Setter private Long idCandidatoEscolhido;
+
 
     @Relationship(type = "REQUISITA_GRADUACAO_EM", direction = Relationship.Direction.OUTGOING)
     private List<Graduacao> graduacao; // Normalmente vagas possuem uma lista de graduações correlatas de interesse. Então decidi cobrir isto
@@ -42,6 +45,5 @@ public class Vaga {
     @Transient @Setter
     private List<Candidato> listaPreferenciaCandidatos; // aqui, vou alocar os candidatos preferenciais da vaga
 
-    @Transient @Setter
-    private Candidato candidatoEscolhido;
+
 }

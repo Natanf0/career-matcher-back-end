@@ -21,6 +21,7 @@ public class Candidato {
     @Id @GeneratedValue @NonNull private Long id;
     @NonNull private String nome, cargo, país, cidade, telefone, email;
     @NonNull private Senioridade senioridade;
+    @Setter private Long idVagaEscolhida;
 
     @Relationship(type = "HABIL_EM", direction = Relationship.Direction.OUTGOING)
     private List<HabilEm> competencias;
@@ -43,6 +44,5 @@ public class Candidato {
     @Transient @Setter
     private List<Vaga> listaPreferenciaVagas; // Aqui, vou alocar as Vagas em ordem de preferencia do candidato
 
-    @Transient @Setter
-    private Vaga vagaEscolhida;
+
 }
