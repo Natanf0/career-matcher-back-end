@@ -2,7 +2,6 @@ package br.com.careermatcher.services;
 
 import br.com.careermatcher.models.Candidato;
 import br.com.careermatcher.models.Vaga;
-import br.com.careermatcher.repositories.CandidatoRepository;
 import br.com.careermatcher.repositories.VagaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,45 +10,37 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @Service
 @AllArgsConstructor
 public class VagaService {
 
     private final VagaRepository vagaRepository;
-    private final CandidatoRepository candidatoRepository;
     private RankerService rankerService;
 
     public List<Vaga> findAll(){
         return vagaRepository.findAll();
     }
 
-
-    public void createRankedListCandidatosTodasAsVagas(){
-        for(Vaga vaga: vagaRepository.findAll()){
-            createRankedListCandidatos(vaga);
+    public void createRankedListCandidatosTodasAsVagas(List<Vaga> todasAsVagas, List<Candidato> todosOsCandidatos){
+        for(Vaga vaga: todasAsVagas){
+            createRankedListCandidatos(vaga, todosOsCandidatos);
         }
-        System.out.println("Vagas salva com sucesso!");
     }
 
 
-    private void createRankedListCandidatos(Vaga vaga){
+    private void createRankedListCandidatos(Vaga vaga, List<Candidato> todosOsCandidatos){
         /*
             Função que cria uma lista de preferências de Candidatos para uma Vaga
          */
-
         Map<Candidato, Double> rankedMapCandidatos = new HashMap<>();
         List<Candidato> rankedListCandidatos = new ArrayList<>();
         double rank;
 
-        for (Candidato candidato : candidatoRepository.findAll()) {
-            if(!candidato.getCargo().equals(vaga.getCargo())){
-                rankedMapCandidatos.put(candidato, 0.);
-            }else{
+        for (Candidato candidato : todosOsCandidatos) {
                 rank = 0;
 
                 rank += rankerService.senioridadeRanker(vaga, candidato)
-                         +rankerService.localidadeXmodalidadeRanker(vaga, candidato)
+                        + rankerService.localidadeXmodalidadeRanker(vaga, candidato)
                         + rankerService.graduacaoRanker(vaga, candidato)
                         + rankerService.experienciaRanker(vaga, candidato)
                         + rankerService.competenciasRanker(vaga, candidato)
@@ -58,15 +49,10 @@ public class VagaService {
                         + rankerService.posDoutoradoRanker(vaga, candidato);
 
                         rankedMapCandidatos.put(candidato, rank);
-
                 }
-            }
 
         rankedListCandidatos = orderByRank(rankedMapCandidatos);
         vaga.setListaPreferenciaCandidatos(rankedListCandidatos);
-
-        System.out.println("SUCESSO!"+vaga.getListaPreferenciaCandidatos());
-        System.out.println("NT");
     }
 
     private List<Candidato> orderByRank(Map<Candidato, Double> rankedMapCandidatos){

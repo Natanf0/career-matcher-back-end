@@ -20,9 +20,6 @@ public class CandidatoController {
 
     @GetMapping("/")
     public ResponseEntity<List<Candidato>> findAllVagas(){
-        return new ResponseEntity<>(candidatoService.findAllmodificado(), HttpStatus.OK);
+        return new ResponseEntity<>(candidatoService.findAll(), HttpStatus.OK);
     }
-
-
-
 }

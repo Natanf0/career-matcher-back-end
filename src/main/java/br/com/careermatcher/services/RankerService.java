@@ -3,8 +3,8 @@ package br.com.careermatcher.services;
 import br.com.careermatcher.enums.Modalidade;
 import br.com.careermatcher.enums.PesosRanker;
 import br.com.careermatcher.models.*;
-import br.com.careermatcher.models.relations.HabilEm;
-import br.com.careermatcher.models.relations.RequisitaCompetenciaEm;
+import br.com.careermatcher.relations.HabilEm;
+import br.com.careermatcher.relations.RequisitaCompetenciaEm;
 import br.com.careermatcher.repositories.CandidatoRepository;
 import br.com.careermatcher.repositories.VagaRepository;
 import lombok.AllArgsConstructor;
@@ -107,10 +107,13 @@ public class RankerService {
     public double competenciasRanker(Vaga vaga, Candidato candidato){
         double rank = 0;
 
-        for(HabilEm habilEm: candidatoRepository.findWithCompetencias(candidato.getId()).orElseThrow().getCompetencias()){
-            for(RequisitaCompetenciaEm requisitaCompetenciaEm: vagaRepository.findWithCompetencias(vaga.getId()).orElseThrow().getCompetencias()){
-                if(habilEm.getCompetencia().getNome().equalsIgnoreCase(requisitaCompetenciaEm.getCompetencia().getNome())){
-                    rank += ((double) habilEm.getPeso() /requisitaCompetenciaEm.getPeso())*PesosRanker.COMPETENCIA_CUMPRIDA.getPeso();
+        List<HabilEm> habilEm = candidato.getCompetencias();
+        List<RequisitaCompetenciaEm> requisitaCompetenciaEm = vaga.getCompetencias();
+
+        for(HabilEm candHabil : habilEm){
+            for(RequisitaCompetenciaEm vagaReq : requisitaCompetenciaEm){
+                if(candHabil.getCompetencia().getNome().equalsIgnoreCase(vagaReq.getCompetencia().getNome())){
+                    rank+= ((double) candHabil.getPeso()/vagaReq.getPeso())*PesosRanker.COMPETENCIA_CUMPRIDA.getPeso();
                 }
             }
         }
