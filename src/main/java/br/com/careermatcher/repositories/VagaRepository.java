@@ -31,7 +31,7 @@ public interface VagaRepository extends Neo4jRepository<Vaga, Long> {
     @Query("MATCH (v:VAGA) WHERE v.id = $vagaId SET v.idCandidatoEscolhido = $candidatoId")
     void atualizarCandidatoEscolhido(Long vagaId, Long candidatoId);
 
-    @Query("""
+    @Query(value = """
         MATCH (v:VAGA)
         WHERE ($senioridade IS NULL OR TOUPPER(v.senioridade) IN [sen IN $senioridade | TOUPPER(sen)])
         AND ($modalidade IS NULL OR TOUPPER(v.modalidade) IN [mod IN $modalidade | TOUPPER(mod)])
@@ -39,14 +39,13 @@ public interface VagaRepository extends Neo4jRepository<Vaga, Long> {
              ANY(c IN $cargo WHERE TOLOWER(v.cargo) CONTAINS TOLOWER(c)))
         AND ($empresa IS NULL OR TOLOWER(v.empresa) CONTAINS TOLOWER($empresa))
         AND ($cidade IS NULL OR TOLOWER(v.cidade) CONTAINS TOLOWER($cidade))
-        RETURN v
+        RETURN v.id
     """)
-    List<Vaga> findByFilters(
+    List<Long> findIdsByFilters(
         @Param("senioridade") List<String> senioridade,
         @Param("modalidade") List<String> modalidade,
         @Param("cargo") List<String> cargo,
         @Param("empresa") String empresa,
         @Param("cidade") String cidade
     );
-
 }

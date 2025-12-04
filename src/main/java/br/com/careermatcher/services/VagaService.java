@@ -39,13 +39,14 @@ public class VagaService {
         if (!hasSenioridade && !hasModalidade && !hasCargo && !hasEmpresa && !hasCidade) {
             vagas = vagaRepository.findAll();
         } else {
-            vagas = vagaRepository.findByFilters(
+            List<Long> ids = vagaRepository.findIdsByFilters(
                 hasSenioridade ? senioridade : null,
                 hasModalidade ? modalidade : null,
                 hasCargo ? cargo : null,
                 hasEmpresa ? empresa : null,
                 hasCidade ? cidade : null
             );
+            vagas = vagaRepository.findAllById(ids).stream().toList();
         }
 
         preencherNomesCandidatos(vagas);
