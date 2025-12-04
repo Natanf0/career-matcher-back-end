@@ -23,12 +23,14 @@ public class Vaga {
 
     @Setter private Long idCandidatoEscolhido;
 
+    @Transient @Setter
+    private String nomeCandidatoEscolhido;
 
     @Relationship(type = "REQUISITA_GRADUACAO_EM", direction = Relationship.Direction.OUTGOING)
-    private List<Graduacao> graduacao; // Normalmente vagas possuem uma lista de graduações correlatas de interesse. Então decidi cobrir isto
+    private List<Graduacao> graduacao;
 
     @Relationship(type = "REQUISITA_EXPERIENCIA_EM", direction = Relationship.Direction.OUTGOING)
-    private Experiencia experiencia; // As descrições das vagas são agnósticas as formas das experiencias. Costumam pedir algo mais exato como "Y anos de experiência em"
+    private Experiencia experiencia;
 
     @Relationship(type = "REQUISITA_COMPETENCIA_EM", direction = Relationship.Direction.OUTGOING)
     private List<RequisitaCompetenciaEm> competencias;
@@ -43,7 +45,5 @@ public class Vaga {
     private PosDoutorado posDoutorado;
 
     @Transient @Setter
-    private List<Candidato> listaPreferenciaCandidatos; // aqui, vou alocar os candidatos preferenciais da vaga
-
-
+    private List<Candidato> listaPreferenciaCandidatos;
 }
