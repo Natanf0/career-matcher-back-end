@@ -2,6 +2,7 @@ package br.com.careermatcher.services;
 
 import br.com.careermatcher.models.Candidato;
 import br.com.careermatcher.models.Vaga;
+import br.com.careermatcher.repositories.CandidatoRepository;
 import br.com.careermatcher.repositories.VagaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,10 +16,65 @@ import java.util.Map;
 public class VagaService {
 
     private final VagaRepository vagaRepository;
+    private final CandidatoRepository candidatoRepository;
     private RankerService rankerService;
 
     public List<Vaga> findAll(){
         return vagaRepository.findAll();
+    }
+
+    public Vaga findById(Long id) {
+        return vagaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Vaga não encontrada com ID: " + id));
+    }
+
+    public List<Vaga> findWithFilters(List<String> senioridade, List<String> modalidade, List<String> cargo, String empresa, String cidade) {
+        boolean hasSenioridade = senioridade != null && !senioridade.isEmpty();
+        boolean hasModalidade = modalidade != null && !modalidade.isEmpty();
+        boolean hasCargo = cargo != null && !cargo.isEmpty();
+        boolean hasEmpresa = empresa != null && !empresa.trim().isEmpty();
+        boolean hasCidade = cidade != null && !cidade.trim().isEmpty();
+
+        List<Vaga> vagas;
+        if (!hasSenioridade && !hasModalidade && !hasCargo && !hasEmpresa && !hasCidade) {
+            vagas = vagaRepository.findAll();
+        } else {
+            vagas = vagaRepository.findByFilters(
+                hasSenioridade ? senioridade : null,
+                hasModalidade ? modalidade : null,
+                hasCargo ? cargo : null,
+                hasEmpresa ? empresa : null,
+                hasCidade ? cidade : null
+            );
+        }
+
+        preencherNomesCandidatos(vagas);
+
+        return vagas;
+    }
+
+    private void preencherNomesCandidatos(List<Vaga> vagas) {
+        List<Long> candidatoIds = vagas.stream()
+            .map(Vaga::getIdCandidatoEscolhido)
+            .filter(id -> id != null)
+            .distinct()
+            .toList();
+
+        if (candidatoIds.isEmpty()) {
+            return;
+        }
+
+        Map<Long, String> candidatosMap = new HashMap<>();
+        candidatoRepository.findAllById(candidatoIds).forEach(candidato ->
+            candidatosMap.put(candidato.getId(), candidato.getNome())
+        );
+
+        vagas.forEach(vaga -> {
+            if (vaga.getIdCandidatoEscolhido() != null) {
+                String nome = candidatosMap.get(vaga.getIdCandidatoEscolhido());
+                vaga.setNomeCandidatoEscolhido(nome);
+            }
+        });
     }
 
     public void createRankedListCandidatosTodasAsVagas(List<Vaga> todasAsVagas, List<Candidato> todosOsCandidatos){
@@ -29,9 +85,6 @@ public class VagaService {
 
 
     private void createRankedListCandidatos(Vaga vaga, List<Candidato> todosOsCandidatos){
-        /*
-            Função que cria uma lista de preferências de Candidatos para uma Vaga
-         */
         Map<Candidato, Double> rankedMapCandidatos = new HashMap<>();
         List<Candidato> rankedListCandidatos = new ArrayList<>();
         double rank;
@@ -56,10 +109,9 @@ public class VagaService {
     }
 
     private List<Candidato> orderByRank(Map<Candidato, Double> rankedMapCandidatos){
-        // Ordenação decrescente pelo valor Integer
         return rankedMapCandidatos.entrySet()
                 .stream()
-                .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue())) // Decrescente
+                .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()))
                 .map(entry -> entry.getKey())
                 .toList();
     }
