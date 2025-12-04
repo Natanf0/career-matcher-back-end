@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +22,10 @@ public class CandidatoController {
     @GetMapping("/")
     public ResponseEntity<List<Candidato>> findAllCandidatos(){
         return new ResponseEntity<>(candidatoService.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Candidato> findCandidatoById(@PathVariable Long id){
+        return new ResponseEntity<>(candidatoService.findById(id), HttpStatus.OK);
     }
 }

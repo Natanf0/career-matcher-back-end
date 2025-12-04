@@ -20,6 +20,11 @@ public class CandidatoService {
 
     public List<Candidato> findAll(){return candidatoRepository.findAll();}
 
+    public Candidato findById(Long id) {
+        return candidatoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Candidato não encontrado com ID: " + id));
+    }
+
     public void createRankedListVagasTodosOsCandidatos(List<Candidato> todosOsCandidatos, List<Vaga> todasAsVagas){
         for(Candidato candidato : todosOsCandidatos ){
             createRankedListVagas(candidato, todasAsVagas);
@@ -50,10 +55,9 @@ public class CandidatoService {
     }
 
     private List<Vaga> orderByRank(Map<Vaga, Double> rankedMapCandidatos){
-        // Ordenação decrescente pelo valor Integer
         return rankedMapCandidatos.entrySet()
                 .stream()
-                .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue())) // Decrescente
+                .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()))
                 .map(entry -> entry.getKey())
                 .toList();
     }

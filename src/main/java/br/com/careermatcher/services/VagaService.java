@@ -21,6 +21,37 @@ public class VagaService {
         return vagaRepository.findAll();
     }
 
+    public Vaga findById(Long id) {
+        return vagaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Vaga não encontrada com ID: " + id));
+    }
+
+    public List<Vaga> findWithFilters(List<String> senioridade, List<String> modalidade, List<String> cargo, String empresa, String cidade) {
+        boolean hasSenioridade = senioridade != null && !senioridade.isEmpty();
+        boolean hasModalidade = modalidade != null && !modalidade.isEmpty();
+        boolean hasCargo = cargo != null && !cargo.isEmpty();
+        boolean hasEmpresa = empresa != null && !empresa.trim().isEmpty();
+        boolean hasCidade = cidade != null && !cidade.trim().isEmpty();
+
+        List<Vaga> vagas;
+        if (!hasSenioridade && !hasModalidade && !hasCargo && !hasEmpresa && !hasCidade) {
+            vagas = vagaRepository.findAll();
+        } else {
+            List<Long> ids = vagaRepository.findIdsByFilters(
+                hasSenioridade ? senioridade : null,
+                hasModalidade ? modalidade : null,
+                hasCargo ? cargo : null,
+                hasEmpresa ? empresa : null,
+                hasCidade ? cidade : null
+            );
+            vagas = vagaRepository.findAllById(ids).stream().toList();
+        }
+
+
+        return vagas;
+    }
+
+
     public void createRankedListCandidatosTodasAsVagas(List<Vaga> todasAsVagas, List<Candidato> todosOsCandidatos){
         for(Vaga vaga: todasAsVagas){
             createRankedListCandidatos(vaga, todosOsCandidatos);
@@ -29,9 +60,6 @@ public class VagaService {
 
 
     private void createRankedListCandidatos(Vaga vaga, List<Candidato> todosOsCandidatos){
-        /*
-            Função que cria uma lista de preferências de Candidatos para uma Vaga
-         */
         Map<Candidato, Double> rankedMapCandidatos = new HashMap<>();
         List<Candidato> rankedListCandidatos = new ArrayList<>();
         double rank;
@@ -56,10 +84,9 @@ public class VagaService {
     }
 
     private List<Candidato> orderByRank(Map<Candidato, Double> rankedMapCandidatos){
-        // Ordenação decrescente pelo valor Integer
         return rankedMapCandidatos.entrySet()
                 .stream()
-                .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue())) // Decrescente
+                .sorted((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()))
                 .map(entry -> entry.getKey())
                 .toList();
     }
