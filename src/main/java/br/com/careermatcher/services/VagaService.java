@@ -2,7 +2,6 @@ package br.com.careermatcher.services;
 
 import br.com.careermatcher.models.Candidato;
 import br.com.careermatcher.models.Vaga;
-import br.com.careermatcher.repositories.CandidatoRepository;
 import br.com.careermatcher.repositories.VagaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,7 +15,6 @@ import java.util.Map;
 public class VagaService {
 
     private final VagaRepository vagaRepository;
-    private final CandidatoRepository candidatoRepository;
     private RankerService rankerService;
 
     public List<Vaga> findAll(){
@@ -49,34 +47,10 @@ public class VagaService {
             vagas = vagaRepository.findAllById(ids).stream().toList();
         }
 
-        preencherNomesCandidatos(vagas);
 
         return vagas;
     }
 
-    private void preencherNomesCandidatos(List<Vaga> vagas) {
-        List<Long> candidatoIds = vagas.stream()
-            .map(Vaga::getIdCandidatoEscolhido)
-            .filter(id -> id != null)
-            .distinct()
-            .toList();
-
-        if (candidatoIds.isEmpty()) {
-            return;
-        }
-
-        Map<Long, String> candidatosMap = new HashMap<>();
-        candidatoRepository.findAllById(candidatoIds).forEach(candidato ->
-            candidatosMap.put(candidato.getId(), candidato.getNome())
-        );
-
-        vagas.forEach(vaga -> {
-            if (vaga.getIdCandidatoEscolhido() != null) {
-                String nome = candidatosMap.get(vaga.getIdCandidatoEscolhido());
-                vaga.setNomeCandidatoEscolhido(nome);
-            }
-        });
-    }
 
     public void createRankedListCandidatosTodasAsVagas(List<Vaga> todasAsVagas, List<Candidato> todosOsCandidatos){
         for(Vaga vaga: todasAsVagas){

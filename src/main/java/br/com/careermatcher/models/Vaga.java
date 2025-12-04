@@ -23,8 +23,6 @@ public class Vaga {
 
     @Setter private Long idCandidatoEscolhido;
 
-    @Transient @Setter
-    private String nomeCandidatoEscolhido;
 
     @Relationship(type = "REQUISITA_GRADUACAO_EM", direction = Relationship.Direction.OUTGOING)
     private List<Graduacao> graduacao;
